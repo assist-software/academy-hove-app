@@ -1,2 +1,20 @@
-.auth-form {
+@import '../../../../styles/variables.scss';
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 415px;
+  width: 100%;
+
+  &Field {
+    height: 44px;
+    border-radius: 8px;
+  }
+
+  &Label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: $gray-600;
+  }
 }

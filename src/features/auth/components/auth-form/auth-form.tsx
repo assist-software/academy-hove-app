@@ -12,11 +12,16 @@ export const AuthForm = ({ formValues, setFormValues }: Props) => {
 
   return (
     <div className={styles.authForm}>
-      <h5>Email</h5>
-      <InputText value={formValues.email} onChange={(e) => setFormValues(e.target.value, 'email')} />
-      <h5>Password</h5>
+      <label className={styles.authFormLabel}>Email</label>
+      <InputText
+        className={styles.authFormField}
+        value={formValues.email}
+        onChange={(e) => setFormValues(e.target.value, 'email')}
+      />
+      <label className={styles.authFormLabel}>Password</label>
       <p onClick={() => setIsPasswordHidden((state) => !state)}>eye</p>
       <InputText
+        className={styles.authFormField}
         type={isPasswordHidden ? 'password' : 'text'}
         value={formValues.password}
         onChange={(e) => setFormValues(e.target.value, 'password')}
