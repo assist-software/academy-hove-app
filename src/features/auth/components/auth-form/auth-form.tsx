@@ -17,7 +17,7 @@ export const AuthForm = ({ formValues, setFormValues }: Props) => {
       <i className='pi pi-spin pi-spinner' onClick={() => setIsPasswordHidden((state) => !state)} />
       <InputText
         type={isPasswordHidden ? 'password' : 'text'}
-        value={formValues.email}
+        value={formValues.password}
         onChange={(e) => setFormValues(e.target.value, 'password')}
       />
     </>
