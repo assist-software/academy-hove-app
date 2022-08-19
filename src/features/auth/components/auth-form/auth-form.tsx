@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { InputText } from 'primereact/inputtext'
+import { Password } from 'primereact/password'
 
 import styles from './auth-form.module.scss'
 
 interface Props {
-  formValues: { email: string; password: string }
-  setFormValues: (value: string, field: 'email' | 'password') => void
+  logIn: ({ email, password }: { email: string; password: string }) => void
   type: 'login' | 'signup'
 }
 
-export const AuthForm = ({ formValues, setFormValues, type }: Props) => {
-  const [isPasswordHidden, setIsPasswordHidden] = useState<boolean>(false)
+export const AuthForm = ({ type }: Props) => {
+  const [formValues, setFormValues] = useState({ email: '', password: '' })
 
   return (
     <div className={styles.authForm}>
@@ -19,21 +19,27 @@ export const AuthForm = ({ formValues, setFormValues, type }: Props) => {
         <InputText
           className={styles.authFormField}
           value={formValues.email}
-          onChange={(e) => setFormValues(e.target.value, 'email')}
+          onChange={(e) =>
+            setFormValues((values) => {
+              return { ...values, email: e.target.value }
+            })
+          }
         />
       </div>
 
       <div className={styles.authFormInputContainer}>
         <label className={styles.authFormLabel}>Password</label>
-        <InputText
+        <Password
           className={styles.authFormField}
-          type={isPasswordHidden ? 'password' : 'text'}
           value={formValues.password}
-          onChange={(e) => setFormValues(e.target.value, 'password')}
+          onChange={(e) =>
+            setFormValues((values) => {
+              return { ...values, password: e.target.value }
+            })
+          }
+          toggleMask
         />
       </div>
-
-      <p onClick={() => setIsPasswordHidden((state) => !state)}>eye</p>
     </div>
   )
 }

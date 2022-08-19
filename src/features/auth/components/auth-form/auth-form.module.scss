@@ -8,14 +8,11 @@
 
   &Field {
     height: 44px;
-    border: 1px solid $gray-200;
-    border-radius: 8px;
     width: 415px;
-    font-size: 16px;
-    line-height: 24px;
 
-    &:focus-visible {
-      border: 1px solid $gray-200;
+    input {
+      height: 44px;
+      width: 415px;
     }
   }
 

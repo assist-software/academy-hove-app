@@ -17,11 +17,7 @@ export class AuthStore {
     return this.userRole !== 'unauth'
   }
 
-  setFormValues = (value: string, field: 'email' | 'password') => {
-    this.formValues = { ...this.formValues, [field]: value }
-  }
-
-  login = ({ email, password }: { email: string; password: string }) => {
+  logIn = ({ email, password }: { email: string; password: string }) => {
     try {
     } catch (e) {}
   }
