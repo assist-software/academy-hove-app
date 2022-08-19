@@ -1,6 +1,9 @@
-import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { AuthPage } from './pages/auth-page'
+
+import 'primereact/resources/primereact.min.css' //core css
+import 'primeicons/primeicons.css'
+import './App.css'
 
 function App() {
   return (

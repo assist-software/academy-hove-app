@@ -10,12 +10,28 @@
     height: 44px;
     border: 1px solid $gray-200;
     border-radius: 8px;
+    width: 415px;
+    font-size: 16px;
+    line-height: 24px;
+
+    &:focus-visible {
+      border: 1px solid $gray-200;
+    }
   }
 
   &Label {
+    text-align: left;
     font-weight: 500;
     font-size: 14px;
     line-height: 22px;
     color: $gray-600;
+    user-select: none;
+    margin-bottom: 7px;
+  }
+
+  &InputContainer {
+    margin: 14px auto;
+    display: flex;
+    flex-direction: column;
   }
 }
