@@ -1,13 +1,14 @@
 import { makeAutoObservable } from 'mobx'
+import { UserAuthDetails, UserRole } from '../models/auth-models'
 
 export class AuthStore {
   userName: string | null = null
   userEmail: string | null = null
   userID: string | null = null
 
-  userRole: 'user' | 'client' | 'admin' | 'unauth' = 'unauth'
+  userRole: UserRole = 'unauth'
 
-  formValues: { email: string; password: string } = { email: '', password: '' }
+  formValues: UserAuthDetails = { email: '', password: '' }
 
   constructor() {
     makeAutoObservable(this)
@@ -17,7 +18,7 @@ export class AuthStore {
     return this.userRole !== 'unauth'
   }
 
-  logIn = ({ email, password }: { email: string; password: string }) => {
+  logIn = ({ email, password }: UserAuthDetails) => {
     try {
     } catch (e) {}
   }
