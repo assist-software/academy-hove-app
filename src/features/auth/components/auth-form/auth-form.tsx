@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { InputText } from 'primereact/inputtext'
 import { Password } from 'primereact/password'
+import { Button } from 'primereact/button'
 
 import styles from './auth-form.module.scss'
+import { Link } from 'react-router-dom'
 
 interface Props {
   logIn: ({ email, password }: { email: string; password: string }) => void
   type: 'login' | 'signup'
 }
 
-export const AuthForm = ({ type }: Props) => {
+export const AuthForm = ({ type, logIn }: Props) => {
   const [formValues, setFormValues] = useState({ email: '', password: '' })
 
   return (
@@ -39,6 +41,16 @@ export const AuthForm = ({ type }: Props) => {
           }
           toggleMask
         />
+        <p className={styles.authFormInputNote}>At least 8 characters and one number.</p>
+      </div>
+      <Button className={styles.authFormButton} label='Sign up' onClick={() => logIn(formValues)} />
+      <div className={styles.authFormLinkContainer}>
+        <p className={styles.authFormLinkText}>
+          Already have an account?{' '}
+          <Link className={styles.authFormLink} to='/login'>
+            Log in
+          </Link>
+        </p>
       </div>
     </div>
   )
