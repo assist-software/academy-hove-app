@@ -1,9 +1,9 @@
+import { useStore } from 'store/store'
 import { observer } from 'mobx-react-lite'
 import { AuthForm } from '../features/auth/components/auth-form/auth-form'
-import { useStore } from '../store'
-import coverImage from '../common/assets/login-image.png'
 
 import styles from '../styles/login-page.module.scss'
+import coverImage from '../common/assets/login-image.png'
 
 export const AuthPage = observer(() => {
   const { authStore } = useStore()
