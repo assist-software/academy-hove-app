@@ -1,39 +1,41 @@
-$primary-50: #f1f6ff;
-$primary-100: #e2edff;
-$primary-200: #b7d1fe;
-$primary-300: #5592fd;
-$primary-400: #0356e8; //Also named ASSIST blue in some parts of the design
-$primary-500: #0241ae;
-$primary-600: #023691;
-$primary-700: #012b74;
+:root {
+  --primary-50: #f1f6ff;
+  --primary-100: #e2edff;
+  --primary-200: #b7d1fe;
+  --primary-300: #5592fd;
+  --primary-400: #0356e8; //Also named ASSIST blue in some parts of the design
+  --primary-500: #0241ae;
+  --primary-600: #023691;
+  --primary-700: #012b74;
 
-$secondary: #ffffff;
+  --secondary: #ffffff;
 
-$succes-300: #6ee7b7;
-$succes-400: #10b981;
-$succes-500: #035e43;
+  --succes-300: #6ee7b7;
+  --succes-400: #10b981;
+  --succes-500: #035e43;
 
-$alert-200: #fbc7c9;
-$alert-300: #f2454c;
-$alert-400: #ef2028;
-$alert-500: #dd1018;
-$alert-600: #be0e14;
-$alert-700: #9e0b11;
+  --alert-200: #fbc7c9;
+  --alert-300: #f2454c;
+  --alert-400: #ef2028;
+  --alert-500: #dd1018;
+  --alert-600: #be0e14;
+  --alert-700: #9e0b11;
 
-$warning-300: #fcd34d;
-$warning-400: #f59e0b;
-$warning-500: #b45309;
+  --warning-300: #fcd34d;
+  --warning-400: #f59e0b;
+  --warning-500: #b45309;
 
-$white: #ffffff;
-$gray-25: #f9fafb;
-$gray-50: #f2f4f7;
-$gray-100: #e4e7ec;
-$gray-200: #d0d5dd;
-$gray-300: #98a2b3;
-$gray-400: #667085;
-$gray-500: #596274;
-$gray-600: #4d5464;
-$gray-700: #404653;
-$gray-800: #333843;
-$gray-900: #262a32;
-$black: #1c1c1e;
+  --white: #ffffff;
+  --gray-25: #f9fafb;
+  --gray-50: #f2f4f7;
+  --gray-100: #e4e7ec;
+  --gray-200: #d0d5dd;
+  --gray-300: #98a2b3;
+  --gray-400: #667085;
+  --gray-500: #596274;
+  --gray-600: #4d5464;
+  --gray-700: #404653;
+  --gray-800: #333843;
+  --gray-900: #262a32;
+  --black: #1c1c1e;
+}
