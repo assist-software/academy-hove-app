@@ -1,5 +1,6 @@
 export const PAGES_PATHS = {
-  AUTH: '/auth',
+  LOG_IN: '/login',
   SIGN_UP: '/signup',
   HOME: '/',
+  RESET_PASS: '/reset-password',
 }
