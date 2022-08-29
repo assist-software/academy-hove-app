@@ -5,6 +5,8 @@ export const RESET_I18 = {
   invalidEmailError: 'Invalid email address. E.g. example@email.com',
   requiredPasswordError: 'Password is required.',
   backToLogin: 'Back to Log in',
+  confirmPassword: 'Confirm Password',
+  password: 'Password',
 }
 
 export const PRIMARY_BUTTON_TEXT = {

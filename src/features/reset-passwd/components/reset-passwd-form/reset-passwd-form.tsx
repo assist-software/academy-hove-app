@@ -110,7 +110,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword }: Pro
                   />
 
                   <label htmlFor='password' className={classNames({ 'p-error': !!errors.email })}>
-                    Password
+                    {RESET_I18.password}
                   </label>
                 </span>
                 {getFormErrorMessage('password')}
@@ -135,7 +135,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword }: Pro
                   />
 
                   <label htmlFor='confirmPassword' className={classNames({ 'p-error': !!errors.email })}>
-                    Confirm Password
+                    {RESET_I18.confirmPassword}
                   </label>
                 </span>
                 {getFormErrorMessage('confirmPassword')}
