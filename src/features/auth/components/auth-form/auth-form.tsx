@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
-import { InputText } from 'primereact/inputtext'
-import { Password } from 'primereact/password'
 import { Button } from 'primereact/button'
 import { Checkbox } from 'primereact/checkbox'
+import { Password } from 'primereact/password'
+import { InputText } from 'primereact/inputtext'
 import { useForm, Controller } from 'react-hook-form'
 
 import {
@@ -14,8 +14,8 @@ import {
 } from 'features/auth/constants/auth-i18-constants'
 import { PAGES_PATHS } from 'common/constants/constants'
 import { Divider } from 'common/components/Divider/Divider'
-import { AuthPageTypes, UserLogInDetails, UserSignUpDetails } from 'features/auth/models/auth-models'
 import { AUTH_PAGE_TYPES } from 'features/auth/constants/auth-constants'
+import { AuthPageTypes, UserLogInDetails, UserSignUpDetails } from 'features/auth/models/auth-models'
 
 import googleLogo from 'common/assets/google.svg'
 import ASSISTLogo from 'common/assets/logo-assist.svg'

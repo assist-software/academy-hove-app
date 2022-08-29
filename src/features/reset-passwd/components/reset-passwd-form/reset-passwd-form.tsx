@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { Link } from 'react-router-dom'
 import { Button } from 'primereact/button'
 import { Password } from 'primereact/password'
 import { InputText } from 'primereact/inputtext'
@@ -7,12 +8,11 @@ import { useForm, Controller } from 'react-hook-form'
 import { PRIMARY_BUTTON_TEXT, RESET_I18 } from 'features/reset-passwd/constants/reset-passwd-constants'
 
 import { useQuery } from 'common/hooks/useQuerry'
+import { PAGES_PATHS } from 'common/constants/constants'
 
 import ASSISTLogo from 'common/assets/logo-assist.svg'
 
 import styles from './reset-passwd-form.module.scss'
-import { PAGES_PATHS } from 'common/constants/constants'
-import { Link } from 'react-router-dom'
 interface Props {
   resetPassword: ({ email, password, oobCode }: ResetPasswordDetails) => void
   sendResetPasswordRequest: ({ email }: { email: string }) => void
