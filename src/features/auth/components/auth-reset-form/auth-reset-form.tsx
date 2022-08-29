@@ -10,9 +10,8 @@ import { PRIMARY_RESET_BUTTON_TEXT, AUTH_I18 } from 'features/auth/constants/aut
 import { useQuery } from 'common/hooks/useQuerry'
 import { PAGES_PATHS } from 'common/constants/constants'
 
-import ASSISTLogo from 'common/assets/logo-assist.svg'
-
 import styles from './auth-reset-form.module.scss'
+import { AuthHeading } from '../auth-heading/auth-heading'
 interface Props {
   resetPassword: ({ email, password, oobCode }: ResetPasswordDetails) => void
   sendResetPasswordRequest: ({ email }: { email: string }) => void
@@ -51,11 +50,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword }: Pro
 
   return (
     <>
-      <div className={styles.resetPasswdHeader}>
-        <img className={styles.resetPasswdASSISTLogo} alt='ASSIST Logo' src={ASSISTLogo} />
-        <h1 className={styles.resetPasswdTitle}>{AUTH_I18.resetPageTitle}</h1>
-        <h3 className={styles.resetPasswdSubitle}>{AUTH_I18.resetPageSubtitle}</h3>
-      </div>
+      <AuthHeading title={AUTH_I18.resetPageTitle} subtitle={AUTH_I18.resetPageSubtitle} />
 
       <div className={styles.resetPasswdForm}>
         <form onSubmit={handleSubmit(onSubmit)} className='p-fluid'>

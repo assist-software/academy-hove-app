@@ -18,9 +18,9 @@ import { AUTH_PAGE_TYPES } from 'features/auth/constants/auth-constants'
 import { AuthPageTypes, UserLogInDetails, UserSignUpDetails } from 'features/auth/models/auth-models'
 
 import googleLogo from 'common/assets/google.svg'
-import ASSISTLogo from 'common/assets/logo-assist.svg'
 
 import styles from './auth-form.module.scss'
+import { AuthHeading } from '../auth-heading/auth-heading'
 
 interface Props {
   logIn: ({ email, password, rememberMe }: UserLogInDetails) => void
@@ -58,11 +58,7 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
 
   return (
     <>
-      <div className={styles.authFormHeader}>
-        <img className={styles.authFormASSISTLogo} alt='ASSIST Logo' src={ASSISTLogo} />
-        <h1 className={styles.authFormTitle}>{AUTH_PAGE_TITLES[type]}</h1>
-        <h3 className={styles.authFormSubitle}>{AUTH_PAGE_SUBTITLES[type]}</h3>
-      </div>
+      <AuthHeading title={AUTH_PAGE_TITLES[type]} subtitle={AUTH_PAGE_SUBTITLES[type]} />
 
       {type === AUTH_PAGE_TYPES.SIGNUP && (
         <>
