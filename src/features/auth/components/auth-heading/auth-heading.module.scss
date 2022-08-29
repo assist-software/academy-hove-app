@@ -1,4 +1,10 @@
 .authHeading {
+  &Header {
+    width: 415px;
+    display: flex;
+    flex-direction: column;
+  }
+
   &Title {
     text-align: left;
     font-weight: 700;
@@ -15,5 +21,11 @@
     color: var(--gray-300);
     margin: 0;
     margin-bottom: 16px;
+  }
+
+  &ASSISTLogo {
+    width: 101px;
+    float: left;
+    margin-bottom: 32px;
   }
 }
