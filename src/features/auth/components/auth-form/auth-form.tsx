@@ -12,6 +12,7 @@ import {
   PRIMARY_BUTTON_TEXT,
   AUTH_I18,
 } from 'features/auth/constants/auth-i18-constants'
+import { PAGES_PATHS } from 'common/constants/constants'
 import { Divider } from 'common/components/Divider/Divider'
 import { AuthPageTypes, UserLogInDetails, UserSignUpDetails } from 'features/auth/models/auth-models'
 import { AUTH_PAGE_TYPES } from 'features/auth/constants/auth-constants'
@@ -100,7 +101,7 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
                 )}
               />
               <label htmlFor='email' className={classNames({ 'p-error': !!errors.email })}>
-                Email*
+                Email
               </label>
             </span>
             {getFormErrorMessage('email')}
@@ -123,7 +124,7 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
                 )}
               />
               <label htmlFor='password' className={classNames({ 'p-error': errors.password })}>
-                Password*
+                Password
               </label>
             </span>
             {getFormErrorMessage('password')}
@@ -166,14 +167,14 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
           {type === AUTH_PAGE_TYPES.SIGNUP ? (
             <p className={styles.authFormLinkText}>
               {AUTH_I18.allreadyHaveAcc}{' '}
-              <Link className={styles.authFormLink} to='/login'>
+              <Link className={styles.authFormLink} to={PAGES_PATHS.LOG_IN}>
                 {AUTH_I18.titleLogin}
               </Link>
             </p>
           ) : (
             <p className={styles.authFormLinkText}>
               {AUTH_I18.dontHaveAnAccout}{' '}
-              <Link className={styles.authFormLink} to='/signup'>
+              <Link className={styles.authFormLink} to={PAGES_PATHS.SIGN_UP}>
                 {AUTH_I18.primaryButtonSignup}
               </Link>
             </p>
