@@ -1,26 +1,26 @@
 import classNames from 'classnames'
-import { Link } from 'react-router-dom'
 import { Button } from 'primereact/button'
 import { Password } from 'primereact/password'
 import { InputText } from 'primereact/inputtext'
 import { ResetPasswordDetails } from 'features/auth'
 import { useForm, Controller } from 'react-hook-form'
+import { Link, useSearchParams } from 'react-router-dom'
 import { PRIMARY_RESET_BUTTON_TEXT, AUTH_I18 } from 'features/auth/constants/auth-i18-constants'
 
-import { useQuery } from 'common/hooks/useQuerry'
 import { PAGES_PATHS } from 'common/constants/constants'
 
+import ASSISTLogo from 'common/assets/logo-assist.svg'
+
 import styles from './auth-reset-form.module.scss'
-import { AuthHeading } from '../auth-heading/auth-heading'
 interface Props {
   resetPassword: ({ email, password, oobCode }: ResetPasswordDetails) => void
   sendResetPasswordRequest: ({ email }: { email: string }) => void
 }
 
 export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword }: Props) => {
-  let querry = useQuery()
+  const [searchParams] = useSearchParams()
 
-  const mode = !querry.get('oobCode') ? 'sendLink' : 'changePwd'
+  const mode = !searchParams.get('oobCode') ? 'sendLink' : 'changePwd'
 
   const defaultValues = {
     email: '',
@@ -37,7 +37,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword }: Pro
 
   const onSubmit = (data: any) => {
     if (mode === 'changePwd') {
-      resetPassword({ ...data, oobCode: querry.get('oobCode') })
+      resetPassword({ ...data, oobCode: searchParams.get('oobCode') })
       reset()
       return
     }
@@ -50,7 +50,11 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword }: Pro
 
   return (
     <>
-      <AuthHeading title={AUTH_I18.resetPageTitle} subtitle={AUTH_I18.resetPageSubtitle} />
+      <div className={styles.resetPasswdHeader}>
+        <img className={styles.resetPasswdASSISTLogo} alt='ASSIST Logo' src={ASSISTLogo} />
+        <h1 className={styles.resetPasswdTitle}>{AUTH_I18.resetPageTitle}</h1>
+        <h3 className={styles.resetPasswdSubitle}>{AUTH_I18.resetPageSubtitle}</h3>
+      </div>
 
       <div className={styles.resetPasswdForm}>
         <form onSubmit={handleSubmit(onSubmit)} className='p-fluid'>
