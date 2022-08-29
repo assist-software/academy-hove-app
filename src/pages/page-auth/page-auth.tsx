@@ -1,5 +1,5 @@
-import { observer } from 'mobx-react-lite'
 import { useStore } from 'store/store'
+import { observer } from 'mobx-react-lite'
 
 import { AuthForm } from 'features/auth'
 import { FullAuthPageTypes } from 'features/auth'

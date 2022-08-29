@@ -1,4 +1,4 @@
-export const RESET_I18 = {
+export const AUTH_I18 = {
   resetPageTitle: 'Forgot password',
   resetPageSubtitle: 'Password reset link sent to you email address.',
   requiredEmailError: 'Email is required.',
@@ -7,9 +7,4 @@ export const RESET_I18 = {
   backToLogin: 'Back to Log in',
   confirmPassword: 'Confirm Password',
   password: 'Password',
-}
-
-export const PRIMARY_BUTTON_TEXT = {
-  sendLink: 'Send reset link',
-  changePwd: 'Confirm password',
 }
