@@ -1,12 +1,8 @@
 export const PAGES_PATHS = {
-  AUTH: '/auth',
+  LOG_IN: '/login',
   SIGN_UP: '/signup',
   HOME: '/',
-}
-
-export const AltImg = {
-  favorite: 'Favorite Icon',
-  property: 'Property Image',
+  RESET_PASS: '/reset-password',
 }
 
 export const ButtonLables = {

@@ -1,34 +1,96 @@
-@import '../../../../styles/variables.scss';
-
 .authForm {
   display: flex;
   flex-direction: column;
   max-width: 415px;
   width: 100%;
 
-  &Field {
-    height: 44px;
+  &SignWithGoogle {
+    margin-bottom: 35px !important;
     width: 415px;
-
-    input {
-      height: 44px;
-      width: 415px;
-    }
   }
 
-  &Label {
-    text-align: left;
+  &LoginWithGoole {
+    margin-top: 8px !important;
+  }
+
+  &LoginExtra {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &RememberText {
     font-weight: 500;
     font-size: 14px;
-    line-height: 22px;
-    color: $gray-600;
-    user-select: none;
-    margin-bottom: 7px;
+    color: var(--gray-500);
+    margin: auto 0 auto 7px;
   }
 
-  &InputContainer {
-    margin: 14px auto;
+  &ForgotPwd {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--primary-400);
+  }
+
+  &InputNote {
+    color: var(--gray-500);
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  &Button {
+    margin-top: 15px !important;
+  }
+
+  &Link {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--primary-400);
+  }
+
+  &LinkText {
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--gray-300);
+  }
+
+  &LinkContainer {
+    margin-top: 7px;
+  }
+
+  &Header {
+    width: 415px;
     display: flex;
     flex-direction: column;
+  }
+
+  &ASSISTLogo {
+    width: 101px;
+    float: left;
+    margin-bottom: 32px;
+  }
+
+  &Title {
+    text-align: left;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--black);
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  &Subitle {
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--gray-300);
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &Field {
+    margin: 30px 0;
   }
 }

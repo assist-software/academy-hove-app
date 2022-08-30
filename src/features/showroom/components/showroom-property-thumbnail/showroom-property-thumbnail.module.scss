@@ -1,40 +1,40 @@
 @import 'styles/variables.scss';
 
 // WEB
-.thumbnailWrapper {
+.thumbnail {
   display: flex;
   flex-direction: column;
 }
 
-.customBorder {
+.thumbnailBorder {
   &User {
     border-radius: 12px;
-    border: 1px solid $gray-100;
+    border: 1px solid var(--gray-100);
   }
   &Admin {
-    border-top: 1px solid $gray-100;
-    border-right: 1px solid $gray-100;
-    border-left: 1px solid $gray-100;
+    border-top: 1px solid var(--gray-100);
+    border-right: 1px solid var(--gray-100);
+    border-left: 1px solid var(--gray-100);
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
   }
   &Client {
-    @extend .customBorderAdmin;
+    @extend .thumbnailBorderAdmin;
   }
 }
 
-.customBorderActions {
+.thumbnailBorderActions {
   &User {
     border-radius: 12px;
-    border: 1px solid $gray-100;
+    border: 1px solid var(--gray-100);
   }
   &Admin {
-    border: 1px solid $gray-100;
+    border: 1px solid var(--gray-100);
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
   }
   &Client {
-    @extend .customBorderActionsAdmin;
+    @extend .thumbnailBorderActionsAdmin;
   }
 }
 
@@ -54,12 +54,12 @@
     gap: 8px;
     width: 262px;
     height: 252px;
-    border: 1px solid $gray-100;
+    border: 1px solid var(--gray-100);
     border-radius: 12px;
   }
 }
 
-.imageList {
+.thumbnailImage {
   &List {
     width: 250px;
     height: 136px;
@@ -73,7 +73,7 @@
   }
 }
 
-.text {
+.thumbnailText {
   display: flex;
   flex-direction: column;
   &List {
@@ -89,14 +89,14 @@
   }
 }
 
-.title {
+.thumbnailTitle {
   &List {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   &Grid {
-    color: $black;
+    color: var(--black);
     overflow: hidden;
     display: inline-block;
     text-overflow: ellipsis;
@@ -104,22 +104,22 @@
   }
 }
 
-.locationText {
+.thumbnailLocation {
   &List {
     position: absolute;
     top: 16px;
     right: 54px;
   }
   &Grid {
-    color: $gray-400;
+    color: var(--gray-400);
   }
 }
 
-.actions {
+.thumbnailActions {
   &List {
     display: flex;
     height: 60px;
-    gap: 4px;
+    gap: 8px;
     align-items: center;
     justify-content: flex-end;
     padding: 0 24px;
@@ -129,35 +129,16 @@
   }
 }
 
-.favoriteWrapper {
+.thumbnailFavorite {
   position: absolute;
   right: 12px;
   top: 12px;
   cursor: pointer;
 }
 
-.buttonStyle {
-  width: 82px;
-  height: 36px;
-}
-
-.editButton {
-  margin: 0;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 22px;
-  color: $primary-500;
-}
-
-.editButtonDelete {
-  @extend .editButton;
-  color: $alert-500;
-}
-
-.descriptionText {
+.thumbnailDescription {
   height: 60px;
-  color: $gray-400;
+  color: var(--gray-400);
   overflow: hidden;
   display: inline-block;
   text-overflow: ellipsis;
@@ -175,7 +156,7 @@
       height: 158px;
     }
   }
-  .imageList {
+  .thumbnailImage {
     &List {
       width: 154px;
       height: 143px;
@@ -184,7 +165,7 @@
       height: 68px;
     }
   }
-  .title {
+  .thumbnailTitle {
     &List {
       height: 44px;
       overflow: hidden;
@@ -196,7 +177,7 @@
 }
 
 @media only screen and (max-width: 660px) {
-  .locationText {
+  .thumbnailLocation {
     &List {
       display: none;
     }

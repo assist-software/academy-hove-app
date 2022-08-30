@@ -4,3 +4,8 @@ export const ORDER_BY = {
   PRiCE_HIGHT_TO_LOW: 'Price: High to Low',
   FEATURED: 'featured',
 }
+
+export const AltImgShowroom = {
+  favorite: 'Favorite Icon',
+  property: 'Property Image',
+}

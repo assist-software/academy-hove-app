@@ -1,4 +1,4 @@
-import { ShowroomAllComponents } from 'features/showroom/components/showroom-all-components'
+import { ShowroomAllComponents } from 'features/showroom/components/showroom-all-components/showroom-all-components'
 
 export const PageAllComponents = () => {
   return (

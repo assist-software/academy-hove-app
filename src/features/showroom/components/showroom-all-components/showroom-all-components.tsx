@@ -1,8 +1,8 @@
-import { v4 as uuidv4 } from 'uuid'
+import { nanoid } from 'nanoid'
 
 import style from './showroom-all-components.module.scss'
 import { ShowroomPropertyThumbnail } from 'features/showroom/components/showroom-property-thumbnail/showroom-property-thumbnail'
-import { SHOWROOM_HOUSE_THUMBNAIL } from 'common/constants/mockData'
+import { SHOWROOM_HOUSE_THUMBNAIL } from '../../constants/showroom-mock-data'
 
 export const ShowroomAllComponents = () => {
   return (
@@ -10,7 +10,7 @@ export const ShowroomAllComponents = () => {
       <div className={style.thumbnailWrapper}>
         {SHOWROOM_HOUSE_THUMBNAIL.map((element) => {
           return (
-            <div key={uuidv4()}>
+            <div key={nanoid()}>
               <ShowroomPropertyThumbnail thumbnail={element} type={'list'} role={'admin'} />
             </div>
           )

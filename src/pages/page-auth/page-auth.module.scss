@@ -1,4 +1,4 @@
-.loginPage {
+.authPage {
   display: flex;
   justify-content: flex-end;
   width: 100vw;
@@ -8,11 +8,13 @@
   &Form {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
   &Cover {
     height: 100vh;
+    width: 100%;
   }
 }
