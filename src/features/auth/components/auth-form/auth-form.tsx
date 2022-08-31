@@ -2,9 +2,10 @@ import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import { InputText } from 'primereact/inputtext'
 import { Password } from 'primereact/password'
-import { Button } from 'primereact/button'
 import { Checkbox } from 'primereact/checkbox'
 import { useForm, Controller } from 'react-hook-form'
+
+import { Button } from 'common/components/Button/Button'
 
 import {
   AUTH_PAGE_SUBTITLES,
@@ -67,10 +68,10 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
         <>
           <Button
             icon={<img alt='Google Icon' src={googleLogo} />}
-            iconPos='left'
-            label={AUTH_I18.signtWithGoogleButton}
-            className={classNames(styles.authFormSignWithGoogle, 'p-button-outlined')}
-          />
+            className={styles.authFormSignWithGoogle}
+            mode='secondary'>
+            {AUTH_I18.signtWithGoogleButton}
+          </Button>
           <Divider children={AUTH_I18.dividerText} />
         </>
       )}
@@ -151,15 +152,17 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
             </div>
           )}
 
-          <Button type='submit' className={styles.authFormButton} label={PRIMARY_BUTTON_TEXT[type]} />
+          <Button type='submit' mode='primary' className={styles.authFormButton}>
+            {PRIMARY_BUTTON_TEXT[type]}
+          </Button>
         </form>
         {type === AUTH_PAGE_TYPES.LOGIN && (
           <Button
             icon={<img alt='Google Icon' src={googleLogo} />}
-            iconPos='left'
-            label={AUTH_I18.loginWithGoogleButton}
-            className={classNames('p-button-outlined', styles.authFormLoginWithGoole)}
-          />
+            mode='secondary'
+            className={styles.authFormLoginWithGoole}>
+            {AUTH_I18.loginWithGoogleButton}
+          </Button>
         )}
 
         <div className={styles.authFormLinkContainer}>
