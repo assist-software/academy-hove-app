@@ -47,17 +47,21 @@ export const ShowroomPropertyThumbnail: FC<Props> = ({ thumbnail, type, role }) 
       {role !== 'user' && (
         <div className={cx(style.thumbnailActions, actionsStyle, type === 'list' && borderActionsStyle)}>
           {thumbnail.status === 'pending' && role !== 'client' && (
-            <Button label={ButtonLables.approve} onClick={() => ShowroomUtilService.handleApprove(thumbnail.id)} />
+            <Button
+              label={ButtonLables.approve}
+              onClick={() => ShowroomUtilService.handleApprove(thumbnail.id)}
+              className='smallButton'
+            />
           )}
           <div onClick={() => ShowroomUtilService.handleDeleteProprety(thumbnail.id)}>
             {thumbnail.status === 'pending' && role !== 'client' ? (
-              <Button className='p-button-danger p-button-text' label={ButtonLables.delete} />
+              <Button className='p-button-danger p-button-text smallButton' label={ButtonLables.delete} />
             ) : (
-              <Button className='p-button-danger' label={ButtonLables.delete} />
+              <Button className='p-button-danger smallButton' label={ButtonLables.delete} />
             )}
           </div>
           <Button
-            className='p-button-info p-button-text'
+            className='p-button-info p-button-text smallButton'
             label={ButtonLables.edit}
             onClick={() => ShowroomUtilService.handleEdit(thumbnail.id)}
           />
