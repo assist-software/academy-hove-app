@@ -8,14 +8,11 @@ import 'styles/variables.scss'
 import 'styles/custom-theme.scss'
 
 import './App.css'
-import { Button } from 'common/components/Button/Button'
 
 function App() {
   return (
     <main>
       <PageRouter />
-      <Button mode='danger'>Danger</Button>
-      <Button mode='tertiary'>Tertiary</Button>
     </main>
   )
 }
