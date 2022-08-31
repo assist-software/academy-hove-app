@@ -1,11 +1,12 @@
 @import 'styles/variables.scss';
+@import 'styles/convert.scss';
 
 h1 {
   margin: 0;
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
+  font-size: rem(32px);
+  line-height: height(32px, 40px);
   color: var(--black);
 }
 
@@ -13,8 +14,8 @@ h2 {
   margin: 0;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: rem(16px);
+  line-height: height(16px, 24px);
   color: var(--black);
 }
 
@@ -22,7 +23,7 @@ p {
   margin: 0;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: rem(12px);
+  line-height: height(12px, 20px);
   color: var(--black);
 }
