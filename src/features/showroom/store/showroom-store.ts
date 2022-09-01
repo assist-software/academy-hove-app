@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
-import { ShowroomAPIService } from './../services/showroom-api-service'
+import { ShowroomAPIService } from '../../showroom/services/showroom-api-service'
 
 export class ShowroomStore {
   propertiesLatest: [] = []
