@@ -8,11 +8,10 @@ import styles from './notification-form.module.scss'
 
 export const NotificationsForm = observer(() => {
   const { notificationsStore } = useStore()
-  const { notificationSettings, setEditModal, editModal, setSetting } = notificationsStore
+  const { notificationSettings, setEditModal, editModal, setSetting, editModalData } = notificationsStore
 
   return (
     <>
-      {' '}
       <div className={styles.notificationForm}>
         <h1>Notifications</h1>
         {Object.entries(notificationSettings).map(([key, value]) => {
@@ -22,7 +21,7 @@ export const NotificationsForm = observer(() => {
           const bothOff = !(notificationValue.email || notificationValue.sms)
           const bothOn = notificationValue.email && notificationValue.sms
 
-          const settingValue = `${notificationValue.email && 'Email'}${bothOn && ','}${notificationValue.sms && 'SMS'}`
+          const settingValue = `${notificationValue.email && 'E-Mail'}${bothOn && ','}${notificationValue.sms && 'SMS'}`
 
           return (
             <div className={styles.notificationFormSetting}>
@@ -43,7 +42,14 @@ export const NotificationsForm = observer(() => {
           )
         })}
       </div>
-      <NotificationsSetModal editModal={editModal} closeModal={() => setEditModal(null)} setSetting={setSetting} />
+      <NotificationsSetModal
+        currentSettings={editModalData}
+        editModal={editModal}
+        closeModal={() => setEditModal(null)}
+        setSetting={(value: notificationStatus) => {
+          if (editModal) setSetting({ setting: editModal, value })
+        }}
+      />
     </>
   )
 })

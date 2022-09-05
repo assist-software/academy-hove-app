@@ -12,6 +12,11 @@ export class NotificationsStore {
 
   editModal: notificationTypes | null = null
 
+  get editModalData() {
+    if (this.editModal) return this.notificationSettings[this.editModal]
+    return { email: false, sms: false }
+  }
+
   constructor() {
     makeAutoObservable(this)
   }
