@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import { UserLogInDetails, UserRole, UserSignUpDetails } from '../models/auth-models'
+import { UserLogInDetails, UserRole, UserSignUpDetails, ResetPasswordDetails } from '../models/auth-models'
 
 export class AuthStore {
   userName: string | null = null
@@ -23,6 +23,18 @@ export class AuthStore {
 
   signUp = ({ email, password }: UserSignUpDetails) => {
     try {
+    } catch (e) {}
+  }
+
+  sendResetPasswordRequest = ({ email }: { email: string }) => {
+    try {
+      //send request to firebase to send the reset pwd email
+    } catch (e) {}
+  }
+
+  resetPassword = ({ email, password, oobCode }: ResetPasswordDetails) => {
+    try {
+      //should send a request to firebase with the oobCode to reset the user's password
     } catch (e) {}
   }
 }
