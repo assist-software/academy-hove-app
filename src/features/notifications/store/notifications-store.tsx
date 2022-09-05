@@ -1,4 +1,7 @@
 import { makeAutoObservable } from 'mobx'
+
+import { updateTimeout } from '../constants/notifications-constants'
+import { notificationsUpdateService } from '../services/notifications-update-service'
 import { INotificationSettings, notificationStatus, notificationTypes } from '../models/notifications-models'
 
 export class NotificationsStore {
@@ -12,6 +15,8 @@ export class NotificationsStore {
 
   editModal: notificationTypes | null = null
 
+  notificationsUpdateTimer: NodeJS.Timer | undefined
+
   get editModalData() {
     if (this.editModal) return this.notificationSettings[this.editModal]
     return { email: false, sms: false }
@@ -23,6 +28,11 @@ export class NotificationsStore {
 
   setSetting = ({ setting, value }: { setting: notificationTypes; value: notificationStatus }) => {
     this.notificationSettings = { ...this.notificationSettings, [setting]: value }
+
+    if (this.notificationsUpdateTimer) clearTimeout(this.notificationsUpdateTimer)
+    this.notificationsUpdateTimer = setTimeout(() => {
+      notificationsUpdateService(this.notificationSettings)
+    }, updateTimeout)
   }
 
   setEditModal = (state: notificationTypes | null) => {

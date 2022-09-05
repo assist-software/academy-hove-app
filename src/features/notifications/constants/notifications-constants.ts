@@ -15,3 +15,5 @@ export const descriptionLookUpObj = {
   newListingsNotifications: 'Tips on how to sell quicker, interesting news and offers from us and our partners.',
   priceChangeNotifications: 'Price change',
 }
+
+export const updateTimeout = 15000 //in miliseconds
