@@ -91,3 +91,20 @@
     box-shadow: none;
   }
 }
+
+.p-card-error {
+  border: 1px solid var(--alert-400);
+  background-color: var(--alert-200);
+  color: var(--alert-500);
+
+  width: 415px;
+
+  margin: 10px 0;
+
+  .p-card-body {
+    padding: 5px;
+  }
+  .p-card-content {
+    padding: 0;
+  }
+}

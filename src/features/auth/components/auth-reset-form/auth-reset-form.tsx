@@ -12,12 +12,14 @@ import { AuthHeading } from '../auth-heading/auth-heading'
 import { PAGES_PATHS } from 'common/constants/constants'
 
 import styles from './auth-reset-form.module.scss'
+import { ErrorCard } from 'common/components/ErrorCard/error-card'
 interface Props {
   resetPassword: ({ email, password, oobCode }: ResetPasswordDetails) => void
   sendResetPasswordRequest: ({ email }: { email: string }) => void
+  formErrorText: string | null
 }
 
-export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword }: Props) => {
+export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formErrorText }: Props) => {
   const [searchParams] = useSearchParams()
 
   const mode = !searchParams.get('oobCode') ? 'sendLink' : 'changePwd'
@@ -51,6 +53,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword }: Pro
   return (
     <>
       <AuthHeading title={AUTH_I18.resetPageTitle} subtitle={AUTH_I18.resetPageSubtitle} />
+      {formErrorText && <ErrorCard text={formErrorText} />}
 
       <div className={styles.resetPasswdForm}>
         <form onSubmit={handleSubmit(onSubmit)} className='p-fluid'>

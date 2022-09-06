@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import { InputText } from 'primereact/inputtext'
 import { Password } from 'primereact/password'
 import { Checkbox } from 'primereact/checkbox'
-import { Password } from 'primereact/password'
-import { InputText } from 'primereact/inputtext'
 import { useForm, Controller } from 'react-hook-form'
 
 import { Button } from 'common/components/Button/Button'
@@ -24,14 +22,17 @@ import googleLogo from 'common/assets/google.svg'
 
 import styles from './auth-form.module.scss'
 import { AuthHeading } from '../auth-heading/auth-heading'
+import { ErrorCard } from 'common/components/ErrorCard/error-card'
 
 interface Props {
   logIn: ({ email, password, rememberMe }: UserLogInDetails) => void
   signUp: ({ email, password }: UserSignUpDetails) => void
   type: AuthPageTypes
+  formErrorText: string | null
+  logInWithGoogle: () => void
 }
 
-export const AuthForm = ({ type, logIn, signUp }: Props) => {
+export const AuthForm = ({ type, logIn, signUp, formErrorText, logInWithGoogle }: Props) => {
   const defaultValues = {
     email: '',
     password: '',
@@ -62,10 +63,14 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
   return (
     <>
       <AuthHeading title={AUTH_PAGE_TITLES[type]} subtitle={AUTH_PAGE_SUBTITLES[type]} />
+      {formErrorText && <ErrorCard text={formErrorText} />}
 
       {type === AUTH_PAGE_TYPES.SIGNUP && (
         <>
           <Button
+            onClick={() => {
+              logInWithGoogle()
+            }}
             icon={<img alt='Google Icon' src={googleLogo} />}
             className={styles.authFormSignWithGoogle}
             mode='secondary'>
@@ -113,6 +118,7 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
                 rules={{ required: AUTH_I18.requiredPasswordError }}
                 render={({ field, fieldState }) => (
                   <Password
+                    feedback={type === AUTH_PAGE_TYPES.SIGNUP}
                     id={field.name}
                     {...field}
                     toggleMask
@@ -136,7 +142,6 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
                 <Controller
                   name='rememberMe'
                   control={control}
-                  rules={{ required: true }}
                   render={({ field }) => (
                     <Checkbox inputId={field.name} onChange={(e) => field.onChange(e.checked)} checked={field.value} />
                   )}
@@ -157,6 +162,9 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
         </form>
         {type === AUTH_PAGE_TYPES.LOGIN && (
           <Button
+            onClick={() => {
+              logInWithGoogle()
+            }}
             icon={<img alt='Google Icon' src={googleLogo} />}
             mode='secondary'
             className={styles.authFormLoginWithGoole}>
