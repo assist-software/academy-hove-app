@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import { InputText } from 'primereact/inputtext'
 import { Password } from 'primereact/password'
 import { Checkbox } from 'primereact/checkbox'
-import { Password } from 'primereact/password'
-import { InputText } from 'primereact/inputtext'
 import { useForm, Controller } from 'react-hook-form'
 
 import { Button } from 'common/components/Button/Button'
@@ -46,6 +44,7 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
   } = useForm({ defaultValues })
 
   const onSubmit = (data: any) => {
+    console.log(data)
     switch (type) {
       case AUTH_PAGE_TYPES.LOGIN:
         return logIn(data)
@@ -136,7 +135,6 @@ export const AuthForm = ({ type, logIn, signUp }: Props) => {
                 <Controller
                   name='rememberMe'
                   control={control}
-                  rules={{ required: true }}
                   render={({ field }) => (
                     <Checkbox inputId={field.name} onChange={(e) => field.onChange(e.checked)} checked={field.value} />
                   )}

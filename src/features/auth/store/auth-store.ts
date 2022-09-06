@@ -1,12 +1,27 @@
 import { makeAutoObservable } from 'mobx'
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  browserSessionPersistence,
+  browserLocalPersistence,
+  setPersistence,
+  getAuth,
+  User,
+} from 'firebase/auth'
+
 import { UserLogInDetails, UserRole, UserSignUpDetails, ResetPasswordDetails } from '../models/auth-models'
+import { app } from 'common/services/firebase-service'
 
 export class AuthStore {
+  user: User | null = null
+
   userName: string | null = null
   userEmail: string | null = null
   userID: string | null = null
 
   userRole: UserRole = 'unauth'
+
+  formErrorText: string | null = null
 
   constructor() {
     makeAutoObservable(this)
@@ -16,14 +31,33 @@ export class AuthStore {
     return this.userRole !== 'unauth'
   }
 
-  logIn = ({ email, password, rememberMe }: UserLogInDetails) => {
+  logIn = async ({ email, password, rememberMe }: UserLogInDetails) => {
     try {
-    } catch (e) {}
+      const auth = getAuth()
+
+      await setPersistence(auth, rememberMe ? browserLocalPersistence : browserSessionPersistence)
+
+      const userCredential = await signInWithEmailAndPassword(auth, email, password)
+
+      const user = userCredential.user
+
+      this.setUser(user)
+    } catch (error: any) {
+      this.setFormErrorText(error.message)
+    }
   }
 
-  signUp = ({ email, password }: UserSignUpDetails) => {
+  signUp = async ({ email, password }: UserSignUpDetails) => {
     try {
-    } catch (e) {}
+      const auth = getAuth(app)
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+
+      const user = userCredential.user
+
+      this.setUser(user)
+    } catch (error: any) {
+      this.setFormErrorText(error.message)
+    }
   }
 
   sendResetPasswordRequest = ({ email }: { email: string }) => {
@@ -36,5 +70,13 @@ export class AuthStore {
     try {
       //should send a request to firebase with the oobCode to reset the user's password
     } catch (e) {}
+  }
+
+  setFormErrorText = (text: string | null) => {
+    this.formErrorText = text
+  }
+
+  setUser = (user: User | null) => {
+    this.user = user
   }
 }
