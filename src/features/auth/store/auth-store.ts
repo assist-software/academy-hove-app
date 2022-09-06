@@ -4,9 +4,13 @@ import {
   signInWithEmailAndPassword,
   browserSessionPersistence,
   browserLocalPersistence,
+  sendPasswordResetEmail,
   setPersistence,
   getAuth,
   User,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from 'firebase/auth'
 
 import { UserLogInDetails, UserRole, UserSignUpDetails, ResetPasswordDetails } from '../models/auth-models'
@@ -28,12 +32,22 @@ export class AuthStore {
   }
 
   get isLoggedIn() {
-    return this.userRole !== 'unauth'
+    return this.user !== null
+  }
+
+  checkUserStatus = () => {
+    const auth = getAuth(app)
+
+    onAuthStateChanged(auth, (user) => {
+      this.setUser(user)
+    })
   }
 
   logIn = async ({ email, password, rememberMe }: UserLogInDetails) => {
     try {
-      const auth = getAuth()
+      this.setFormErrorText(null)
+
+      const auth = getAuth(app)
 
       await setPersistence(auth, rememberMe ? browserLocalPersistence : browserSessionPersistence)
 
@@ -47,8 +61,25 @@ export class AuthStore {
     }
   }
 
+  logInWithGoogle = async () => {
+    try {
+      const provider = new GoogleAuthProvider()
+      const auth = getAuth(app)
+      const result = await signInWithPopup(auth, provider)
+
+      // const credential = GoogleAuthProvider.credentialFromResult(result)
+      // const token = credential?.accessToken
+
+      this.setUser(result.user)
+    } catch (error: any) {
+      this.setFormErrorText(error.message)
+    }
+  }
+
   signUp = async ({ email, password }: UserSignUpDetails) => {
     try {
+      this.setFormErrorText(null)
+
       const auth = getAuth(app)
       const userCredential = await createUserWithEmailAndPassword(auth, email, password)
 
@@ -60,10 +91,13 @@ export class AuthStore {
     }
   }
 
-  sendResetPasswordRequest = ({ email }: { email: string }) => {
+  sendResetPasswordRequest = async ({ email }: { email: string }) => {
     try {
-      //send request to firebase to send the reset pwd email
-    } catch (e) {}
+      const auth = getAuth()
+      await sendPasswordResetEmail(auth, email)
+    } catch (error: any) {
+      this.setFormErrorText(error.message)
+    }
   }
 
   resetPassword = ({ email, password, oobCode }: ResetPasswordDetails) => {
