@@ -5,7 +5,7 @@ $rem-base: 16px !default;
 }
 
 @function rem($value, $base-value: $rem-base) {
-  $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+  $value: calc(strip-unit($value) / strip-unit($base-value) * 1rem);
   @if ($value == 0rem) {
     $value: 0;
   }
@@ -13,5 +13,5 @@ $rem-base: 16px !default;
 }
 
 @function height($font-size, $line-height) {
-  @return strip-unit($line-height / $font-size);
+  @return strip-unit(calc($line-height / $font-size));
 }
