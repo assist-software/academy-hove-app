@@ -6,6 +6,8 @@ import 'primeicons/primeicons.css'
 
 import 'styles/variables.scss'
 
+import 'styles/custom-theme.scss'
+
 import './App.css'
 
 function App() {
