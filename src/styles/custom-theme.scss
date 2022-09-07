@@ -1,0 +1,110 @@
+.p-button {
+  background-color: var(--primary-400);
+  border-color: var(--primary-400);
+
+  &:enabled:hover {
+    background-color: var(--primary-500);
+    border-color: var(--primary-500);
+  }
+
+  &:enabled:active {
+    background-color: var(--primary-700);
+    border-color: var(--primary-700);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--primary-200), 0 1px 2px 0 var(--black);
+  }
+}
+
+.p-button.p-button-outlined {
+  border: 1px solid var(--primary-500);
+  color: var(--primary-500);
+
+  &:enabled:hover {
+    background-color: var(--primary-100);
+    border-color: var(--primary-600);
+    color: var(--primary-600);
+  }
+
+  &:enabled:active {
+    background-color: var(--primary-200);
+    border-color: var(--primary-700);
+    color: var(--primary-700);
+  }
+}
+
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
+  box-shadow: 0 0 0 0.2rem var(--primary-200);
+  border-color: var(--primary-400);
+}
+
+.p-checkbox .p-checkbox-box {
+  border-color: var(--gray-500);
+
+  &:hover {
+    border-color: var(--primary-500) !important;
+  }
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  border-color: var(--primary-400);
+  background-color: var(--primary-400);
+}
+
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+  background-color: var(--primary-500);
+  border-color: var(--primary-500);
+}
+
+.p-button-danger {
+  background-color: var(--alert-400);
+  border: 1px solid var(--alert-400);
+  color: var(--white);
+
+  &:enabled:hover {
+    background-color: var(--alert-500);
+    border-color: var(--alert-500);
+  }
+
+  &:enabled:active {
+    background-color: var(--alert-700);
+    border-color: var(--alert-700);
+  }
+}
+
+.p-button.p-button-text {
+  border: 0px;
+  color: var(--primary-500);
+
+  &:enabled:hover {
+    background-color: var(--primary-100);
+    color: var(--primary-600);
+  }
+
+  &:enabled:active {
+    background-color: var(--primary-200);
+    color: var(--primary-700);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.p-card-error {
+  border: 1px solid var(--alert-400);
+  background-color: var(--alert-200);
+  color: var(--alert-500);
+
+  width: 415px;
+
+  margin: 10px 0;
+
+  .p-card-body {
+    padding: 5px;
+  }
+  .p-card-content {
+    padding: 0;
+  }
+}

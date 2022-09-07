@@ -4,3 +4,16 @@ export const PAGES_PATHS = {
   HOME: '/',
   RESET_PASS: '/reset-password',
 }
+
+export const ButtonLables = {
+  approve: 'Approve',
+  delete: 'Delete',
+  edit: 'Edit',
+}
+
+export const HttpMethods = {
+  POST: 'post',
+  GET: 'get',
+  PUT: 'put',
+  DELETE: 'delete',
+}

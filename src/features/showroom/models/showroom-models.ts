@@ -7,5 +7,11 @@ export interface IProperty {
 
 // Folosita pentru thumbnail unde sunt doar cateva
 export interface IPropertyLite {
-  thumbnail: string
+  property: string
+  location: string
+  price: string
+  about: string
+  favorite: boolean
+  status: string
+  id: string
 }
