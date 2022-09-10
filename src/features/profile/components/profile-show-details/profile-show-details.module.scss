@@ -1,0 +1,41 @@
+@import 'styles/convert.scss';
+
+.test {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details {
+  border-bottom: 1px solid var(--gray-200);
+  padding: 0 0 rem(16px) 0;
+  margin: 0 0 rem(20px) 0;
+}
+
+.detailsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailsTitle {
+  color: var(--gray-700);
+  font-size: rem(16px);
+}
+
+.detailsData {
+  color: var(--gray-400);
+  font-size: rem(14px);
+  font-weight: 400;
+}
+
+.detailsEdit {
+  color: var(--primary-500);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 rem(12px) 0 0;
+}
+
+.detailsChild {
+  margin-top: rem(26px);
+}

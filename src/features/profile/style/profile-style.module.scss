@@ -1,13 +1,17 @@
 @import 'styles/convert.scss';
 
-.editNameForm {
-  width: 100%;
+.profileContent {
   display: flex;
+  flex-direction: column;
   gap: rem(20px);
 }
 
-.editNameInput {
-  width: 100%;
+.buttonStyle {
+  width: rem(117px);
+}
+
+.profileLabel {
+  width: calc(50% - rem(20px));
   display: flex;
   flex-direction: column;
   gap: rem(4px);
