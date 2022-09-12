@@ -103,13 +103,9 @@ export class AuthStore {
 
   handleLogout = async () => {
     try {
-      console.log('ads')
       const auth = getAuth()
-      signOut(auth)
-      console.log('ads')
-    } catch (e) {
-      console.log(e)
-    }
+      await signOut(auth)
+    } catch (e) {}
   }
 
   resetPassword = ({ email, password, oobCode }: ResetPasswordDetails) => {
