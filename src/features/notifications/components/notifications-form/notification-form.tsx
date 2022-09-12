@@ -6,6 +6,8 @@ import { NotificationsSetModal } from '../notification-set-modal/notification-se
 import { notificationStatus, notificationTypes } from 'features/notifications/models/notifications-models'
 
 import styles from './notification-form.module.scss'
+import { Button } from 'common/components/Button/Button'
+import { Divider } from 'common/components/Divider/Divider'
 
 export const NotificationsForm = observer(() => {
   const { notificationsStore } = useStore()
@@ -25,21 +27,24 @@ export const NotificationsForm = observer(() => {
           const settingValue = `${notificationValue.email && 'E-Mail'}${bothOn && ','}${notificationValue.sms && 'SMS'}`
 
           return (
-            <div className={styles.notificationFormSetting}>
-              <div>
-                <p className={styles.notificationFormSettingName}>{nameLookUpObj[notificationKey]}</p>
-                <p className={styles.notificationFormSettingValue}>{bothOff ? 'Off' : settingValue}</p>
-              </div>
-              <div>
-                {/** TODO : Update this after the buttons are merged into main */}
-                <button
+            <>
+              <div className={styles.notificationFormSetting}>
+                <div>
+                  <p className={styles.notificationFormSettingName}>{nameLookUpObj[notificationKey]}</p>
+                  <p className={styles.notificationFormSettingValue}>{bothOff ? 'Off' : settingValue}</p>
+                </div>
+
+                <Button
                   onClick={() => {
                     setEditModal(notificationKey)
-                  }}>
+                  }}
+                  mode='tertiary'
+                  className={styles.notificationFormEditBtn}>
                   Edit
-                </button>
+                </Button>
               </div>
-            </div>
+              <Divider className={styles.notificationFormDivider} />
+            </>
           )
         })}
       </div>

@@ -1,7 +1,31 @@
 .notificationForm {
+  width: 940px;
+
+  &Setting {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+  }
+
+  &Divider {
+    width: 100%;
+    margin-top: 16px;
+  }
+
   &SettingName {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--gray-700);
   }
 
   &SettingValue {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gray-400);
+    margin-top: 8px;
+  }
+
+  &EditBtn {
+    margin: auto 0 auto auto;
   }
 }

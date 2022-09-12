@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { AuthStateHandler } from 'features/auth/components/auth-state-handler/auth-state-handler'
 import { SettingsPage } from 'features/settings/components/settings-page/settings-page'
 import { PAGES_PATHS } from '../common/constants/constants'
+import { NotificationsForm } from 'features/notifications'
 import { PageAllComponents } from './page-all-components'
 import { AuthPage } from './page-auth/page-auth'
 
@@ -19,7 +20,7 @@ export const PageRouter = () => {
         <Route path={`${PAGES_PATHS.SETTINGS}*`} element={<SettingsPage />}>
           <Route path={PAGES_PATHS.PROFILE} element={<></>} />
           <Route path={PAGES_PATHS.SECURITY} element={<> asd</>} />
-          <Route path={PAGES_PATHS.NOTIFICATIONS} element={<>dsa</>} />
+          <Route path={PAGES_PATHS.NOTIFICATIONS} element={<NotificationsForm />} />
           <Route path={PAGES_PATHS.MESSAGES} element={<>asfd</>} />
         </Route>
       </Routes>

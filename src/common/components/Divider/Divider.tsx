@@ -1,13 +1,23 @@
+import classNames from 'classnames'
 import styles from './Divider.module.scss'
 
 interface Props {
-  children: any
+  children?: any
+  [key: string]: any
 }
 
-export const Divider = ({ children }: Props) => {
+export const Divider = ({ children, ...props }: Props) => {
+  const lineClassName = !props.className ? styles.dividerLine : styles.dividerLessLine
+
   return (
-    <div className={styles.divider}>
-      <hr className={styles.dividerLine} /> {children} <hr className={styles.dividerLine} />
+    <div className={classNames(!props.className ? styles.divider : styles.dividerLess)}>
+      <hr {...props} className={classNames(lineClassName, { [props.className]: !!props.className })} />
+      {children && (
+        <>
+          {children}
+          <hr {...props} className={classNames(lineClassName, { [props.className]: !!props.className })} />
+        </>
+      )}
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { PAGES_PATHS } from 'common/constants/constants'
+import { useStore } from 'store/store'
 
 import { ReactComponent as NotificationIcon } from '../../assets/notification-icon.svg'
 import { ReactComponent as SecurityIcon } from '../../assets/security-icon.svg'
@@ -12,7 +13,6 @@ import { ReactComponent as LogoutIcon } from '../../assets/logout-icon.svg'
 import userIcon from '../../assets/user-img.svg'
 
 import style from './settings-page.module.scss'
-import { useStore } from 'store/store'
 
 export const SettingsPage = () => {
   const { authStore } = useStore()
