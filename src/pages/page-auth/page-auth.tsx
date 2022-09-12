@@ -1,11 +1,11 @@
-import { useEffect } from 'react'
-import { useStore } from 'store/store'
+import { useLocation } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useStore } from 'store/store'
+import { useEffect } from 'react'
 
-import { AuthForm } from 'features/auth'
-import { FullAuthPageTypes } from 'features/auth'
 import { ResetPasswdForm } from 'features/reset-passwd'
+import { FullAuthPageTypes } from 'features/auth'
+import { AuthForm } from 'features/auth'
 
 import coverImage from 'common/assets/login-image.png'
 
@@ -17,27 +17,14 @@ interface Props {
 
 export const AuthPage = observer(({ type }: Props) => {
   const location = useLocation()
-  const navigator = useNavigate()
 
   const { authStore } = useStore()
-  const {
-    logIn,
-    signUp,
-    resetPassword,
-    sendResetPasswordRequest,
-    setFormErrorText,
-    formErrorText,
-    user,
-    logInWithGoogle,
-  } = authStore
+  const { sendResetPasswordRequest, setFormErrorText, logInWithGoogle, resetPassword, formErrorText, signUp, logIn } =
+    authStore
 
   useEffect(() => {
     setFormErrorText(null)
   }, [location.pathname])
-
-  useEffect(() => {
-    if (user?.email) navigator('/', { replace: true })
-  }, [user])
 
   return (
     <div className={styles.authPage}>

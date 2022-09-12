@@ -11,6 +11,7 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
+  signOut,
 } from 'firebase/auth'
 
 import { UserLogInDetails, UserRole, UserSignUpDetails, ResetPasswordDetails } from '../models/auth-models'
@@ -97,6 +98,17 @@ export class AuthStore {
       await sendPasswordResetEmail(auth, email)
     } catch (error: any) {
       this.setFormErrorText(error.message)
+    }
+  }
+
+  handleLogout = async () => {
+    try {
+      console.log('ads')
+      const auth = getAuth()
+      signOut(auth)
+      console.log('ads')
+    } catch (e) {
+      console.log(e)
     }
   }
 

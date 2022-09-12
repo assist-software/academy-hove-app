@@ -22,3 +22,5 @@ export const HttpMethods = {
   PUT: 'put',
   DELETE: 'delete',
 }
+
+export const AUTH_PAGES = [PAGES_PATHS.LOG_IN, PAGES_PATHS.SIGN_UP, PAGES_PATHS.RESET_PASS]

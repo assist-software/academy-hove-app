@@ -1,24 +1,49 @@
 .settingsPage {
   display: flex;
   width: 683px;
-  padding-left: 422px;
   padding-top: 32px;
 
   &NavBar {
     display: flex;
     flex-direction: column;
+    padding-left: 422px;
+    padding-right: 150px;
   }
 
   &Icon {
     width: 20px;
     height: 20px;
+    margin-right: 12px;
   }
 
-  &Tab {
+  &Tab,
+  &Logout {
     margin: 13px 0;
     color: var(--gray-500);
     font-weight: 500;
     font-size: 14px;
     text-decoration: none;
+    display: flex;
+  }
+
+  &TabActive {
+    color: var(--primary-400);
+
+    path {
+      fill: var(--primary-400);
+    }
+  }
+
+  &Tab:first-of-type {
+    margin-top: 29px;
+  }
+
+  &Logout {
+    margin-top: 30px;
+    cursor: pointer;
+  }
+
+  &TabText {
+    margin: auto auto auto 0;
   }
 }

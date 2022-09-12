@@ -1,13 +1,15 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import { AuthPage } from './page-auth/page-auth'
+import { AuthStateHandler } from 'features/auth/components/auth-state-handler/auth-state-handler'
+import { SettingsPage } from 'features/settings/components/settings-page/settings-page'
 import { PAGES_PATHS } from '../common/constants/constants'
 import { PageAllComponents } from './page-all-components'
-import { SettingsPage } from 'features/settings/components/settings-page/settings-page'
+import { AuthPage } from './page-auth/page-auth'
 
 export const PageRouter = () => {
   return (
     <BrowserRouter>
+      <AuthStateHandler />
       <Routes>
         <Route path={PAGES_PATHS.HOME} element={<PageAllComponents />}></Route>
         <Route path={PAGES_PATHS.LOG_IN} element={<AuthPage type='login' />} />
