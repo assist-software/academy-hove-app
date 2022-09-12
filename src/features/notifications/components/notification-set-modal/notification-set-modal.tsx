@@ -1,8 +1,8 @@
-import { Dialog } from 'primereact/dialog'
 import { InputSwitch } from 'primereact/inputswitch'
+import { Dialog } from 'primereact/dialog'
 
-import { notificationStatus, notificationTypes } from 'features/notifications/models/notifications-models'
 import { descriptionLookUpObj, nameLookUpObj } from 'features/notifications/constants/notifications-constants'
+import { notificationStatus, notificationTypes } from 'features/notifications/models/notifications-models'
 
 import style from './notification-set-modal.module.scss'
 
@@ -20,19 +20,22 @@ export const NotificationsSetModal = ({ editModal, closeModal, setSetting, curre
       className={style.notificationSettingDialog}
       header={header}
       visible={!!editModal}
-      style={{ width: '50vw' }}
+      style={{ width: '400px' }}
       onHide={closeModal}>
-      {!!editModal && <p>{descriptionLookUpObj[editModal]}</p>}
+      {!!editModal && <p className={style.notificationSettingDialogDescription}>{descriptionLookUpObj[editModal]}</p>}
       <div className={style.notificationSettingDialogItem}>
-        <p>E-Mail</p>
+        <p className={style.notificationSettingDialogItemText}>E-Mail</p>
         <InputSwitch
           checked={currentSettings?.email}
           onChange={() => setSetting({ ...currentSettings, email: !currentSettings?.email })}
         />
       </div>
       <div className={style.notificationSettingDialogItem}>
-        <p>SMS</p>
-        <InputSwitch checked={() => setSetting({ ...currentSettings, sms: !currentSettings?.sms })} />
+        <p className={style.notificationSettingDialogItemText}>SMS</p>
+        <InputSwitch
+          checked={currentSettings.sms}
+          onChange={() => setSetting({ ...currentSettings, sms: !currentSettings?.sms })}
+        />
       </div>
     </Dialog>
   )

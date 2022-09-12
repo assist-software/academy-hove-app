@@ -1,13 +1,13 @@
-import { useStore } from 'store/store'
 import { observer } from 'mobx-react-lite'
+import { useStore } from 'store/store'
 
+import { notificationStatus, notificationTypes } from 'features/notifications/models/notifications-models'
 import { nameLookUpObj } from 'features/notifications/constants/notifications-constants'
 import { NotificationsSetModal } from '../notification-set-modal/notification-set-modal'
-import { notificationStatus, notificationTypes } from 'features/notifications/models/notifications-models'
+import { Divider } from 'common/components/Divider/Divider'
+import { Button } from 'common/components/Button/Button'
 
 import styles from './notification-form.module.scss'
-import { Button } from 'common/components/Button/Button'
-import { Divider } from 'common/components/Divider/Divider'
 
 export const NotificationsForm = observer(() => {
   const { notificationsStore } = useStore()
@@ -24,7 +24,9 @@ export const NotificationsForm = observer(() => {
           const bothOff = !(notificationValue.email || notificationValue.sms)
           const bothOn = notificationValue.email && notificationValue.sms
 
-          const settingValue = `${notificationValue.email && 'E-Mail'}${bothOn && ','}${notificationValue.sms && 'SMS'}`
+          const settingValue = `${notificationValue.email ? 'E-Mail' : ''}${bothOn ? ', ' : ''}${
+            notificationValue.sms ? 'SMS' : ''
+          }`
 
           return (
             <>

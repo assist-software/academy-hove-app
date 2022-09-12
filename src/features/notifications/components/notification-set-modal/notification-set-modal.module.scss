@@ -1,4 +1,19 @@
 .notificationSettingDialog {
   &Item {
+    display: flex;
+    width: 100%;
+  }
+
+  &ItemText {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--black);
+    margin: 20px auto 20px 0;
+  }
+
+  &Description {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gray-400);
   }
 }
