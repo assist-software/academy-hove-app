@@ -35,6 +35,15 @@
     text-decoration: none;
   }
 
+  &Link:hover {
+    span {
+      color: var(--primary-300) !important;
+    }
+    svg path {
+      fill: var(--primary-300) !important;
+    }
+  }
+
   &LinkIcon {
     margin: auto 6px;
   }
