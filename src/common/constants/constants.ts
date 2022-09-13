@@ -3,6 +3,8 @@ export const PAGES_PATHS = {
   SIGN_UP: '/signup',
   HOME: '/',
   RESET_PASS: '/reset-password',
+  SEARCH: '/search',
+  FAVOURITES: '/favourites',
 }
 
 export const ButtonLables = {
@@ -17,3 +19,5 @@ export const HttpMethods = {
   PUT: 'put',
   DELETE: 'delete',
 }
+
+export const AUTH_PAGES = [PAGES_PATHS.LOG_IN, PAGES_PATHS.SIGN_UP, PAGES_PATHS.RESET_PASS]
