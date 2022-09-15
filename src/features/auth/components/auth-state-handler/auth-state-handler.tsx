@@ -42,8 +42,6 @@ export const AuthStateHandler = () => {
           priceChangeNotifications,
         } = userData
 
-        console.log(discountNotifications)
-
         notificationsStore.setStoreData({
           discountNotifications,
           messagesNotifications,
