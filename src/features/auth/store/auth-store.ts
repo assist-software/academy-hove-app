@@ -1,21 +1,23 @@
+import { app, db } from 'common/services/firebase-service'
+import { setDoc } from 'firebase/firestore'
+import { doc } from '@firebase/firestore'
 import { makeAutoObservable } from 'mobx'
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  browserSessionPersistence,
   browserLocalPersistence,
+  browserSessionPersistence,
+  createUserWithEmailAndPassword,
+  getAuth,
+  GoogleAuthProvider,
+  onAuthStateChanged,
   sendPasswordResetEmail,
   setPersistence,
-  getAuth,
-  User,
-  onAuthStateChanged,
-  GoogleAuthProvider,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  User,
 } from 'firebase/auth'
 
-import { UserLogInDetails, UserRole, UserSignUpDetails, ResetPasswordDetails } from '../models/auth-models'
-import { app } from 'common/services/firebase-service'
+import { ResetPasswordDetails, UserLogInDetails, UserRole, UserSignUpDetails } from '../models/auth-models'
 
 export class AuthStore {
   user: User | null = null
@@ -87,6 +89,12 @@ export class AuthStore {
       const user = userCredential.user
 
       this.setUser(user)
+
+      const docRef = doc(db, 'users', user.uid)
+
+      setDoc(docRef, {
+        imageURL: '',
+      })
     } catch (error: any) {
       this.setFormErrorText(error.message)
     }
