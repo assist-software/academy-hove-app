@@ -24,3 +24,13 @@ export const HttpMethods = {
 }
 
 export const AUTH_PAGES = [PAGES_PATHS.LOG_IN, PAGES_PATHS.SIGN_UP, PAGES_PATHS.RESET_PASS]
+
+//Used to initialise the user doc
+export const PLACEHOLDER_USER_DATA = {
+  imageURL: '',
+  newsNotification: { email: false, sms: false },
+  discountNotifications: { email: false, sms: false },
+  messagesNotifications: { email: false, sms: false },
+  newListingsNotifications: { email: false, sms: false },
+  priceChangeNotifications: { email: false, sms: false },
+}

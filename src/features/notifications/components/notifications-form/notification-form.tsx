@@ -30,7 +30,7 @@ export const NotificationsForm = observer(() => {
 
           return (
             <>
-              <div className={styles.notificationFormSetting}>
+              <div className={styles.notificationFormSetting} key={notificationKey}>
                 <div>
                   <p className={styles.notificationFormSettingName}>{nameLookUpObj[notificationKey]}</p>
                   <p className={styles.notificationFormSettingValue}>{bothOff ? 'Off' : settingValue}</p>

@@ -16,4 +16,4 @@ export const descriptionLookUpObj = {
   priceChangeNotifications: 'Price change',
 }
 
-export const updateTimeout = 15000 //in miliseconds
+export const updateTimeout = 0 //in miliseconds

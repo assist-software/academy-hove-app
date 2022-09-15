@@ -1,8 +1,9 @@
 import { makeAutoObservable } from 'mobx'
 
-import { updateTimeout } from '../constants/notifications-constants'
-import { notificationsUpdateService } from '../services/notifications-update-service'
 import { INotificationSettings, notificationStatus, notificationTypes } from '../models/notifications-models'
+import { notificationsUpdateService } from '../services/notifications-update-service'
+import { NotificationStoreData } from 'features/auth/models/firestore-models'
+import { updateTimeout } from '../constants/notifications-constants'
 
 export class NotificationsStore {
   notificationSettings: INotificationSettings = {
@@ -37,5 +38,9 @@ export class NotificationsStore {
 
   setEditModal = (state: notificationTypes | null) => {
     this.editModal = state
+  }
+
+  setStoreData = (data: NotificationStoreData) => {
+    this.notificationSettings = data
   }
 }

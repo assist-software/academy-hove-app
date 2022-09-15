@@ -18,6 +18,7 @@ import {
 } from 'firebase/auth'
 
 import { ResetPasswordDetails, UserLogInDetails, UserRole, UserSignUpDetails } from '../models/auth-models'
+import { PLACEHOLDER_USER_DATA } from 'common/constants/constants'
 
 export class AuthStore {
   user: User | null = null
@@ -70,9 +71,6 @@ export class AuthStore {
       const auth = getAuth(app)
       const result = await signInWithPopup(auth, provider)
 
-      // const credential = GoogleAuthProvider.credentialFromResult(result)
-      // const token = credential?.accessToken
-
       this.setUser(result.user)
     } catch (error: any) {
       this.setFormErrorText(error.message)
@@ -92,9 +90,7 @@ export class AuthStore {
 
       const docRef = doc(db, 'users', user.uid)
 
-      setDoc(docRef, {
-        imageURL: '',
-      })
+      setDoc(docRef, PLACEHOLDER_USER_DATA)
     } catch (error: any) {
       this.setFormErrorText(error.message)
     }
@@ -128,5 +124,9 @@ export class AuthStore {
 
   setUser = (user: User | null) => {
     this.user = user
+  }
+
+  setUserID = (uid: string) => {
+    this.userID = uid
   }
 }
