@@ -1,7 +1,7 @@
-import { PageLogin } from 'pages/auth//login/page-login'
-import { PageForgotPass } from 'pages/auth/forgot-password/page-forgot-pass'
-import { PageRegister } from 'pages/auth/register/page-register'
-import { PageResetPass } from 'pages/auth/reset-password/page-reset-pass'
+import { PageLogin } from 'pages/auth/components/login/page-login'
+import { PageForgotPass } from 'pages/auth/components/forgot-password/page-forgot-pass'
+import { PageRegister } from 'pages/auth/components/register/page-register'
+import { PageResetPass } from 'pages/auth/components/reset-password/page-reset-pass'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { PAGES_PATHS } from '../../common/constants/constants'

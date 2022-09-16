@@ -1,37 +1,33 @@
-import * as Yup from 'yup'
 import { Formik, Form } from 'formik'
 import { Password } from 'primereact/password'
 import { Button } from 'primereact/button'
-import styles from '../auth-login/auth-login.module.scss'
-
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Email is invalid').required('This field is mandatory'),
-  password: Yup.string()
-    .required('No password provided.')
-    .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, 'Invalid password'),
-})
+import { AuthValidation } from 'features/auth/schemas/auth-validation'
+import { AUTH_CONSTANTS } from 'features/auth/constants/auth-constants'
+import styles from '../../styles/auth-login.module.scss'
 
 export const AuthResetPass = () => {
   return (
-    <Formik initialValues={{ email: '', password: '' }} onSubmit={() => {}} validationSchema={validationSchema}>
+    <Formik initialValues={{ email: '', password: '' }} onSubmit={() => {}} validationSchema={AuthValidation()}>
       {({ errors, touched, values, setFieldValue }) => {
         return (
           <Form className={styles.authLoginContainer}>
             <div className={styles.authInputText}>
-              <label style={{ marginBottom: '10px' }}>Password</label>
+              <label style={{ marginBottom: '10px' }}>{AUTH_CONSTANTS.AUTH_LABELS.PASSWORD}</label>
               <Password
-                className={styles.formPassword}
+                className={styles.authFormPassword}
+                placeholder={AUTH_CONSTANTS.AUTH_PLACEHOLDER.PASSWORD_PLACEHOLDER}
                 value={values.password}
                 onChange={(e) => setFieldValue('password', e.target.value)}
                 toggleMask={true}
               />
-              <div>At least 8 characters and one number.</div>
+              <div>{AUTH_CONSTANTS.AUTH_TEXT.PASS_VALIDATION_TEXT}</div>
               <span className={styles.errorMessage}>{touched.password && errors?.password}</span>
             </div>
             <div className={styles.authInputText}>
-              <label style={{ marginBottom: '10px' }}>Confirm password</label>
+              <label style={{ marginBottom: '10px' }}>{AUTH_CONSTANTS.AUTH_LABELS.CONFIRM_PASSWORD}</label>
               <Password
-                className={styles.formPassword}
+                className={styles.authFormPassword}
+                placeholder={AUTH_CONSTANTS.AUTH_PLACEHOLDER.CONFIRM_PASSWORD_PLACEHOLDER}
                 value={values.password}
                 onChange={(e) => setFieldValue('password', e.target.value)}
                 toggleMask={true}
@@ -40,7 +36,7 @@ export const AuthResetPass = () => {
             </div>
             <div className={styles.authLoginButtonContainer}>
               <div className={styles.authLoginButtonContainerLogin}>
-                <Button label='Confirm password' className={styles.loginBtn} />
+                <Button label='Confirm password' className={styles.authLoginBtn} />
               </div>
             </div>
           </Form>

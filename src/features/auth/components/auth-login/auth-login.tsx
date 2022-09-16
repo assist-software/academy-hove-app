@@ -1,44 +1,38 @@
 import { useState } from 'react'
-import * as Yup from 'yup'
 import { Formik, Form } from 'formik'
 import { InputText } from 'primereact/inputtext'
 import { Password } from 'primereact/password'
 import { Checkbox } from 'primereact/checkbox'
 import { Button } from 'primereact/button'
-import { Link } from 'react-router-dom'
-import googleImg from 'common/assets/google.svg'
+import { useNavigate } from 'react-router-dom'
+import { AuthValidation } from 'features/auth/schemas/auth-validation'
 import { PAGES_PATHS } from 'common/constants/constants'
-import styles from './auth-login.module.scss'
-
-interface IForm {
-  email: ''
-  password: ''
-}
-
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Email is invalid').required('This field is mandatory'),
-  password: Yup.string()
-    .required('No password provided.')
-    .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, 'Invalid password'),
-})
+import { AUTH_CONSTANTS } from 'features/auth/constants/auth-constants'
+import styles from '../../styles/auth-login.module.scss'
 
 export const AuthLogin = () => {
   const [checked, setChecked] = useState<boolean>(false)
+  const navigate = useNavigate()
   return (
-    <Formik initialValues={{ email: '', password: '' }} onSubmit={() => {}} validationSchema={validationSchema}>
+    <Formik initialValues={{ email: '', password: '' }} onSubmit={() => {}} validationSchema={AuthValidation()}>
       {({ errors, touched, values, setFieldValue }) => {
         return (
           <Form className={styles.authLoginContainer}>
             <div className={styles.authInputText}>
-              <label style={{ marginBottom: '10px' }}>Email</label>
-              <InputText value={values.email} onChange={(e) => setFieldValue('email', e.target.value)} />
+              <label style={{ marginBottom: '10px' }}>{AUTH_CONSTANTS.AUTH_LABELS.EMAIL}</label>
+              <InputText
+                value={values.email}
+                placeholder={AUTH_CONSTANTS.AUTH_PLACEHOLDER.EMAIL_PLACEHOLDER}
+                onChange={(e) => setFieldValue('email', e.target.value)}
+              />
               <span className={styles.errorMessage}>{touched.email && errors?.email}</span>
             </div>
 
             <div className={styles.authInputText}>
-              <label style={{ marginBottom: '10px' }}>Password</label>
+              <label style={{ marginBottom: '10px' }}>{AUTH_CONSTANTS.AUTH_LABELS.PASSWORD}</label>
               <Password
-                className={styles.formPassword}
+                className={styles.authFormPassword}
+                placeholder={AUTH_CONSTANTS.AUTH_PLACEHOLDER.PASSWORD_PLACEHOLDER}
                 value={values.password}
                 onChange={(e) => setFieldValue('password', e.target.value)}
                 toggleMask={true}
@@ -50,26 +44,26 @@ export const AuthLogin = () => {
               <div>
                 <Checkbox onChange={(e) => setChecked(e.checked)} checked={checked}></Checkbox>
                 <label className={styles.authRememberColor} style={{ marginLeft: '5px' }}>
-                  Remember me
+                  {AUTH_CONSTANTS.AUTH_TEXT.REMEMBER_ME}
                 </label>
               </div>
-              <Link className={styles.linkButtonStyle} to={PAGES_PATHS.FORGOT_PASSWORD}>
-                Forgot your password?
-              </Link>
+              <p className={styles.authLinkButtonStyle} onClick={() => navigate(PAGES_PATHS.FORGOT_PASSWORD)}>
+                {AUTH_CONSTANTS.AUTH_TEXT.FORGOT_PASS}
+              </p>
             </div>
 
             <div className={styles.authLoginButtonContainer}>
               <div className={styles.authLoginButtonContainerLogin}>
-                <Button label='Log in' className={styles.loginBtn} />
+                <Button label='Log in' className={styles.authLoginBtn} />
               </div>
 
               <Button label='Login with Google' className='p-button-outlined' />
             </div>
-            <div className={styles.footerText}>
-              <div className={styles.authTextColor}>Don't have an account?</div>
-              <Link className={styles.linkButtonStyle} to={PAGES_PATHS.SIGN_UP}>
-                Sign in
-              </Link>
+            <div className={styles.authFooterText}>
+              <div className={styles.authTextColor}>{AUTH_CONSTANTS.AUTH_TEXT.NO_ACC}</div>
+              <p className={styles.authLinkButtonStyle} onClick={() => navigate(PAGES_PATHS.SIGN_UP)}>
+                {AUTH_CONSTANTS.AUTH_TEXT.SIGN_UP}
+              </p>
             </div>
           </Form>
         )

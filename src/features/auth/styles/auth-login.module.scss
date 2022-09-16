@@ -41,35 +41,35 @@
   margin-bottom: 3%;
 }
 
-.formPassword {
+.authFormPassword {
   input {
     width: 100%;
   }
 }
 
-.orContainer {
+.authOrContainer {
   width: 50%;
   text-align: center;
 }
 
-.orSpan {
+.authOrSpan {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6c6c6c;
+  color: var(--gray-325);
   font-weight: 600;
   font-size: 12px;
   line-height: 20px;
 }
 
-.hlr {
-  border-top: 1px solid #d0d0d0;
+.authHorizontalLineRight {
+  border-top: 1px solid var(--gray-225);
   width: 50%;
   margin-left: 3%;
 }
 
-.hll {
-  border-top: 1px solid #d0d0d0;
+.authHorizontalLineLeft {
+  border-top: 1px solid var(--gray-225);
   width: 50%;
   margin-right: 3%;
 }
@@ -77,35 +77,27 @@
 form {
   .errorMessage {
     height: 12px;
-    color: red;
+    color: var(--alert-400);
     font-size: 12px;
   }
 }
 
-.loginBtn {
-  background-color: #0356e8 !important;
+.authLoginBtn {
+  background-color: var(--primary-400) !important;
 }
 
-// .p-button-outlined {
-//   background-color: white !important;
-//   color: #0356e8 !important;
-// }
-
-.footerText {
+.authFooterText {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50%;
 }
-.googleImg {
-  width: 20%;
-  height: 20%;
-}
 
-.linkButtonStyle {
-  color: #0356e8;
+.authLinkButtonStyle {
+  color: var(--primary-400);
   text-decoration: none;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .authTextColor {
@@ -133,7 +125,7 @@ form {
   .authLoginCheckboxContainer,
   .authLoginButtonContainer,
   .authLoginButtonContainerLogin,
-  .formPassword input {
+  .authFormPassword input {
     width: 100%;
   }
 }

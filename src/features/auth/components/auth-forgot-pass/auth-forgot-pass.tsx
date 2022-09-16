@@ -1,39 +1,37 @@
-import { useState } from 'react'
-import * as Yup from 'yup'
 import { Formik, Form } from 'formik'
 import { InputText } from 'primereact/inputtext'
 import { Button } from 'primereact/button'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { AuthValidation } from 'features/auth/schemas/auth-validation'
 import { PAGES_PATHS } from 'common/constants/constants'
-import styles from '../auth-login/auth-login.module.scss'
-
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Email is invalid').required('This field is mandatory'),
-  password: Yup.string()
-    .required('No password provided.')
-    .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, 'Invalid password'),
-})
+import { AUTH_CONSTANTS } from 'features/auth/constants/auth-constants'
+import styles from '../../styles/auth-login.module.scss'
 
 export const AuthForgotPass = () => {
+  const navigate = useNavigate()
   return (
-    <Formik initialValues={{ email: '', password: '' }} onSubmit={() => {}} validationSchema={validationSchema}>
+    <Formik initialValues={{ email: '', password: '' }} onSubmit={() => {}} validationSchema={AuthValidation()}>
       {({ errors, touched, values, setFieldValue }) => {
         return (
           <Form className={styles.authLoginContainer}>
             <div className={styles.authInputText}>
-              <label style={{ marginBottom: '10px' }}>Email</label>
-              <InputText value={values.email} onChange={(e) => setFieldValue('email', e.target.value)} />
+              <label style={{ marginBottom: '10px' }}>{AUTH_CONSTANTS.AUTH_LABELS.EMAIL}</label>
+              <InputText
+                value={values.email}
+                placeholder={AUTH_CONSTANTS.AUTH_PLACEHOLDER.EMAIL_PLACEHOLDER}
+                onChange={(e) => setFieldValue('email', e.target.value)}
+              />
               <span className={styles.errorMessage}>{touched.email && errors?.email}</span>
             </div>
             <div className={styles.authLoginButtonContainer}>
               <div className={styles.authLoginButtonContainerLogin}>
-                <Button label='Send reset link' className={styles.loginBtn} />
+                <Button label='Send reset link' className={styles.authLoginBtn} />
               </div>
             </div>
             <div>
-              <Link className={styles.linkButtonStyle} to={PAGES_PATHS.LOG_IN}>
-                Back to Log in
-              </Link>
+              <p className={styles.authLinkButtonStyle} onClick={() => navigate(PAGES_PATHS.LOG_IN)}>
+                {AUTH_CONSTANTS.AUTH_TEXT.BACK_LOGIN}
+              </p>
             </div>
           </Form>
         )
