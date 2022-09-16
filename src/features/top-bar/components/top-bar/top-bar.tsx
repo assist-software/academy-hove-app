@@ -1,4 +1,4 @@
-import { Dropdown } from 'primereact/dropdown'
+import { Dropdown, DropdownChangeParams } from 'primereact/dropdown'
 import { Link, useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 import { useState } from 'react'
@@ -7,11 +7,12 @@ import { AUTH_PAGES, PAGES_PATHS } from 'common/constants/constants'
 import { InputText } from 'primereact/inputtext'
 import { useStore } from 'store/store'
 
+import { ReactComponent as FavIcon } from './../../assets/favourites-icon.svg'
 import { ReactComponent as AssistLogo } from 'common/assets/logo-assist.svg'
 import { ReactComponent as UserIcon } from './../../assets/user-icon.svg'
-import { ReactComponent as FavIcon } from './../../assets/favourites-icon.svg'
 
 import style from './top-bar.module.scss'
+import { DROPDOWN_PLACEHOLDER } from 'features/top-bar/constants/top-bar-constants'
 
 export const TopBar = () => {
   const [selectCategory, setSelectedCategory] = useState(null)
@@ -23,13 +24,15 @@ export const TopBar = () => {
 
   const categories = [{ name: 'Category 1' }, { name: 'Category 2' }, { name: 'Category 3' }]
 
-  const onCityChange = (e: any) => {
+  const onCityChange = (e: DropdownChangeParams) => {
     setSelectedCategory(e.value)
   }
 
-  const handleKeyDown = (event: any) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const textBox = event.target as HTMLInputElement
+
     if (event.key === 'Enter') {
-      navigate(`${PAGES_PATHS.SEARCH}/${event.target.value}`)
+      navigate(`${PAGES_PATHS.SEARCH}/${textBox.value}`)
     }
   }
 
@@ -52,7 +55,7 @@ export const TopBar = () => {
                 options={categories}
                 onChange={onCityChange}
                 optionLabel='name'
-                placeholder='Category'
+                placeholder={DROPDOWN_PLACEHOLDER}
               />
             </span>
             <InputText onKeyDown={handleKeyDown} />
