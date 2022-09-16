@@ -1,5 +1,5 @@
 import logo from 'common/assets/logo-assist.svg'
-import styles from './auth-heading.module.scss'
+import styles from '../../styles/auth-heading.module.scss'
 
 interface IProps {
   title: string

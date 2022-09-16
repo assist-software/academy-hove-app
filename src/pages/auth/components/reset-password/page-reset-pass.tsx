@@ -3,6 +3,7 @@ import { Splitter, SplitterPanel } from 'primereact/splitter'
 import authImage from 'common/assets/login-image.png'
 import { AuthResetPass } from 'features/auth/components/auth-reset-pass/auth-reset-pass'
 import { PAGES_AUTH_CONSTANTS } from 'pages/auth/constants/pages-auth-constants'
+import { AUTH_ALT_IMAGE } from 'pages/auth/constants/pages-auth-constants'
 import styles from '../../styles/auth-pages.module.scss'
 
 export const PageResetPass = () => {
@@ -17,7 +18,7 @@ export const PageResetPass = () => {
           <AuthResetPass />
         </SplitterPanel>
         <SplitterPanel className={styles.rightContainer}>
-          <img src={authImage} alt={PAGES_AUTH_CONSTANTS.ALT_IMG} className={styles.loginImage} />
+          <img src={authImage} alt={AUTH_ALT_IMAGE.ALT_IMG} className={styles.loginImage} />
         </SplitterPanel>
       </Splitter>
     </>
