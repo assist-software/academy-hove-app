@@ -14,13 +14,13 @@
 
   &SettingName {
     font-weight: 400;
-    font-size: 16px;
+    font-size: rem(16px);
     color: var(--gray-700);
   }
 
   &SettingValue {
     font-weight: 400;
-    font-size: 14px;
+    font-size: rem(14px);
     color: var(--gray-400);
     margin-top: 8px;
   }

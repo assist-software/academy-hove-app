@@ -6,8 +6,7 @@
   &NavBar {
     display: flex;
     flex-direction: column;
-    padding-left: 422px;
-    padding-right: 150px;
+    padding: 0 150px 0 422px;
   }
 
   &Icon {
@@ -21,7 +20,7 @@
     margin: 13px 0;
     color: var(--gray-500);
     font-weight: 500;
-    font-size: 14px;
+    font-size: rem(14px);
     text-decoration: none;
     display: flex;
   }

@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import styles from './Divider.module.scss'
 
 interface Props {
-  children?: any
+  children?: string
   [key: string]: any
 }
 
