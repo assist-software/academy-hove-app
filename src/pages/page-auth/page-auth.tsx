@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite'
 
 import coverImage from 'common/assets/login-image.png'
 
-import { FormErrorResetter, FullAuthPageTypes, SignInForm, LoginForm } from 'features/auth'
+import { FormErrorResetter, FullAuthPageTypes, ResetPasswordWrapper, SignInForm, LoginForm } from 'features/auth'
 
 import styles from './page-auth.module.scss'
 
@@ -15,7 +15,7 @@ export const PageAuth = observer(({ type }: Props) => {
     <div className={styles.authPage}>
       <div className={styles.authPageForm}>
         <FormErrorResetter />
-        {/* {type === 'reset' && <ResetPasswordWrapper />} */}
+        {type === 'reset' && <ResetPasswordWrapper />}
         {type === 'login' && <LoginForm />}
         {type === 'signup' && <SignInForm />}
       </div>
