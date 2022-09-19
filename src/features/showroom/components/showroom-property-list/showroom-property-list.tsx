@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import { Carousel } from 'primereact/carousel'
-// import { Button } from 'primereact/button'
 import './showroom-property-list.module.scss'
 import { SHOWROOM_HOUSE_THUMBNAIL } from 'features/showroom/constants/showroom-mock-data'
 import { thumbnailTemplate } from './showroom-property-list-thumbnail'
