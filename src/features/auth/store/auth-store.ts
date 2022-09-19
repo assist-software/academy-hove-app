@@ -67,9 +67,6 @@ export class AuthStore {
       const auth = getAuth(app)
       const result = await signInWithPopup(auth, provider)
 
-      // const credential = GoogleAuthProvider.credentialFromResult(result)
-      // const token = credential?.accessToken
-
       this.setUser(result.user)
     } catch (error: any) {
       this.setFormErrorText(error.message)
