@@ -75,7 +75,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
                       id={field.name}
                       {...field}
                       className={classNames({
-                        'p-invalid': fieldState.invalid,
+                        'p-invalid': fieldState.error,
                       })}
                     />
                   )}
@@ -101,7 +101,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
                         {...field}
                         toggleMask
                         className={classNames({
-                          'p-invalid': fieldState.invalid,
+                          'p-invalid': fieldState.error,
                         })}
                       />
                     )}
@@ -126,7 +126,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
                         toggleMask
                         {...field}
                         className={classNames({
-                          'p-invalid': fieldState.invalid,
+                          'p-invalid': fieldState.error,
                         })}
                       />
                     )}

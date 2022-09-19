@@ -74,7 +74,7 @@ export const AuthForm = ({ type, logIn, signUp, formErrorText, logInWithGoogle }
             icon={<img alt='Google Icon' src={googleLogo} />}
             className={styles.authFormSignWithGoogle}
             mode='secondary'>
-            {AUTH_I18.signtWithGoogleButton}
+            {AUTH_I18.signWithGoogleButton}
           </Button>
           <Divider children={AUTH_I18.dividerText} />
         </>
@@ -123,7 +123,7 @@ export const AuthForm = ({ type, logIn, signUp, formErrorText, logInWithGoogle }
                     {...field}
                     toggleMask
                     className={classNames({
-                      'p-invalid': fieldState.invalid,
+                      'p-invalid': fieldState.error,
                     })}
                   />
                 )}
@@ -167,7 +167,7 @@ export const AuthForm = ({ type, logIn, signUp, formErrorText, logInWithGoogle }
             }}
             icon={<img alt='Google Icon' src={googleLogo} />}
             mode='secondary'
-            className={styles.authFormLoginWithGoole}>
+            className={styles.authFormLoginWithGoogle}>
             {AUTH_I18.loginWithGoogleButton}
           </Button>
         )}
@@ -175,14 +175,14 @@ export const AuthForm = ({ type, logIn, signUp, formErrorText, logInWithGoogle }
         <div className={styles.authFormLinkContainer}>
           {type === AUTH_PAGE_TYPES.SIGNUP ? (
             <p className={styles.authFormLinkText}>
-              {AUTH_I18.allreadyHaveAcc}{' '}
+              {AUTH_I18.alreadyHaveAcc}{' '}
               <Link className={styles.authFormLink} to={PAGES_PATHS.LOG_IN}>
                 {AUTH_I18.titleLogin}
               </Link>
             </p>
           ) : (
             <p className={styles.authFormLinkText}>
-              {AUTH_I18.dontHaveAnAccout}{' '}
+              {AUTH_I18.dontHaveAnAccount}{' '}
               <Link className={styles.authFormLink} to={PAGES_PATHS.SIGN_UP}>
                 {AUTH_I18.primaryButtonSignup}
               </Link>
