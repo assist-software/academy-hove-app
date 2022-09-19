@@ -1,18 +1,18 @@
-import classNames from 'classnames'
-import { Button } from 'primereact/button'
-import { Password } from 'primereact/password'
-import { InputText } from 'primereact/inputtext'
-import { ResetPasswordDetails } from 'features/auth'
-import { useForm, Controller } from 'react-hook-form'
 import { Link, useSearchParams } from 'react-router-dom'
-import { PRIMARY_RESET_BUTTON_TEXT, AUTH_I18 } from 'features/auth/constants/auth-i18-constants'
+import { useForm, Controller } from 'react-hook-form'
+import { ResetPasswordDetails } from 'features/auth'
+import { InputText } from 'primereact/inputtext'
+import { Password } from 'primereact/password'
+import { Button } from 'primereact/button'
+import classNames from 'classnames'
 
-import { AuthHeading } from '../auth-heading/auth-heading'
-
+import { ErrorCard } from 'common/components/ErrorCard/error-card'
 import { PAGES_PATHS } from 'common/constants/constants'
 
+import { PRIMARY_RESET_BUTTON_TEXT, AUTH_I18 } from 'features/auth/constants/auth-i18-constants'
+import { AuthHeading } from '../auth-heading/auth-heading'
+
 import styles from './auth-reset-form.module.scss'
-import { ErrorCard } from 'common/components/ErrorCard/error-card'
 interface Props {
   resetPassword: ({ email, password, oobCode }: ResetPasswordDetails) => void
   sendResetPasswordRequest: ({ email }: { email: string }) => void
