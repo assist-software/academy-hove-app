@@ -11,8 +11,6 @@ import 'styles/variables.scss'
 
 import 'styles/custom-theme.scss'
 
-import './App.css'
-
 function App() {
   const { authStore } = useStore()
   const { checkUserStatus } = authStore
