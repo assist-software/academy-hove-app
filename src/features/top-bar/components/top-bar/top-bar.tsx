@@ -1,18 +1,18 @@
 import { Dropdown, DropdownChangeParams } from 'primereact/dropdown'
 import { Link, useNavigate } from 'react-router-dom'
+import { InputText } from 'primereact/inputtext'
 import classNames from 'classnames'
 import { useState } from 'react'
 
 import { AUTH_PAGES, PAGES_PATHS } from 'common/constants/constants'
-import { InputText } from 'primereact/inputtext'
 import { useStore } from 'store/store'
 
-import { ReactComponent as FavIcon } from './../../assets/favourites-icon.svg'
+import { DROPDOWN_PLACEHOLDER } from 'features/top-bar/constants/top-bar-constants'
+import { ReactComponent as FavIcon } from '../../assets/favourites-icon.svg'
 import { ReactComponent as AssistLogo } from 'common/assets/logo-assist.svg'
-import { ReactComponent as UserIcon } from './../../assets/user-icon.svg'
+import { ReactComponent as UserIcon } from '../../assets/user-icon.svg'
 
 import style from './top-bar.module.scss'
-import { DROPDOWN_PLACEHOLDER } from 'features/top-bar/constants/top-bar-constants'
 
 export const TopBar = () => {
   const [selectCategory, setSelectedCategory] = useState(null)
