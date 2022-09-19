@@ -1,20 +1,22 @@
 import { FC } from 'react'
 import classnames from 'classnames/bind'
+import { Button } from 'primereact/button'
 
-import style from './showroom-property-thumbnail.module.scss'
+import { ButtonLables } from 'common/constants/constants'
+import { UtilService } from 'common/services/util-service'
+
 import { ShowroomUtilService } from 'features/showroom/services/showroom-util-service'
 import { AltImgShowroom } from 'features/showroom/constants/showroom-constants'
 import { IPropertyLite } from 'features/showroom/models/showroom-models'
-import { ButtonLables } from 'common/constants/constants'
-import { UtilService } from 'common/services/util-service'
-import { Button } from 'primereact/button'
-import favoriteInactive from '../../assets/favoriteInactive.svg'
-import favoriteActive from '../../assets/favoriteActive.svg'
-import thumbnailImg from '../../assets/thnumbnail.jpg'
+import favoriteInactive from 'features/showroom/assets/favoriteInactive.svg'
+import favoriteActive from 'features/showroom/assets/favoriteActive.svg'
+import thumbnailImg from 'features/showroom/assets/thumbnail.jpg'
+
+import style from './showroom-property-thumbnail.module.scss'
 
 interface Props {
   thumbnail: IPropertyLite
-  type: string
+  type: 'list' | string
   role: string
 }
 
