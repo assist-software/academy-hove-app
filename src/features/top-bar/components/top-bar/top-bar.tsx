@@ -62,7 +62,7 @@ export const TopBar = () => {
           </div>
         </div>
         <div className={style.topBarElement}>
-          <Link to={PAGES_PATHS.FAVOURITES} className={style.topBarLink}>
+          <Link to={PAGES_PATHS.FAVORITES} className={style.topBarLink}>
             <FavIcon className={style.topBarLinkIcon} />
             <span className={style.topBarLinkText}>Favourites</span>
           </Link>

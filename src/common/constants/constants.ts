@@ -4,10 +4,10 @@ export const PAGES_PATHS = {
   HOME: '/',
   RESET_PASS: '/reset-password',
   SEARCH: '/search',
-  FAVOURITES: '/favourites',
+  FAVORITES: '/favorites',
 }
 
-export const ButtonLables = {
+export const ButtonLabels = {
   approve: 'Approve',
   delete: 'Delete',
   edit: 'Edit',

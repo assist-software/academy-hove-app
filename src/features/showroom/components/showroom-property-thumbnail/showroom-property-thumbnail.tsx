@@ -2,7 +2,7 @@ import { FC } from 'react'
 import classnames from 'classnames/bind'
 import { Button } from 'primereact/button'
 
-import { ButtonLables } from 'common/constants/constants'
+import { ButtonLabels } from 'common/constants/constants'
 import { UtilService } from 'common/services/util-service'
 
 import { ShowroomUtilService } from 'features/showroom/services/showroom-util-service'
@@ -50,21 +50,21 @@ export const ShowroomPropertyThumbnail: FC<Props> = ({ thumbnail, type, role }) 
         <div className={cx(style.thumbnailActions, actionsStyle, type === 'list' && borderActionsStyle)}>
           {thumbnail.status === 'pending' && role !== 'client' && (
             <Button
-              label={ButtonLables.approve}
+              label={ButtonLabels.approve}
               onClick={() => ShowroomUtilService.handleApprove(thumbnail.id)}
               className='smallButton'
             />
           )}
           <div onClick={() => ShowroomUtilService.handleDeleteProprety(thumbnail.id)}>
             {thumbnail.status === 'pending' && role !== 'client' ? (
-              <Button className='p-button-danger p-button-text smallButton' label={ButtonLables.delete} />
+              <Button className='p-button-danger p-button-text smallButton' label={ButtonLabels.delete} />
             ) : (
-              <Button className='p-button-danger smallButton' label={ButtonLables.delete} />
+              <Button className='p-button-danger smallButton' label={ButtonLabels.delete} />
             )}
           </div>
           <Button
             className='p-button-info p-button-text smallButton'
-            label={ButtonLables.edit}
+            label={ButtonLabels.edit}
             onClick={() => ShowroomUtilService.handleEdit(thumbnail.id)}
           />
         </div>
