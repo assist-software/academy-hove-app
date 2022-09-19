@@ -1,0 +1,16 @@
+.loginImage {
+  height: 100vh;
+  width: 50vw;
+}
+
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 450px) {
+  .rightContainer {
+    display: none;
+  }
+}

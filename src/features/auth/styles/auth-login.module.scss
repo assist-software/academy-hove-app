@@ -1,0 +1,131 @@
+.authLoginContainer {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+
+.authInputText {
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.authLoginCheckboxContainer {
+  display: flex;
+  width: 50%;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.authLoginButtonContainer {
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.authLoginButtonContainerLogin {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.authGoogleLoginButtonContainer {
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  margin-bottom: 3%;
+}
+
+.authFormPassword {
+  input {
+    width: 100%;
+  }
+}
+
+.authOrContainer {
+  width: 50%;
+  text-align: center;
+}
+
+.authOrSpan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-325);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.authHorizontalLineRight {
+  border-top: 1px solid var(--gray-225);
+  width: 50%;
+  margin-left: 3%;
+}
+
+.authHorizontalLineLeft {
+  border-top: 1px solid var(--gray-225);
+  width: 50%;
+  margin-right: 3%;
+}
+
+form {
+  .errorMessage {
+    height: 12px;
+    color: var(--alert-400);
+    font-size: 12px;
+  }
+}
+
+.authLoginBtn {
+  background-color: var(--primary-400) !important;
+}
+
+.authFooterText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.authLinkButtonStyle {
+  color: var(--primary-400);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.authTextColor {
+  color: var(--gray-300);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  margin-right: 3%;
+}
+
+.authRememberColor {
+  color: var(--gray-500);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+@media screen and (max-width: 450px) {
+  .authLoginContainer {
+    padding-inline: 1rem;
+  }
+
+  .authLoginContainer,
+  .authInputText,
+  .authLoginCheckboxContainer,
+  .authLoginButtonContainer,
+  .authLoginButtonContainerLogin,
+  .authFormPassword input {
+    width: 100%;
+  }
+}
