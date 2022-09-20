@@ -15,12 +15,12 @@ import {
   PRIMARY_BUTTON_TEXT,
   AUTH_I18,
 } from 'features/auth/constants/auth-i18-constants'
-import { AuthHeading } from '../auth-heading/auth-heading'
 import { ErrorCard } from 'common/components/ErrorCard/error-card'
 
 import { useStore } from 'store/store'
 
 import styles from './auth-form.module.scss'
+import { AuthHeading } from 'features/auth/components/auth-heading/auth-heading'
 
 export const LoginForm = () => {
   const { authStore } = useStore()

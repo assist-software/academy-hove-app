@@ -13,7 +13,7 @@ import {
   signInWithPopup,
 } from 'firebase/auth'
 
-import { UserLogInDetails, UserRole, UserSignUpDetails, ResetPasswordDetails } from '../models/auth-models'
+import { UserLogInDetails, UserRole, UserSignUpDetails, ResetPasswordDetails } from 'features/auth/models/auth-models'
 import { app } from 'common/services/firebase-service'
 
 export class AuthStore {

@@ -1,7 +1,6 @@
 import { makeAutoObservable } from 'mobx'
-import { IPropertyLite } from '../models/showroom-models'
-
-import { ShowroomAPIService } from '../../showroom/services/showroom-api-service'
+import { IPropertyLite } from 'features/showroom/models/showroom-models'
+import { ShowroomAPIService } from 'features/showroom/services/showroom-api-service'
 
 export class ShowroomStore {
   propertiesLatest: Array<IPropertyLite> = []
