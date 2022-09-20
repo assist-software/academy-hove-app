@@ -10,9 +10,9 @@ import { ErrorCard } from 'common/components/ErrorCard/error-card'
 import { PAGES_PATHS } from 'common/constants/constants'
 
 import { PRIMARY_RESET_BUTTON_TEXT, AUTH_I18 } from 'features/auth/constants/auth-i18-constants'
-import { AuthHeading } from '../auth-heading/auth-heading'
 
 import styles from './auth-reset-form.module.scss'
+import { AuthHeading } from 'features/auth/components/auth-heading/auth-heading'
 interface Props {
   resetPassword: ({ email, password, oobCode }: ResetPasswordDetails) => void
   sendResetPasswordRequest: ({ email }: { email: string }) => void

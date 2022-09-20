@@ -17,9 +17,9 @@ import { PAGES_PATHS } from 'common/constants/constants'
 import googleLogo from 'common/assets/google.svg'
 
 import styles from './auth-form.module.scss'
-import { AuthHeading } from '../auth-heading/auth-heading'
 import { ErrorCard } from 'common/components/ErrorCard/error-card'
 import { useStore } from 'store/store'
+import { AuthHeading } from 'features/auth/components/auth-heading/auth-heading'
 
 export const SignInForm = () => {
   const { authStore } = useStore()

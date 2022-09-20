@@ -1,8 +1,11 @@
 import { makeAutoObservable } from 'mobx'
-
-import { updateTimeout } from '../constants/notifications-constants'
-import { notificationsUpdateService } from '../services/notifications-update-service'
-import { INotificationSettings, notificationStatus, notificationTypes } from '../models/notifications-models'
+import {
+  INotificationSettings,
+  notificationStatus,
+  notificationTypes,
+} from 'features/notifications/models/notifications-models'
+import { notificationsUpdateService } from 'features/notifications/services/notifications-update-service'
+import { updateTimeout } from 'features/notifications/constants/notifications-constants'
 
 export class NotificationsStore {
   notificationSettings: INotificationSettings = {

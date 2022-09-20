@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
-import { PAGES_PATHS } from '../common/constants/constants'
-import { PageAllComponents } from './page-all-components'
-import { PageAuth } from './page-auth/page-auth'
+import { PageAllComponents } from 'pages/page-all-components'
+import { PAGES_PATHS } from 'common/constants/constants'
+import { PageAuth } from 'pages/page-auth/page-auth'
 
 export const PageRouter = () => {
   return (
