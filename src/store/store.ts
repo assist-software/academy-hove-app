@@ -1,8 +1,8 @@
 import { createContext, useContext } from 'react'
 
+import { AuthStore } from 'features/auth/store/auth-store'
 import { NotificationsStore } from 'features/notifications'
 import { ShowroomStore } from 'features/showroom/store/showroom-store'
-import { AuthStore } from 'features/auth/store/auth-store'
 
 const store = {
   authStore: new AuthStore(),

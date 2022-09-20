@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx'
+
 import { IPropertyLite } from 'features/showroom/models/showroom-models'
 import { ShowroomAPIService } from 'features/showroom/services/showroom-api-service'
 
