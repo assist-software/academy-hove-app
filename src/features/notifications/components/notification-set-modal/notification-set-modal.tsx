@@ -1,8 +1,8 @@
 import { Dialog } from 'primereact/dialog'
 import { InputSwitch } from 'primereact/inputswitch'
 
-import { notificationStatus, notificationTypes } from 'features/notifications/models/notifications-models'
 import { descriptionLookUpObj, nameLookUpObj } from 'features/notifications/constants/notifications-constants'
+import { notificationStatus, notificationTypes } from 'features/notifications/models/notifications-models'
 
 import style from './notification-set-modal.module.scss'
 

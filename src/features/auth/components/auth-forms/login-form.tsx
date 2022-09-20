@@ -1,26 +1,27 @@
 import { useForm, Controller } from 'react-hook-form'
-import { InputText } from 'primereact/inputtext'
-import { Checkbox } from 'primereact/checkbox'
-import { Password } from 'primereact/password'
 import { Link } from 'react-router-dom'
-import classNames from 'classnames'
 
-import { PAGES_PATHS } from 'common/constants/constants'
-import { Button } from 'common/components/Button/Button'
+import classNames from 'classnames'
+import { Checkbox } from 'primereact/checkbox'
+import { InputText } from 'primereact/inputtext'
+import { Password } from 'primereact/password'
+import { useStore } from 'store/store'
+
 import googleLogo from 'common/assets/google.svg'
 
+import { Button } from 'common/components/Button/Button'
+import { ErrorCard } from 'common/components/ErrorCard/error-card'
+import { PAGES_PATHS } from 'common/constants/constants'
+
+import { AuthHeading } from 'features/auth/components/auth-heading/auth-heading'
 import {
   AUTH_PAGE_SUBTITLES,
   AUTH_PAGE_TITLES,
   PRIMARY_BUTTON_TEXT,
   AUTH_I18,
 } from 'features/auth/constants/auth-i18-constants'
-import { ErrorCard } from 'common/components/ErrorCard/error-card'
-
-import { useStore } from 'store/store'
 
 import styles from './auth-form.module.scss'
-import { AuthHeading } from 'features/auth/components/auth-heading/auth-heading'
 
 export const LoginForm = () => {
   const { authStore } = useStore()
