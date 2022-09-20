@@ -1,5 +1,5 @@
-import { SHOWROOM_HOUSE_THUMBNAIL } from 'features/showroom/constants/showroom-mock-data'
 import { ShowroomPropertyThumbnail } from 'features/showroom/components/showroom-property-thumbnail/showroom-property-thumbnail'
+import { SHOWROOM_HOUSE_THUMBNAIL } from 'features/showroom/constants/showroom-mock-data'
 
 import style from './showroom-all-components.module.scss'
 

@@ -1,4 +1,3 @@
-import { makeAutoObservable } from 'mobx'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -12,9 +11,11 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth'
+import { makeAutoObservable } from 'mobx'
+
+import { app } from 'common/services/firebase-service'
 
 import { UserLogInDetails, UserRole, UserSignUpDetails, ResetPasswordDetails } from 'features/auth/models/auth-models'
-import { app } from 'common/services/firebase-service'
 
 export class AuthStore {
   user: User | null = null

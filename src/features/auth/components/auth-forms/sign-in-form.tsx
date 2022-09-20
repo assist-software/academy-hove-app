@@ -1,25 +1,27 @@
 import { useForm, Controller } from 'react-hook-form'
+import { Link } from 'react-router-dom'
+
+import classNames from 'classnames'
 import { InputText } from 'primereact/inputtext'
 import { Password } from 'primereact/password'
-import { Link } from 'react-router-dom'
-import classNames from 'classnames'
+import { useStore } from 'store/store'
 
+import googleLogo from 'common/assets/google.svg'
+
+import { Button } from 'common/components/Button/Button'
+import { Divider } from 'common/components/Divider/Divider'
+import { ErrorCard } from 'common/components/ErrorCard/error-card'
+import { PAGES_PATHS } from 'common/constants/constants'
+
+import { AuthHeading } from 'features/auth/components/auth-heading/auth-heading'
 import {
   AUTH_PAGE_SUBTITLES,
   AUTH_PAGE_TITLES,
   PRIMARY_BUTTON_TEXT,
   AUTH_I18,
 } from 'features/auth/constants/auth-i18-constants'
-import { Divider } from 'common/components/Divider/Divider'
-import { Button } from 'common/components/Button/Button'
-import { PAGES_PATHS } from 'common/constants/constants'
-
-import googleLogo from 'common/assets/google.svg'
 
 import styles from './auth-form.module.scss'
-import { ErrorCard } from 'common/components/ErrorCard/error-card'
-import { useStore } from 'store/store'
-import { AuthHeading } from 'features/auth/components/auth-heading/auth-heading'
 
 export const SignInForm = () => {
   const { authStore } = useStore()

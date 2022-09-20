@@ -1,11 +1,11 @@
-import { useStore } from 'store/store'
 import { observer } from 'mobx-react-lite'
+import { useStore } from 'store/store'
 
+import { NotificationsSetModal } from 'features/notifications/components/notification-set-modal/notification-set-modal'
 import { nameLookUpObj } from 'features/notifications/constants/notifications-constants'
 import { notificationStatus, notificationTypes } from 'features/notifications/models/notifications-models'
 
 import styles from './notification-form.module.scss'
-import { NotificationsSetModal } from 'features/notifications/components/notification-set-modal/notification-set-modal'
 
 export const NotificationsForm = observer(() => {
   const { notificationsStore } = useStore()

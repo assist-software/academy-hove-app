@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx'
+
 import { ManageAPIService } from 'features/manage/services/manage-api-service'
 
 export class ManageStore {
