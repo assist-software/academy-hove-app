@@ -1,0 +1,32 @@
+.authContainer {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.authHeadingColorSubtitle {
+  color: var(--gray-300);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.authHeadingColorTitle {
+  color: var(--black);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.titlesContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 450px) {
+  .authContainer {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+}
