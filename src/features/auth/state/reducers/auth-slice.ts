@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 const initialState = {
-  user: { access_token: '', display_name: '', email: '', photoUrl: '', isLoggedIn: false },
+  user: { access_token: '', display_name: '', email: '', photoUrl: '', isLoggedIn: false, error: '' },
 }
 
 const authSlice = createSlice({
@@ -12,6 +12,7 @@ const authSlice = createSlice({
       state.user.email = action.payload
     },
     HANDLE_SET_USER(state, action) {
+      console.log(state, action)
       state.user = action.payload
     },
   },

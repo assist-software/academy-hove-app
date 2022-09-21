@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Formik, Form } from 'formik'
 import { InputText } from 'primereact/inputtext'
 import { Password } from 'primereact/password'
@@ -12,36 +12,29 @@ import { AUTH_LABELS } from 'features/auth/constants/auth-constants'
 import { AUTH_PLACEHOLDER } from 'features/auth/constants/auth-constants'
 import { AUTH_TEXT } from 'features/auth/constants/auth-constants'
 import { authLogin, authSigninWithGoogle } from '../../services/auth-api-services'
-import { onAuthStateChanged } from 'firebase/auth'
 import { IAuth } from 'features/auth/models/IAuth'
 import styles from '../../styles/auth-login.module.scss'
 import GoogleIcon from 'common/assets/google.svg'
-import { auth } from '../../../../firebase/firebase-config'
 import { HANDLE_SET_USER } from 'features/auth/state/reducers/auth-slice'
 import { useAppDispatch, useAppSelector } from 'state'
 
 export const AuthLogin = () => {
   const [checked, setChecked] = useState<boolean>(false)
-  const dispatch = useAppDispatch()
   const { user } = useAppSelector((state) => state.auth)
-
-  onAuthStateChanged(auth, (currentUser: any) => {
-    debugger
-
-    if (currentUser) {
-      dispatch(HANDLE_SET_USER({ ...currentUser, isLoggedIn: true }))
-    }
-  })
-
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const onSubmit = (values: IAuth): void => {
-    authLogin(values.email, values.password)
-  }
-  useEffect(() => {
-    if (user.isLoggedIn) {
+
+  const onSubmit = async (values: IAuth) => {
+    const user = await authLogin(values.email, values.password)
+    console.log(user)
+    if (!user.message) {
+      dispatch(HANDLE_SET_USER({ ...user, isLoggedIn: true }))
       return navigate('/')
+    } else {
+      dispatch(HANDLE_SET_USER({ ...user, error: user.message }))
     }
-  }, [user])
+    console.log('asdasfasfasfasf', user)
+  }
 
   return (
     <Formik initialValues={{ email: '', password: '' }} onSubmit={onSubmit} validationSchema={AuthValidation()}>
@@ -56,7 +49,10 @@ export const AuthLogin = () => {
                   placeholder={AUTH_PLACEHOLDER.EMAIL_PLACEHOLDER}
                   onChange={(e) => setFieldValue('email', e.target.value)}
                 />
-                <span className={styles.errorMessage}>{touched.email && errors?.email}</span>
+                <span className={styles.errorMessage}>
+                  {touched.email && errors?.email}
+                  {user.error}
+                </span>
               </div>
 
               <div className={styles.authInputText}>

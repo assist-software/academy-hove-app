@@ -13,13 +13,22 @@ import { authRegister, authSigninWithGoogle } from '../../services/auth-api-serv
 import styles from '../../styles/auth-login.module.scss'
 import { IAuth } from 'features/auth/models/IAuth'
 import GoogleIcon from 'common/assets/google.svg'
+import { HANDLE_SET_USER } from 'features/auth/state/reducers/auth-slice'
+import { useAppDispatch } from 'state'
+import { useAppSelector } from 'state'
 
 export const AuthRegister = () => {
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const onSubmit = (values: IAuth): void => {
+  const { user } = useAppSelector((state) => state.auth)
+  const onSubmit = async (values: IAuth) => {
     console.log(values)
-    authRegister(values.email, values.password)
+    const response = await authRegister(values.email, values.password)
+    dispatch(HANDLE_SET_USER({ ...user, error: response.message }))
+    console.log(response)
   }
+
+  console.log(user)
 
   return (
     <Formik initialValues={{ email: '', password: '' }} onSubmit={onSubmit} validationSchema={AuthValidation()}>
@@ -49,7 +58,10 @@ export const AuthRegister = () => {
                   placeholder={AUTH_PLACEHOLDER.EMAIL_PLACEHOLDER}
                   onChange={(e) => setFieldValue('email', e.target.value)}
                 />
-                <span className={styles.errorMessage}>{touched.email && errors?.email}</span>
+                <span className={styles.errorMessage}>
+                  {touched.email && errors?.email}
+                  {user.error}
+                </span>
               </div>
 
               <div className={styles.authInputText}>
