@@ -1,7 +1,6 @@
 import { PageRouter } from './pages/router/page-router'
 import { HANDLE_SET_USER } from 'features/auth/state/reducers/auth-slice'
 import { useAppDispatch } from 'state'
-import { IAuth } from 'features/auth/models/IAuth'
 import 'primereact/resources/themes/lara-light-indigo/theme.css'
 import 'primereact/resources/primereact.min.css' //core css
 import 'primeicons/primeicons.css'
