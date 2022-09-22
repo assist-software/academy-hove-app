@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import classnames from 'classnames/bind'
 import { Button } from 'primereact/button'
 
@@ -22,7 +20,7 @@ interface Props {
   role: string
 }
 
-export const ShowroomPropertyThumbnail: FC<Props> = ({ thumbnail, type, role }) => {
+export const ShowroomPropertyThumbnail = ({ thumbnail, type, role }: Props) => {
   const cx = classnames.bind(style)
   const borderActionsStyle = style[`thumbnailBorderActions${UtilService.capitalizeFirstLetter(role)}`]
   const locationStyle = style[`thumbnailLocation${UtilService.capitalizeFirstLetter(type)}`]
