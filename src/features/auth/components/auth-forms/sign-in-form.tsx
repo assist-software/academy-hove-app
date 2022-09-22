@@ -7,7 +7,6 @@ import { Password } from 'primereact/password'
 import { useStore } from 'store/store'
 
 import googleLogo from 'common/assets/google.svg'
-
 import { Button } from 'common/components/Button/Button'
 import { Divider } from 'common/components/Divider/Divider'
 import { ErrorCard } from 'common/components/ErrorCard/error-card'
