@@ -37,6 +37,19 @@ export const AuthLogin = () => {
     console.log('asdasfasfasfasf', user)
   }
 
+  const onLoginWithGoogle = async () => {
+    const user = await authSigninWithGoogle()
+    console.log('googleUser', user)
+    if (!user.message) {
+      localStorage.setItem('user1', JSON.stringify(user))
+      dispatch(HANDLE_SET_USER({ ...user, isLoggedIn: true }))
+      return navigate('/')
+    } else {
+      dispatch(HANDLE_SET_USER({ ...user, error: user.message }))
+    }
+    console.log('asdasfasfasfasf', user)
+  }
+
   return (
     <Formik initialValues={{ email: '', password: '' }} onSubmit={onSubmit} validationSchema={AuthValidation()}>
       {({ errors, touched, values, setFieldValue }) => {
@@ -94,7 +107,7 @@ export const AuthLogin = () => {
               <Button
                 label={AUTH_BUTTON_TEXT.AUTH_LOGIN_GOOGLE_BUTTON_TEXT}
                 className='p-button-outlined'
-                onClick={authSigninWithGoogle}
+                onClick={onLoginWithGoogle}
                 style={{ width: '50%' }}
                 icon={<img src={GoogleIcon} alt='Google' />}
               />

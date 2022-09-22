@@ -27,15 +27,15 @@ export const authLogin = async (email: string, password: string): Promise<any> =
   }
 }
 
-export const authSigninWithGoogle = () => {
+export const authSigninWithGoogle = async (): Promise<any> => {
   const provider = new GoogleAuthProvider()
-  signInWithPopup(auth, provider)
-    .then((re) => {
-      console.log(re)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+  try {
+    const response = await signInWithPopup(auth, provider)
+    console.log('response', response.user)
+    return response.user
+  } catch (err: any) {
+    return err
+  }
 }
 
 export const authSendPasswordReset = async (email: string) => {
