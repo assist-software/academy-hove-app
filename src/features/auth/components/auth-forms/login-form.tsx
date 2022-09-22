@@ -8,7 +8,6 @@ import { Password } from 'primereact/password'
 import { useStore } from 'store/store'
 
 import googleLogo from 'common/assets/google.svg'
-
 import { Button } from 'common/components/Button/Button'
 import { ErrorCard } from 'common/components/ErrorCard/error-card'
 import { PAGES_PATHS } from 'common/constants/constants'

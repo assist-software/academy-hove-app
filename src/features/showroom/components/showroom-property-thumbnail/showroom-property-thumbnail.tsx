@@ -1,15 +1,12 @@
-import { FC } from 'react'
-
 import classnames from 'classnames/bind'
 import { Button } from 'primereact/button'
-
-import favoriteActive from 'features/showroom/assets/favoriteActive.svg'
-import favoriteInactive from 'features/showroom/assets/favoriteInactive.svg'
-import thumbnailImg from 'features/showroom/assets/thumbnail.jpg'
 
 import { ButtonLables } from 'common/constants/constants'
 import { UtilService } from 'common/services/util-service'
 
+import favoriteActive from 'features/showroom/assets/favoriteActive.svg'
+import favoriteInactive from 'features/showroom/assets/favoriteInactive.svg'
+import thumbnailImg from 'features/showroom/assets/thumbnail.jpg'
 import { AltImgShowroom } from 'features/showroom/constants/showroom-constants'
 import { IPropertyLite } from 'features/showroom/models/showroom-models'
 import { ShowroomUtilService } from 'features/showroom/services/showroom-util-service'
@@ -22,7 +19,7 @@ interface Props {
   role: string
 }
 
-export const ShowroomPropertyThumbnail: FC<Props> = ({ thumbnail, type, role }) => {
+export const ShowroomPropertyThumbnail = ({ thumbnail, type, role }: Props) => {
   const cx = classnames.bind(style)
   const borderActionsStyle = style[`thumbnailBorderActions${UtilService.capitalizeFirstLetter(role)}`]
   const locationStyle = style[`thumbnailLocation${UtilService.capitalizeFirstLetter(type)}`]

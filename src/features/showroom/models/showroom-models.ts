@@ -1,3 +1,5 @@
+import { SHOWROOM_ACTIVE_VIEW } from 'features/showroom/constants/showroom-constants'
+
 export type IPropertyType = 'medium' | 'large'
 
 // folosita pentru edit/create unde sunt mai multe detalii
@@ -15,3 +17,5 @@ export interface IPropertyLite {
   status: string
   id: string
 }
+
+export type viewType = keyof typeof SHOWROOM_ACTIVE_VIEW

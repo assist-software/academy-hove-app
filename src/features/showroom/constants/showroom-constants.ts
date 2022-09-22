@@ -27,3 +27,8 @@ export const SHOWROOM_CAROUSEL_RESPONSIVE_OPTIONS = [
     numScroll: 1,
   },
 ]
+
+export const SHOWROOM_ACTIVE_VIEW = {
+  GRID: 'grid',
+  LIST: 'list',
+}
