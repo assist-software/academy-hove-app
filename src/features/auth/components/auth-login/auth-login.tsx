@@ -28,6 +28,7 @@ export const AuthLogin = () => {
     const user = await authLogin(values.email, values.password)
     console.log(user)
     if (!user.message) {
+      localStorage.setItem('user1', JSON.stringify(user))
       dispatch(HANDLE_SET_USER({ ...user, isLoggedIn: true }))
       return navigate('/')
     } else {

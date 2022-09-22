@@ -14,8 +14,7 @@ import styles from '../../styles/auth-login.module.scss'
 import { IAuth } from 'features/auth/models/IAuth'
 import GoogleIcon from 'common/assets/google.svg'
 import { HANDLE_SET_USER } from 'features/auth/state/reducers/auth-slice'
-import { useAppDispatch } from 'state'
-import { useAppSelector } from 'state'
+import { useAppDispatch, useAppSelector } from 'state'
 
 export const AuthRegister = () => {
   const dispatch = useAppDispatch()

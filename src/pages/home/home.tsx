@@ -18,6 +18,7 @@ export const Home = () => {
         onClick={() => {
           authLogout()
           dispatch(HANDLE_SET_USER({ access_token: '', display_name: '', email: '', photoUrl: '', isLoggedIn: false }))
+          localStorage.clear()
         }}
         style={{ cursor: 'pointer' }}>
         Logout
