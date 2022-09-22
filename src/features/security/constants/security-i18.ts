@@ -1,0 +1,16 @@
+export const SecurityFormText = {
+  mainTitle: 'Login & security',
+  socialTitle: 'Social accounts',
+  recentTitle: 'Recent login activity',
+  accountTitle: 'Account',
+  logOutDevice: 'Log out device',
+  passwordText: 'Password',
+  lastUpdated: 'Last updated 3 weeks ago',
+  updateText: 'Update',
+  connectedText: 'Connected',
+  notConnectedText: 'Not connected',
+  connectText: 'Connect',
+  disconnectText: 'Disconnect',
+  deactivateAccount: 'Deactivate your account',
+  deactivateText: 'Deactivate',
+}
