@@ -1,9 +1,8 @@
-import { FC } from 'react'
-
 import classnames from 'classnames/bind'
 import { Button } from 'primereact/button'
 
-import { SHOWROOM_ACTIVE_VIEW, viewType } from 'features/showroom/constants/showroom-constants'
+import { SHOWROOM_ACTIVE_VIEW } from 'features/showroom/constants/showroom-constants'
+import { viewType } from 'features/showroom/models/showroom-models'
 
 import styles from './showroom-view-switch.module.scss'
 
@@ -13,7 +12,7 @@ interface Props {
   switchView: (to: viewType) => void
 }
 
-export const ShowroomViewSwitch: FC<Props> = ({ activeView, switchView }) => {
+export const ShowroomViewSwitch = ({ activeView, switchView }: Props) => {
   return (
     <div className='flex'>
       <Button
