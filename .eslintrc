@@ -25,12 +25,11 @@
         "groups": [
           "/^react.*/",
           "module",
-          "/assets/",
           "/common/",
           "/features/",
+          "/assets/",
           ["parent", "sibling", "index", "absolute"]
-        ],
-        "alphabetize": { "order": "asc", "ignoreCase": true }
+        ]
       }
     ],
     "no-relative-import-paths/no-relative-import-paths": ["error", { "allowSameFolder": true }]
