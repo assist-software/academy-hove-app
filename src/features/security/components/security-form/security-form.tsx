@@ -1,7 +1,8 @@
 import { Button } from 'common/components/Button/Button'
+
 import { SecurityFormText } from 'features/security/constants/security-i18'
-import { SecurityItemHolder } from '../security-item-holder/security-item-holder'
-import { SecurityRecentLogin } from '../security-recent-login/security-recent-login'
+import { SecurityItemHolder } from 'features/security/components/security-item-holder/security-item-holder'
+import { SecurityRecentLogin } from 'features/security/components/security-recent-login/security-recent-login'
 
 import style from './security-form.module.scss'
 

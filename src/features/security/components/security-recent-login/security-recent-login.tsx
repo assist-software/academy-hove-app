@@ -1,10 +1,9 @@
 import { RecentLoginInterface } from 'features/security/models/security-recent-login-model'
-import { getFormatedDate } from 'features/security/utils/security-date-to-date_str'
-import { SecurityItemHolder } from '../security-item-holder/security-item-holder'
 import { SecurityFormText } from 'features/security/constants/security-i18'
-
-import { ReactComponent as DesktopIcon } from '../../assets/laptop-icon.svg'
-import { ReactComponent as MobileIcon } from '../../assets/mobile-icon.svg'
+import { getFormattedDate } from 'features/security/utils/security-date-to-date_str'
+import { SecurityItemHolder } from 'features/security/components/security-item-holder/security-item-holder'
+import { ReactComponent as DesktopIcon } from 'features/security/assets/laptop-icon.svg'
+import { ReactComponent as MobileIcon } from 'features/security/assets/mobile-icon.svg'
 
 import style from './security-recent-login.module.scss'
 
@@ -14,9 +13,9 @@ export const SecurityRecentLogin = ({ id, deviceType, os, browser, location, dat
   const handleLogOutFromDevice = (id: string) => {}
 
   return (
-    <div className={style.recentLogin}>
+    <div className={style.securityRecentLogin}>
       <SecurityItemHolder
-        description={`${location} - ${getFormatedDate(date)}`}
+        description={`${location} - ${getFormattedDate(date)}`}
         buttonText={SecurityFormText['logOutDevice']}
         icon={correctIcon[deviceType]}
         title={`${os} - ${browser}`}
