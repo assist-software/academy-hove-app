@@ -1,5 +1,6 @@
 import { makeAutoObservable } from 'mobx'
-import { MessagesAPIService } from '../services/messages-api-service'
+
+import { MessagesAPIService } from 'features/messages/services/messages-api-service'
 
 export class MessagesStore {
   allMessages: any = []
