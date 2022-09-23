@@ -18,7 +18,7 @@ export const Home = () => {
         'Designers tend to cut the lorem ipsum text when it pleases them to keep their designs nice and tidy. However, in reality, content is not the same length. Small areas may not be able to house the necessary content needed. This, in turn, causes you (the designer) to spend more time reworking the layout to fit the text. Dummy text misleads future content.',
       price: '712,123',
       image: imgThumbnail,
-      location: 'asd',
+      location: 'Suceava, Romania',
       isFavorite: false,
     },
   ]
@@ -26,7 +26,7 @@ export const Home = () => {
   return (
     <div>
       {list.map((elem, index) => (
-        <ShowroomCard property={elem} isGrid={true} role={0} key={index} />
+        <ShowroomCard property={elem} isGrid={true} role={1} key={index} />
       ))}
       <p onClick={handleChangeValue}>{exemple}</p>
     </div>

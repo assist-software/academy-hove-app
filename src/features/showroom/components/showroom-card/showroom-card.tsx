@@ -44,8 +44,8 @@ export const ShowroomCard: FC<IPropery> = ({ ...props }) => {
       {props.isGrid && props.role > 0 && (
         <div className={styles.cardButtons}>
           {props.role === 2 && <Button>Approve</Button>}
-          <Button>Delete</Button>
-          <Button>Edit</Button>
+          <Button className='p-button-danger p-button-text'>Delete</Button>
+          <Button className='p-button-info p-button-text'>Edit</Button>
         </div>
       )}
     </>
