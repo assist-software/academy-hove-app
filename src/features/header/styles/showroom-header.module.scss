@@ -1,0 +1,11 @@
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-200);
+  height: 9vh;
+}
+
+.inputLeng {
+  width: 30vw !important;
+}
