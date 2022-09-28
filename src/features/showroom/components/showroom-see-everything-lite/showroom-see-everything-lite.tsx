@@ -1,5 +1,6 @@
-import style from './showroom-see-everything-lite.module.scss'
 import { Button } from 'primereact/button'
+
+import style from './showroom-see-everything-lite.module.scss'
 
 interface Props {
   onClickHandler: () => void

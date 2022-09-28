@@ -1,4 +1,3 @@
-import { makeAutoObservable } from 'mobx'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -12,9 +11,11 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth'
+import { makeAutoObservable } from 'mobx'
 
-import { UserLogInDetails, UserRole, UserSignUpDetails, ResetPasswordDetails } from '../models/auth-models'
 import { app } from 'common/services/firebase-service'
+
+import { UserLogInDetails, UserRole, UserSignUpDetails, ResetPasswordDetails } from 'features/auth/models/auth-models'
 
 export class AuthStore {
   user: User | null = null
@@ -66,9 +67,6 @@ export class AuthStore {
       const provider = new GoogleAuthProvider()
       const auth = getAuth(app)
       const result = await signInWithPopup(auth, provider)
-
-      // const credential = GoogleAuthProvider.credentialFromResult(result)
-      // const token = credential?.accessToken
 
       this.setUser(result.user)
     } catch (error: any) {

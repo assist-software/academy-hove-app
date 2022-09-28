@@ -9,6 +9,7 @@
     "mobx": "6.6.1",
     "mobx-react-lite": "3.4.0",
     "nanoid": "4.0.0",
+    "primeflex": "^3.2.1",
     "primeicons": "5.0.0",
     "primereact": "8.3.0",
     "react": "18.2.0",
@@ -23,7 +24,7 @@
     "web-vitals": "2.1.4"
   },
   "scripts": {
-    "start": "PORT=3030 react-scripts start",
+    "start": "cross-env PORT=3030 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -71,6 +72,8 @@
     "babel-plugin-named-exports-order": "0.0.2",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-react-app": "7.0.1",
+    "eslint-plugin-import-helpers": "^1.2.1",
+    "eslint-plugin-no-relative-import-paths": "^1.4.0",
     "eslint-plugin-prettier": "4.2.1",
     "husky": "8.0.0",
     "lint-staged": "13.0.3",

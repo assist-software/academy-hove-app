@@ -1,0 +1,30 @@
+@import 'styles/convert.scss';
+
+.showroomPropertyList {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+
+  & :global .p-carousel-content {
+    position: relative;
+  }
+
+  & :global .p-carousel-items-container {
+    gap: 16px;
+  }
+
+  & :global .p-carousel .p-carousel-content .p-carousel-prev,
+  & :global .p-carousel .p-carousel-content .p-carousel-next {
+    border: 2px solid #0356e8;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  & :global .pi {
+    color: #0356e8;
+  }
+
+  & :global .p-carousel-indicators {
+    display: none;
+  }
+}

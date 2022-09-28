@@ -1,18 +1,19 @@
-import classNames from 'classnames'
-import { Button } from 'primereact/button'
-import { Password } from 'primereact/password'
-import { InputText } from 'primereact/inputtext'
-import { ResetPasswordDetails } from 'features/auth'
 import { useForm, Controller } from 'react-hook-form'
 import { Link, useSearchParams } from 'react-router-dom'
-import { PRIMARY_RESET_BUTTON_TEXT, AUTH_I18 } from 'features/auth/constants/auth-i18-constants'
 
-import { AuthHeading } from '../auth-heading/auth-heading'
+import classNames from 'classnames'
+import { Button } from 'primereact/button'
+import { InputText } from 'primereact/inputtext'
+import { Password } from 'primereact/password'
 
+import { ErrorCard } from 'common/components/ErrorCard/error-card'
 import { PAGES_PATHS } from 'common/constants/constants'
 
+import { ResetPasswordDetails } from 'features/auth'
+import { AuthHeading } from 'features/auth/components/auth-heading/auth-heading'
+import { PRIMARY_RESET_BUTTON_TEXT, AUTH_I18 } from 'features/auth/constants/auth-i18-constants'
+
 import styles from './auth-reset-form.module.scss'
-import { ErrorCard } from 'common/components/ErrorCard/error-card'
 interface Props {
   resetPassword: ({ email, password, oobCode }: ResetPasswordDetails) => void
   sendResetPasswordRequest: ({ email }: { email: string }) => void
@@ -75,7 +76,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
                       id={field.name}
                       {...field}
                       className={classNames({
-                        'p-invalid': fieldState.invalid,
+                        'p-invalid': fieldState.error,
                       })}
                     />
                   )}
@@ -101,7 +102,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
                         {...field}
                         toggleMask
                         className={classNames({
-                          'p-invalid': fieldState.invalid,
+                          'p-invalid': fieldState.error,
                         })}
                       />
                     )}
@@ -126,7 +127,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
                         toggleMask
                         {...field}
                         className={classNames({
-                          'p-invalid': fieldState.invalid,
+                          'p-invalid': fieldState.error,
                         })}
                       />
                     )}

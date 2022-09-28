@@ -1,12 +1,13 @@
 import { ShowroomAllComponents } from 'features/showroom/components/showroom-all-components/showroom-all-components'
-import { FilterAllComponents } from 'features/filter/components/filter-all-components/filter-all-components'
-import { OrderByAllComponents } from 'features/order-by/components/order-by-all-components/order-by-all-components'
+import { ShowRoomHeader } from 'features/showroom/components/showroom-header/showroom-header'
+import { ShowroomPropertyList } from 'features/showroom/components/showroom-property-list/showroom-property-list'
+
 export const PageAllComponents = () => {
   return (
     <div>
-      <FilterAllComponents />
-      <OrderByAllComponents />
+      <ShowRoomHeader />
       <ShowroomAllComponents />
+      <ShowroomPropertyList title={'Small'} />
     </div>
   )
 }

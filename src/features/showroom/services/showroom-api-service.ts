@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 import { HttpMethods } from 'common/constants/constants'
 
 const fetchProperties = async () => {

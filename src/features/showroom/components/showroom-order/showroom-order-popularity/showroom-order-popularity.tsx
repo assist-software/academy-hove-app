@@ -1,6 +1,5 @@
-import React from 'react'
 import { DropDown } from 'common/components/DropDown/DropDown'
 
-export const OrderPopularity = () => {
+export const ShowRoomOrderPopularity = () => {
   return <DropDown placeholder={'Most Popular'} />
 }
