@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     const localUser = JSON.parse(localStorage.getItem('user1') as string)
-    console.log(localUser)
+
     dispatch(HANDLE_SET_USER({ ...localUser, isLoggedIn: true }))
   }, [])
   return (

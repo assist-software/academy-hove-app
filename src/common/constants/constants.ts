@@ -4,6 +4,13 @@ export const PAGES_PATHS = {
   HOME: '/',
   FORGOT_PASSWORD: '/forgot-password',
   RESET_PASS: '/reset-password',
+  SEE_EVERITHING_ID: '/see-everything/:id',
+  SEE_EVERITHING: '/see-everything',
+  LATEST: 'latest',
+  SMALL_HOUSES: 'small-houses',
+  BIG_HOUSES: 'big-houses',
+  LISTING_ID: 'listing/:id',
+  LISTING: 'listing',
 }
 
 export const ButtonLables = {

@@ -12,7 +12,6 @@ import { auth } from '../../../firebase/firebase-config'
 export const authRegister = async (email: string, password: string) => {
   try {
     const user = await createUserWithEmailAndPassword(auth, email, password)
-    console.log(user)
   } catch (err: any) {
     return err
   }
@@ -31,7 +30,7 @@ export const authSigninWithGoogle = async (): Promise<any> => {
   const provider = new GoogleAuthProvider()
   try {
     const response = await signInWithPopup(auth, provider)
-    console.log('response', response.user)
+
     return response.user
   } catch (err: any) {
     return err
@@ -41,7 +40,7 @@ export const authSigninWithGoogle = async (): Promise<any> => {
 export const authSendPasswordReset = async (email: string) => {
   try {
     await sendPasswordResetEmail(auth, email)
-    console.log(email)
+
     alert('Password reset link sent!')
   } catch (err) {
     console.error(err)

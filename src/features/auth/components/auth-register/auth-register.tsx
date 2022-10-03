@@ -21,13 +21,9 @@ export const AuthRegister = () => {
   const navigate = useNavigate()
   const { user } = useAppSelector((state) => state.auth)
   const onSubmit = async (values: IAuth) => {
-    console.log(values)
     const response = await authRegister(values.email, values.password)
     dispatch(HANDLE_SET_USER({ ...user, error: response.message }))
-    console.log(response)
   }
-
-  console.log(user)
 
   return (
     <Formik initialValues={{ email: '', password: '' }} onSubmit={onSubmit} validationSchema={AuthValidation()}>

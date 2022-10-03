@@ -14,8 +14,6 @@ import styles from '../../styles/auth-login.module.scss'
 
 export const AuthResetPass = () => {
   const onSubmit = ({ password, oobCode }: Partial<IAuth>): void => {
-    console.log(password)
-    console.log(oobCode)
     authResetPassword(password as string, query.get('oobCode') as string)
   }
   function useQuery() {
@@ -23,7 +21,6 @@ export const AuthResetPass = () => {
     return new URLSearchParams(location.search)
   }
   const query = useQuery()
-  console.log(query.get('oobCode'), 'aaa')
 
   const initialValues: Partial<IAuth> = { password: '' }
   return (

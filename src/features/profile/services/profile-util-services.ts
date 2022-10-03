@@ -1,6 +1,4 @@
-const openEditMode = () => {
-  console.log('Edit mode is open')
-}
+const openEditMode = () => {}
 
 export const ProfileUtilService = {
   openEditMode,

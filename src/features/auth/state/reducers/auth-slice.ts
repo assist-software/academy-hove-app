@@ -12,7 +12,6 @@ const authSlice = createSlice({
       state.user.email = action.payload
     },
     HANDLE_SET_USER(state, action) {
-      console.log(state, action)
       state.user = action.payload
     },
   },

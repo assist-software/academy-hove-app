@@ -14,7 +14,6 @@ import { authSendPasswordReset } from '../../services/auth-api-services'
 
 export const AuthForgotPass = () => {
   const onSubmit = ({ email }: Partial<IAuth>): void => {
-    console.log(email)
     authSendPasswordReset(email as string)
   }
   const navigate = useNavigate()

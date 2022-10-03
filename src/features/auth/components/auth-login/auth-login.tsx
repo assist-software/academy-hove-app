@@ -26,7 +26,7 @@ export const AuthLogin = () => {
 
   const onSubmit = async (values: IAuth) => {
     const user = await authLogin(values.email, values.password)
-    console.log(user)
+
     if (!user.message) {
       localStorage.setItem('user1', JSON.stringify(user))
       dispatch(HANDLE_SET_USER({ ...user, isLoggedIn: true }))
@@ -34,12 +34,11 @@ export const AuthLogin = () => {
     } else {
       dispatch(HANDLE_SET_USER({ ...user, error: user.message }))
     }
-    console.log('asdasfasfasfasf', user)
   }
 
   const onLoginWithGoogle = async () => {
     const user = await authSigninWithGoogle()
-    console.log('googleUser', user)
+
     if (!user.message) {
       localStorage.setItem('user1', JSON.stringify(user))
       dispatch(HANDLE_SET_USER({ ...user, isLoggedIn: true }))
@@ -47,7 +46,6 @@ export const AuthLogin = () => {
     } else {
       dispatch(HANDLE_SET_USER({ ...user, error: user.message }))
     }
-    console.log('asdasfasfasfasf', user)
   }
 
   return (

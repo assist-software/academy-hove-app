@@ -8,6 +8,7 @@
   background-color: #fff;
   border: 1px solid #e4e7ec;
   position: relative;
+  margin-bottom: 0 0 2% 0;
 
   .cardDescription {
     display: flex;
@@ -39,7 +40,8 @@
   .cardImage {
     width: 262px;
     height: 162px;
-    border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }
 }
 
@@ -48,11 +50,11 @@
   height: 200px;
   display: flex;
   flex-direction: row;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-radius: 12px;
   background-color: #fff;
   border: 1px solid #e4e7ec;
   padding: 16px 30px;
+  margin-bottom: 20px;
 
   .cardDescription {
     display: flex;
@@ -100,12 +102,78 @@
 
 .cardFavoriteGrid {
   position: absolute;
-  right: 19px;
-  top: 19px;
+  right: 21%;
+  top: 24%;
 }
 
 .cardFavorite {
   position: absolute;
   right: 8px;
   top: 8px;
+}
+
+.finalCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.finalCard {
+  width: 280px;
+  border: 1px solid #e4e7ec;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  height: 200px;
+}
+
+.carouselSeeEverithingLatest {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 18%;
+  top: 11%;
+  cursor: pointer;
+}
+
+.carouselSeeEverithingBigHouses {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 18%;
+  cursor: pointer;
+  top: 43%;
+}
+
+.carouselSeeEverithingSmallHouses {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 18%;
+  cursor: pointer;
+  top: 75%;
+}
+
+.ceva {
+  display: none !important;
+}
+
+.ShowroomHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 20px 0;
+}
+
+.ShowroomSeeEverythingContainer {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.showroomCardContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
