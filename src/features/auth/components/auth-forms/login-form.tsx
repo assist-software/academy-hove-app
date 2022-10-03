@@ -51,7 +51,7 @@ export const LoginForm = () => {
 
   return (
     <>
-      <AuthHeading title={AUTH_PAGE_TITLES.login} subtitle={AUTH_PAGE_SUBTITLES.login} />
+      <AuthHeading title={AUTH_PAGE_TITLES.LOGIN} subtitle={AUTH_PAGE_SUBTITLES.LOGIN} />
       {formErrorText && <ErrorCard text={formErrorText} />}
 
       <div className={styles.authForm}>
@@ -62,10 +62,10 @@ export const LoginForm = () => {
                 name='email'
                 control={control}
                 rules={{
-                  required: AUTH_I18.requiredEmailError,
+                  required: AUTH_I18.REQUIRED_EMAIL_ERROR,
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: AUTH_I18.invalidEmailError,
+                    message: AUTH_I18.INVALID_EMAIL_ERROR,
                   },
                 }}
                 render={({ field, fieldState }) => (
@@ -89,7 +89,7 @@ export const LoginForm = () => {
               <Controller
                 name='password'
                 control={control}
-                rules={{ required: AUTH_I18.requiredPasswordError }}
+                rules={{ required: AUTH_I18.REQUIRED_PASSWORD_ERROR }}
                 render={({ field, fieldState }) => (
                   <Password
                     id={field.name}
@@ -106,7 +106,7 @@ export const LoginForm = () => {
               </label>
             </span>
             {getFormErrorMessage('password')}
-            <p className={styles.authFormInputNote}>{AUTH_I18.passwordConstraint}</p>
+            <p className={styles.authFormInputNote}>{AUTH_I18.PASSWORD_CONSTRAINT}</p>
           </div>
 
           <div className={styles.authFormLoginExtra}>
@@ -119,16 +119,16 @@ export const LoginForm = () => {
                 )}
               />
               <label className={styles.authFormRememberText} htmlFor='rememberMe'>
-                {AUTH_I18.rememberMeCheckboxLabel}
+                {AUTH_I18.REMEMBER_ME_CHECKBOX_LABEL}
               </label>
             </div>
             <Link className={styles.authFormForgotPwd} to='/reset-password'>
-              {AUTH_I18.forgotPasswordText}
+              {AUTH_I18.FORGOT_PASSWORD_TEXT}
             </Link>
           </div>
 
           <Button type='submit' mode='primary' className={styles.authFormButton}>
-            {PRIMARY_BUTTON_TEXT.login}
+            {PRIMARY_BUTTON_TEXT.LOGIN}
           </Button>
         </form>
 
@@ -139,14 +139,14 @@ export const LoginForm = () => {
           icon={<img alt='Google Icon' src={googleLogo} />}
           mode='secondary'
           className={styles.authFormLoginWithGoogle}>
-          {AUTH_I18.loginWithGoogleButton}
+          {AUTH_I18.LOGIN_WITH_GOOGLE_BUTTON}
         </Button>
 
         <div className={styles.authFormLinkContainer}>
           <p className={styles.authFormLinkText}>
-            {AUTH_I18.dontHaveAnAccount}{' '}
+            {AUTH_I18.DONT_HAVE_AN_ACCOUNT}{' '}
             <Link className={styles.authFormLink} to={PAGES_PATHS.SIGN_UP}>
-              {AUTH_I18.primaryButtonSignup}
+              {AUTH_I18.PRIMARY_BUTTON_SIGNUP}
             </Link>
           </p>
         </div>

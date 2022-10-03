@@ -1,9 +1,9 @@
-export const ProfileLabels = {
-  profile: 'Profile',
-  name: 'Full name',
-  gender: 'Gender',
-  date: 'Date of birth',
-  email: 'Email address',
-  phone: 'Phone number',
-  address: 'Address',
+export const PROFILE_LABELS = {
+  PROFILE: 'Profile',
+  NAME: 'Full name',
+  GENDER: 'Gender',
+  DATE: 'Date of birth',
+  EMAIL: 'Email address',
+  PHONE: 'Phone number',
+  ADDRESS: 'Address',
 }

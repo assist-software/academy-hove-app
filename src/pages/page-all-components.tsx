@@ -8,6 +8,7 @@ import { viewType } from 'features/showroom/models/showroom-models'
 
 export const PageAllComponents = () => {
   const [activeView, setActiveView] = useState<viewType>(SHOWROOM_ACTIVE_VIEW.LIST as viewType)
+
   return (
     <div>
       <ShowroomAllComponents />

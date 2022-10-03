@@ -1,7 +1,7 @@
 import { Dialog } from 'primereact/dialog'
 import { InputSwitch } from 'primereact/inputswitch'
 
-import { descriptionLookUpObj, nameLookUpObj } from 'features/notifications/constants/notifications-constants'
+import { DESCRIPTION_LOOK_UP_OBJ, NAME_LOOK_UP_OBJ } from 'features/notifications/constants/notifications-constants'
 import { notificationStatus, notificationTypes } from 'features/notifications/models/notifications-models'
 
 import style from './notification-set-modal.module.scss'
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const NotificationsSetModal = ({ editModal, closeModal, setSetting, currentSettings }: Props) => {
-  const header = !!editModal ? nameLookUpObj[editModal] : ''
+  const header = !!editModal ? NAME_LOOK_UP_OBJ[editModal] : ''
   return (
     <Dialog
       className={style.notificationSettingDialog}
@@ -22,7 +22,7 @@ export const NotificationsSetModal = ({ editModal, closeModal, setSetting, curre
       visible={!!editModal}
       style={{ width: '50vw' }}
       onHide={closeModal}>
-      {!!editModal && <p>{descriptionLookUpObj[editModal]}</p>}
+      {!!editModal && <p>{DESCRIPTION_LOOK_UP_OBJ[editModal]}</p>}
       <div className={style.notificationSettingDialogItem}>
         <p>E-Mail</p>
         <InputSwitch

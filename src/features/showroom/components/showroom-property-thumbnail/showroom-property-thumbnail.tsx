@@ -1,13 +1,13 @@
 import classnames from 'classnames/bind'
 import { Button } from 'primereact/button'
 
-import { ButtonLables } from 'common/constants/constants'
+import { BUTTON_LABELS } from 'common/constants/constants'
 import { UtilService } from 'common/services/util-service'
 
 import favoriteActive from 'features/showroom/assets/favoriteActive.svg'
 import favoriteInactive from 'features/showroom/assets/favoriteInactive.svg'
 import thumbnailImg from 'features/showroom/assets/thumbnail.jpg'
-import { AltImgShowroom } from 'features/showroom/constants/showroom-constants'
+import { ALT_IMG_SHOWROOM } from 'features/showroom/constants/showroom-constants'
 import { IPropertyLite } from 'features/showroom/models/showroom-models'
 import { ShowroomUtilService } from 'features/showroom/services/showroom-util-service'
 
@@ -32,9 +32,9 @@ export const ShowroomPropertyThumbnail = ({ thumbnail, type, role }: Props) => {
   return (
     <div className={style.thumbnail}>
       <div className={cx(style.thumbnaiType, typeStyle, borderStyle)}>
-        <img className={cx(style.thumbnailImage, imageStyle)} src={thumbnailImg} alt={AltImgShowroom.property} />
+        <img className={cx(style.thumbnailImage, imageStyle)} src={thumbnailImg} alt={ALT_IMG_SHOWROOM.PROPERTY} />
         <div className={style.thumbnailFavorite} onClick={() => ShowroomUtilService.handleFavorite(thumbnail.id)}>
-          <img src={thumbnail.favorite ? favoriteActive : favoriteInactive} alt={AltImgShowroom.favorite} />
+          <img src={thumbnail.favorite ? favoriteActive : favoriteInactive} alt={ALT_IMG_SHOWROOM.FAVORITE} />
         </div>
         <div className={cx(style.thumbnailText, textStyle)}>
           <h2 className={cx(style.thumbnailTitle, titleStyle)}>{thumbnail.property}</h2>
@@ -49,21 +49,21 @@ export const ShowroomPropertyThumbnail = ({ thumbnail, type, role }: Props) => {
         <div className={cx(style.thumbnailActions, actionsStyle, type === 'list' && borderActionsStyle)}>
           {thumbnail.status === 'pending' && role !== 'client' && (
             <Button
-              label={ButtonLables.approve}
+              label={BUTTON_LABELS.APPROVE}
               onClick={() => ShowroomUtilService.handleApprove(thumbnail.id)}
               className='smallButton'
             />
           )}
           <div onClick={() => ShowroomUtilService.handleDeleteProprety(thumbnail.id)}>
             {thumbnail.status === 'pending' && role !== 'client' ? (
-              <Button className='p-button-danger p-button-text smallButton' label={ButtonLables.delete} />
+              <Button className='p-button-danger p-button-text smallButton' label={BUTTON_LABELS.DELETE} />
             ) : (
-              <Button className='p-button-danger smallButton' label={ButtonLables.delete} />
+              <Button className='p-button-danger smallButton' label={BUTTON_LABELS.DELETE} />
             )}
           </div>
           <Button
             className='p-button-info p-button-text smallButton'
-            label={ButtonLables.edit}
+            label={BUTTON_LABELS.EDIT}
             onClick={() => ShowroomUtilService.handleEdit(thumbnail.id)}
           />
         </div>

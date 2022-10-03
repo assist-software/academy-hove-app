@@ -33,5 +33,19 @@
       }
     ],
     "no-relative-import-paths/no-relative-import-paths": ["error", { "allowSameFolder": true }]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*constants.ts"],
+      "rules": {
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "default",
+            "format": ["UPPER_CASE"]
+          }
+        ]
+      }
+    }
+  ]
 }
