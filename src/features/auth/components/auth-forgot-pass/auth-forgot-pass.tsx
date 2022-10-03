@@ -2,18 +2,24 @@ import { Formik, Form } from 'formik'
 import { InputText } from 'primereact/inputtext'
 import { Button } from 'primereact/button'
 import { useNavigate } from 'react-router-dom'
-import { AuthValidation } from 'features/auth/schemas/auth-validation'
+import { AuthEmailValidation } from 'features/auth/schemas/auth-validation'
 import { PAGES_PATHS } from 'common/constants/constants'
 import { AUTH_LABELS } from 'features/auth/constants/auth-constants'
 import { AUTH_PLACEHOLDER } from 'features/auth/constants/auth-constants'
 import { AUTH_TEXT } from 'features/auth/constants/auth-constants'
 import { AUTH_BUTTON_TEXT } from 'features/auth/constants/auth-constants'
 import styles from '../../styles/auth-login.module.scss'
+import { IAuth } from 'features/auth/models/IAuth'
+import { authSendPasswordReset } from '../../services/auth-api-services'
 
 export const AuthForgotPass = () => {
+  const onSubmit = ({ email }: Partial<IAuth>): void => {
+    authSendPasswordReset(email as string)
+  }
   const navigate = useNavigate()
+  const initialValues: Partial<IAuth> = { email: '' }
   return (
-    <Formik initialValues={{ email: '', password: '' }} onSubmit={() => {}} validationSchema={AuthValidation()}>
+    <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={AuthEmailValidation()}>
       {({ errors, touched, values, setFieldValue }) => {
         return (
           <Form className={styles.authLoginContainer}>
@@ -28,7 +34,11 @@ export const AuthForgotPass = () => {
             </div>
             <div className={styles.authLoginButtonContainer}>
               <div className={styles.authLoginButtonContainerLogin}>
-                <Button label={AUTH_BUTTON_TEXT.AUTH_FORGOT_PASS_BUTTON_TEXT} className={styles.authLoginBtn} />
+                <Button
+                  label={AUTH_BUTTON_TEXT.AUTH_FORGOT_PASS_BUTTON_TEXT}
+                  className={styles.authLoginBtn}
+                  type='submit'
+                />
               </div>
             </div>
             <div>

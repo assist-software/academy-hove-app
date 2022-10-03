@@ -1,0 +1,180 @@
+.cardContainer {
+  width: 262px;
+  height: 252px;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background-color: #fff;
+  border: 1px solid #e4e7ec;
+  position: relative;
+  margin-bottom: 2%;
+
+  .cardDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 8px 12px;
+
+    h1 {
+      font-weight: 600;
+      font-size: 14px;
+      color: #1c1c1e;
+      margin: 0;
+    }
+
+    p {
+      color: #667085;
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+
+  .cardImportant {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+  }
+
+  .cardImage {
+    width: 262px;
+    height: 162px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+}
+
+.cardContainerGrid {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 12px;
+  background-color: #fff;
+  border: 1px solid #e4e7ec;
+  padding: 16px 30px;
+  margin-bottom: 20px;
+
+  .cardDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 16px 30px;
+
+    h1 {
+      font-weight: 600;
+      font-size: 14px;
+      color: #1c1c1e;
+      margin: 0;
+    }
+
+    p {
+      color: #667085;
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+
+  .cardImportant {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 12px;
+  }
+
+  .cardImage {
+    width: 262px;
+    height: 160px;
+    border-radius: 12px;
+  }
+}
+.cardButtons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 12px;
+  padding: 12px 18px;
+  border: 1px solid #e4e7ec;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.cardFavoriteGrid {
+  position: absolute;
+  right: 21%;
+  top: 24%;
+}
+
+.cardFavorite {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.finalCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.finalCard {
+  width: 280px;
+  border: 1px solid #e4e7ec;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  height: 200px;
+}
+
+.carouselSeeEverithingLatest {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 18%;
+  top: 11%;
+  cursor: pointer;
+}
+
+.carouselSeeEverithingBigHouses {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 18%;
+  cursor: pointer;
+  top: 43%;
+}
+
+.carouselSeeEverithingSmallHouses {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 18%;
+  cursor: pointer;
+  top: 75%;
+}
+
+.ceva {
+  display: none !important;
+}
+
+.ShowroomHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.ShowroomSeeEverythingContainer {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.showroomCardContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
