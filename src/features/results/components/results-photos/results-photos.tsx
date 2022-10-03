@@ -4,7 +4,7 @@ import allPhoto from '../../assets/allPhoto.svg'
 import { Image } from 'primereact/image'
 import { PROPRETY_ALT_IMG, PROPRETY_BUTTON } from 'features/results/constants/results-constants'
 
-export const PropretyPhotos = () => {
+export const Resultshotos = () => {
   return (
     <div className={style.proprety}>
       <Image

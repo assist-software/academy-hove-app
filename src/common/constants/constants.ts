@@ -3,6 +3,7 @@ export const PAGES_PATHS = {
   SIGN_UP: '/signup',
   HOME: '/',
   RESET_PASS: '/reset-password',
+  RESULTS: '/results',
 }
 
 export const BUTTON_LABELS = {
