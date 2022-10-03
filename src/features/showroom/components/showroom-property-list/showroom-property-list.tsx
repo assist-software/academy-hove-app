@@ -3,8 +3,10 @@ import { Carousel } from 'primereact/carousel'
 
 import { ShowroomPropertyThumbnail } from 'features/showroom/components/showroom-property-thumbnail/showroom-property-thumbnail'
 import { ShowroomSeeEverythingLite } from 'features/showroom/components/showroom-see-everything-lite/showroom-see-everything-lite'
-import { SHOWROOM_CAROUSEL_RESPONSIVE_OPTIONS } from 'features/showroom/constants/showroom-constants'
-import { SHOWROOM_HOUSE_THUMBNAIL } from 'features/showroom/constants/showroom-mock-data'
+import {
+  SHOWROOM_CAROUSEL_RESPONSIVE_OPTIONS,
+  SHOWROOM_HOUSE_THUMBNAIL,
+} from 'features/showroom/constants/showroom-mock-data'
 import { IPropertyLite } from 'features/showroom/models/showroom-models'
 
 import styles from './showroom-property-list.module.scss'

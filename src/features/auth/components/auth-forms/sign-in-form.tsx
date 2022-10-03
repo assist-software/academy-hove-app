@@ -51,7 +51,7 @@ export const SignInForm = () => {
 
   return (
     <>
-      <AuthHeading title={AUTH_PAGE_TITLES.signup} subtitle={AUTH_PAGE_SUBTITLES.signup} />
+      <AuthHeading title={AUTH_PAGE_TITLES.SIGNUP} subtitle={AUTH_PAGE_SUBTITLES.SIGNUP} />
       {formErrorText && <ErrorCard text={formErrorText} />}
 
       <>
@@ -62,9 +62,9 @@ export const SignInForm = () => {
           icon={<img alt='Google Icon' src={googleLogo} />}
           className={styles.authFormSignWithGoogle}
           mode='secondary'>
-          {AUTH_I18.signWithGoogleButton}
+          {AUTH_I18.SIGN_WITH_GOOGLE_BUTTON}
         </Button>
-        <Divider children={AUTH_I18.dividerText} />
+        <Divider children={AUTH_I18.DIVIDER_TEXT} />
       </>
 
       <div className={styles.authForm}>
@@ -75,10 +75,10 @@ export const SignInForm = () => {
                 name='email'
                 control={control}
                 rules={{
-                  required: AUTH_I18.requiredEmailError,
+                  required: AUTH_I18.REQUIRED_EMAIL_ERROR,
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: AUTH_I18.invalidEmailError,
+                    message: AUTH_I18.INVALID_EMAIL_ERROR,
                   },
                 }}
                 render={({ field, fieldState }) => (
@@ -102,7 +102,7 @@ export const SignInForm = () => {
               <Controller
                 name='password'
                 control={control}
-                rules={{ required: AUTH_I18.requiredPasswordError }}
+                rules={{ required: AUTH_I18.REQUIRED_PASSWORD_ERROR }}
                 render={({ field, fieldState }) => (
                   <Password
                     feedback
@@ -120,19 +120,19 @@ export const SignInForm = () => {
               </label>
             </span>
             {getFormErrorMessage('password')}
-            <p className={styles.authFormInputNote}>{AUTH_I18.passwordConstraint}</p>
+            <p className={styles.authFormInputNote}>{AUTH_I18.PASSWORD_CONSTRAINT}</p>
           </div>
 
           <Button type='submit' mode='primary' className={styles.authFormButton}>
-            {PRIMARY_BUTTON_TEXT.signup}
+            {PRIMARY_BUTTON_TEXT.SIGNUP}
           </Button>
         </form>
 
         <div className={styles.authFormLinkContainer}>
           <p className={styles.authFormLinkText}>
-            {AUTH_I18.alreadyHaveAcc}{' '}
+            {AUTH_I18.ALREADY_HAVE_ACCOUNT}{' '}
             <Link className={styles.authFormLink} to={PAGES_PATHS.LOG_IN}>
-              {AUTH_I18.titleLogin}
+              {AUTH_I18.TITLE_LOGIN}
             </Link>
           </p>
         </div>

@@ -5,13 +5,13 @@ export const PAGES_PATHS = {
   RESET_PASS: '/reset-password',
 }
 
-export const ButtonLables = {
-  approve: 'Approve',
-  delete: 'Delete',
-  edit: 'Edit',
+export const BUTTON_LABELS = {
+  APPROVE: 'Approve',
+  DELETE: 'Delete',
+  EDIT: 'Edit',
 }
 
-export const HttpMethods = {
+export const HTTP_METHODS = {
   POST: 'post',
   GET: 'get',
   PUT: 'put',

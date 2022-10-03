@@ -1,11 +1,11 @@
-export const MessagesLabel = {
-  messages: 'Messages',
+export const MESSAGES_LABELS = {
+  MESSAGES: 'Messages',
 }
 
-export const MessagesAltImg = {
-  delete: 'Delete Icon',
-  block: 'Block Icon',
-  avatar: 'User Avatar',
-  chatbot: 'Chatbot Icon',
-  send: 'Send Icon',
+export const MESSAGED_ALT_IMG = {
+  DELETE: 'Delete Icon',
+  BLOCK: 'Block Icon',
+  AVATAR: 'User Avatar',
+  CHAT_BOT: 'Chatbot Icon',
+  SEND: 'Send Icon',
 }

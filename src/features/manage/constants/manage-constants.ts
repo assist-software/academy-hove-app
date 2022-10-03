@@ -1,11 +1,11 @@
-export const ManageLabels = {
-  addNew: 'Add new',
-  details: 'Details',
-  photo: 'Photos & videos',
-  description: 'Description',
-  contact: 'Contact info',
+export const MANAGE_LABELS = {
+  ADD_NEW: 'Add new',
+  DETAILS: 'Details',
+  PHOTO: 'Photos & videos',
+  DESCRIPTION: 'Description',
+  CONTACT: 'Contact info',
 }
 
-export const ManageAltImg = {
-  add: 'Add new Icon',
+export const MANAGE_ALT_IMG = {
+  ADD: 'Add new Icon',
 }

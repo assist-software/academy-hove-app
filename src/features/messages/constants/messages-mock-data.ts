@@ -1,23 +1,23 @@
 export const MESSAGES_CHAT_LIST = [
   {
-    name: 'Jordan Henderson',
+    NAME: 'Jordan Henderson',
     proprety: 'Dreamy Treehouse Above Park City',
     lastMessagges: 'Fantastic.',
-    avatar: '',
+    AVATAR: '',
     time: '28.06',
   },
   {
-    name: 'Simone Gellar',
+    NAME: 'Simone Gellar',
     proprety: 'Mother Eve tiny house near Zion National Park',
     lastMessagges: 'Definitely tempting and that sounds',
-    avatar: '',
+    AVATAR: '',
     time: '17.06',
   },
   {
-    name: 'Kaylan Marie',
+    NAME: 'Kaylan Marie',
     proprety: 'Dreamy Treehouse Above Park City',
     lastMessagges: 'Would you like to discuss more about the',
-    avatar: '',
+    AVATAR: '',
     time: '15.06',
   },
 ]

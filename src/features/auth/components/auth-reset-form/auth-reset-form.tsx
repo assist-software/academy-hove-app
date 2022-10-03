@@ -23,7 +23,7 @@ interface Props {
 export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formErrorText }: Props) => {
   const [searchParams] = useSearchParams()
 
-  const mode = !searchParams.get('oobCode') ? 'sendLink' : 'changePwd'
+  const mode = !searchParams.get('oobCode') ? 'SEND_LINK' : 'CHANGE_PWD'
 
   const defaultValues = {
     email: '',
@@ -39,7 +39,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
   } = useForm({ defaultValues })
 
   const onSubmit = (data: any) => {
-    if (mode === 'changePwd') {
+    if (mode === 'CHANGE_PWD') {
       resetPassword({ ...data, oobCode: searchParams.get('oobCode') })
       reset()
       return
@@ -53,22 +53,22 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
 
   return (
     <>
-      <AuthHeading title={AUTH_I18.resetPageTitle} subtitle={AUTH_I18.resetPageSubtitle} />
+      <AuthHeading title={AUTH_I18.RESET_PAGE_TITLE} subtitle={AUTH_I18.RESET_PAGE_SUBTITLE} />
       {formErrorText && <ErrorCard text={formErrorText} />}
 
       <div className={styles.resetPasswdForm}>
         <form onSubmit={handleSubmit(onSubmit)} className='p-fluid'>
-          {mode === 'sendLink' && (
+          {mode === 'SEND_LINK' && (
             <div className={styles.resetPasswdField}>
               <span className='p-float-label p-input-icon-right'>
                 <Controller
                   name='email'
                   control={control}
                   rules={{
-                    required: AUTH_I18.requiredEmailError,
+                    required: AUTH_I18.REQUIRED_EMAIL_ERROR,
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                      message: AUTH_I18.invalidEmailError,
+                      message: AUTH_I18.INVALID_EMAIL_ERROR,
                     },
                   }}
                   render={({ field, fieldState }) => (
@@ -88,14 +88,14 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
               {getFormErrorMessage('email')}
             </div>
           )}
-          {mode === 'changePwd' && (
+          {mode === 'CHANGE_PWD' && (
             <>
               <div className={styles.resetPasswdField}>
                 <span className='p-float-label p-input-icon-right'>
                   <Controller
                     name='password'
                     control={control}
-                    rules={{ required: AUTH_I18.requiredPasswordError }}
+                    rules={{ required: AUTH_I18.REQUIRED_PASSWORD_ERROR }}
                     render={({ field, fieldState }) => (
                       <Password
                         id={field.name}
@@ -109,7 +109,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
                   />
 
                   <label htmlFor='password' className={classNames({ 'p-error': !!errors.email })}>
-                    {AUTH_I18.password}
+                    {AUTH_I18.PASSWORD}
                   </label>
                 </span>
                 {getFormErrorMessage('password')}
@@ -119,7 +119,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
                   <Controller
                     name='confirmPassword'
                     control={control}
-                    rules={{ required: AUTH_I18.requiredPasswordError }}
+                    rules={{ required: AUTH_I18.REQUIRED_PASSWORD_ERROR }}
                     render={({ field, fieldState }) => (
                       <Password
                         feedback={false}
@@ -134,7 +134,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
                   />
 
                   <label htmlFor='confirmPassword' className={classNames({ 'p-error': !!errors.email })}>
-                    {AUTH_I18.confirmPassword}
+                    {AUTH_I18.CONFIRM_PASSWORD}
                   </label>
                 </span>
                 {getFormErrorMessage('confirmPassword')}
@@ -146,7 +146,7 @@ export const ResetPasswdForm = ({ sendResetPasswordRequest, resetPassword, formE
 
           <p className={styles.resetPasswdLink}>
             <Link className={styles.resetPasswdLink} to={PAGES_PATHS.LOG_IN}>
-              {AUTH_I18.backToLogin}
+              {AUTH_I18.BACK_TO_LOGIN}
             </Link>
           </p>
         </form>
