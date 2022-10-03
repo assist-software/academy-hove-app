@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { collection, getDocs, query, where } from '@firebase/firestore'
 import { db } from '../../firebase/firebase-config'
-import { IProperty, IProperty1 } from 'features/showroom/models/showroom-models'
+import { IProperty1 } from 'features/showroom/models/showroom-models'
 
 export const Listing = () => {
   const dataCollectionLatest = collection(db, 'Latest')

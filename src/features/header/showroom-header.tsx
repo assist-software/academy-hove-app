@@ -37,22 +37,8 @@ export const ShowroomHeader = () => {
     { name: 'Messages' },
     { name: 'Logout' },
   ]
-  {
-    //  <p onClick={handleChangeValue}>{exemple}</p>
-    //   <div>Welcome back, {user?.email} !</div>
-    //   <p
-    //   onClick={() => {
-    //     authLogout()
-    //     dispatch(HANDLE_SET_USER({ access_token: '', display_name: '', email: '', photoUrl: '', isLoggedIn: false }))
-    //       localStorage.clear()
-    //     }}
-    //     style={{ cursor: 'pointer' }}>
-    //     Logout
-    //   </p>
-  }
 
   const dispatch = useAppDispatch()
-  const { exemple } = useAppSelector((state) => state.exemple)
   const { user } = useAppSelector((state) => state.auth)
 
   return (
