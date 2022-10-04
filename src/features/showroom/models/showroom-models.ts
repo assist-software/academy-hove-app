@@ -14,4 +14,8 @@ export interface IProperty1 {
   isFavorite: boolean
   shortDescription: string
   type: string
+  image1?: string
+  image2?: string
+  image3?: string
+  image4?: string
 }

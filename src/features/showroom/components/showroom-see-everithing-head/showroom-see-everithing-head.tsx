@@ -32,7 +32,6 @@ export const ShowroomSeeEverithingHead = () => {
           snapshot.docs.forEach((doc: any) => {
             info.push({ ...doc.data() })
           })
-          console.log('123123', info)
           setCards(info)
         })
         .catch((err) => {
@@ -45,7 +44,6 @@ export const ShowroomSeeEverithingHead = () => {
           snapshot.docs.forEach((doc: any) => {
             info.push({ ...doc.data() })
           })
-          console.log('123123', info)
           setCards(info)
         })
         .catch((err) => {
@@ -58,7 +56,6 @@ export const ShowroomSeeEverithingHead = () => {
           snapshot.docs.forEach((doc: any) => {
             info.push({ ...doc.data() })
           })
-          console.log('123123', info)
           setCards(info)
         })
         .catch((err) => {
