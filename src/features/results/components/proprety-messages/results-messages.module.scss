@@ -1,0 +1,29 @@
+@import 'styles/convert.scss';
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  width: rem(750px);
+  gap: rem(12px);
+  margin: rem(32px) 0 rem(68px) 0;
+}
+
+.messagesTextarea {
+  width: 100%;
+  height: rem(150px);
+}
+
+.messagesButton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.messagesButtonStyle {
+  width: rem(165px);
+}
+
+.messagesButtonDisable {
+  width: rem(165px);
+  pointer-events: none;
+}
