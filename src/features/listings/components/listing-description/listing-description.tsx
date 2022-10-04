@@ -5,7 +5,7 @@ import { IProperty1 } from 'features/showroom/models/showroom-models'
 import styles from 'features/listings/styles/listing.module.scss'
 import profilePhoto from 'features/listings/assets/profile_logo.png'
 import { Button } from 'primereact/button'
-import { SELLER_CONTAINER } from 'features/listings/constants/listing-constants'
+import { DESCRIPTION_CONTAINER, SELLER_CONTAINER } from 'features/listings/constants/listing-constants'
 
 export const ListingDescription = () => {
   const dataCollectionLatest = collection(db, 'Latest')
@@ -33,13 +33,13 @@ export const ListingDescription = () => {
     <>
       <div className={styles.lsitingDescriptionContainer}>
         <div className={styles.descriptionContainer}>
-          <div className={styles.space}>Description</div>
+          <div className={styles.space}>{DESCRIPTION_CONTAINER.DESCRIPTION}</div>
           <div className={styles.descriptionStyle}>{cards[0]?.description}</div>
         </div>
         <div className={styles.sellerContainerWithButton}>
           <div className={styles.sellerContainer}>
-            <div style={{ marginRight: '20px' }}>
-              <img src={profilePhoto} alt='profile' />
+            <div className={styles.profileImageContainer}>
+              <img src={profilePhoto} alt={DESCRIPTION_CONTAINER.ALT} />
             </div>
             <div>
               <h4>{SELLER_CONTAINER.NAME}</h4>
@@ -50,7 +50,7 @@ export const ListingDescription = () => {
           </div>
           <div>
             <Button className={styles.purchaseButton} onClick={handleClickMessage}>
-              Purchase
+              {DESCRIPTION_CONTAINER.BUTTON_PURCHASE}
             </Button>
             <Button className='p-button-outlined' aria-label='Favorite' icon='pi pi-heart' />
           </div>

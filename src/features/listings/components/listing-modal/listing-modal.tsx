@@ -6,6 +6,7 @@ import { IProperty1 } from 'features/showroom/models/showroom-models'
 import { useEffect, useState } from 'react'
 import shareIcon from 'features/listings/assets/LeftIcon.png'
 import heartIcon from 'features/listings/assets/heart.png'
+import { IMAGE_ALT_CONTAINER } from 'features/listings/constants/listing-constants'
 
 export const ListingModal = ({ closeModal }: any) => {
   const dataCollectionLatest = collection(db, 'Latest')
@@ -42,30 +43,42 @@ export const ListingModal = ({ closeModal }: any) => {
           </div>
           <div className={styles.modalShareAndFavContainer}>
             <div className={styles.modalShareIconContainer}>
-              <img src={shareIcon} alt='Share' />
+              <img src={shareIcon} alt={IMAGE_ALT_CONTAINER.SHARE} />
               Share
             </div>
             <div className={styles.modalHeartIconContainer}>
-              <img src={heartIcon} alt='Heart' />
+              <img src={heartIcon} alt={IMAGE_ALT_CONTAINER.HEART} />
               Save
             </div>
           </div>
           <div className={styles.modalImageContainer}>
             <div className={styles.gridContainer}>
               <div className={styles.gridItem0}>
-                <img className={styles.firstImageStyle} src={cards[0]?.image} alt='house' />
+                <img className={styles.firstImageStyle} src={cards[0]?.image} alt={IMAGE_ALT_CONTAINER.ALT_IMAGE} />
               </div>
               <div className={styles.gridItem1}>
-                <img className={styles.secondaryImageStyle} src={cards[0]?.image1} alt='house' />
+                <img
+                  className={styles.secondaryImageStyle}
+                  src={cards[0]?.image1}
+                  alt={IMAGE_ALT_CONTAINER.ALT_IMAGE}
+                />
               </div>
               <div className={styles.gridItem2}>
-                <img className={styles.secondaryImageStyle} src={cards[0]?.image2} alt='house' />
+                <img
+                  className={styles.secondaryImageStyle}
+                  src={cards[0]?.image2}
+                  alt={IMAGE_ALT_CONTAINER.ALT_IMAGE}
+                />
               </div>
               <div className={styles.gridItem3}>
-                <img className={styles.firstImageStyle} src={cards[0]?.image3} alt='house' />
+                <img className={styles.firstImageStyle} src={cards[0]?.image3} alt={IMAGE_ALT_CONTAINER.ALT_IMAGE} />
               </div>
               <div className={styles.gridItem4}>
-                <img className={styles.secondaryImageStyle} src={cards[0]?.image4} alt='house' />
+                <img
+                  className={styles.secondaryImageStyle}
+                  src={cards[0]?.image4}
+                  alt={IMAGE_ALT_CONTAINER.ALT_IMAGE}
+                />
               </div>
             </div>
           </div>

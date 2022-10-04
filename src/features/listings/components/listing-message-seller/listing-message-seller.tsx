@@ -2,6 +2,7 @@ import { Button } from 'primereact/button'
 import { InputTextarea } from 'primereact/inputtextarea'
 import { useState } from 'react'
 import styles from 'features/listings/styles/listing.module.scss'
+import { MESSAGE_SELLER_CONTAINER } from 'features/listings/constants/listing-constants'
 
 export const ListingMessageSeller = () => {
   const [value2, setValue2] = useState('')
@@ -10,7 +11,7 @@ export const ListingMessageSeller = () => {
     <>
       <div>
         <div>
-          <div>Message the seller</div>
+          <div>{MESSAGE_SELLER_CONTAINER.MESSAGE}</div>
           <InputTextarea
             className={styles.messageTextArea}
             value={value2}
@@ -18,7 +19,7 @@ export const ListingMessageSeller = () => {
             rows={5}
             cols={30}
             autoResize
-            placeholder='Send Message'
+            placeholder={MESSAGE_SELLER_CONTAINER.SEND_MESSAGE}
           />
         </div>
         <div className={styles.spacingButton}>

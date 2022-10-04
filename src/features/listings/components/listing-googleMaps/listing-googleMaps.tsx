@@ -4,6 +4,7 @@ import { db } from '../../../../firebase/firebase-config'
 import { IProperty1 } from 'features/showroom/models/showroom-models'
 import styles from 'features/listings/styles/listing.module.scss'
 import { GoogleMaps } from '../google-maps/google-maps'
+import { GOOGLE_MAPS_CONTAINER } from 'features/listings/constants/listing-constants'
 export const ListingGoogleMaps = () => {
   const dataCollectionLatest = collection(db, 'Latest')
   const [cards, setCards] = useState<IProperty1[]>([])
@@ -25,7 +26,7 @@ export const ListingGoogleMaps = () => {
   return (
     <>
       <div className={styles.listingGoogleMapsContainer}>
-        <div className={styles.space}>Location</div>
+        <div className={styles.space}>{GOOGLE_MAPS_CONTAINER.LOCATION}</div>
         <div className={styles.space}>{cards[0]?.location}</div>
         <GoogleMaps />
       </div>

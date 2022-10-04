@@ -4,6 +4,7 @@ import { db } from '../../../../firebase/firebase-config'
 import { IProperty1 } from 'features/showroom/models/showroom-models'
 import shareLogo from 'features/listings/assets/LeftIcon.png'
 import styles from 'features/listings/styles/listing.module.scss'
+import { IMAGE_ALT_CONTAINER } from 'features/listings/constants/listing-constants'
 
 export const ListingTitleHeader = () => {
   const dataCollectionLatest = collection(db, 'Latest')
@@ -35,7 +36,7 @@ export const ListingTitleHeader = () => {
           <div>
             <img src={shareLogo} alt='Share' />
           </div>
-          <div className={styles.shareButtonStyle}>Share</div>
+          <div className={styles.shareButtonStyle}>{IMAGE_ALT_CONTAINER.SHARE}</div>
         </div>
       </div>
     </>

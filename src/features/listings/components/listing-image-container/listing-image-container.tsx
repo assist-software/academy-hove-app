@@ -6,6 +6,7 @@ import styles from 'features/listings/styles/listing.module.scss'
 import { Button } from 'primereact/button'
 import showPhotoIcon from 'features/listings/assets/showPhoto.png'
 import { ListingModal } from '../listing-modal/listing-modal'
+import { IMAGE_ALT_CONTAINER } from 'features/listings/constants/listing-constants'
 export const ListingImageContainer = () => {
   const dataCollectionLatest = collection(db, 'Latest')
   const [cards, setCards] = useState<IProperty1[]>([])
@@ -33,18 +34,18 @@ export const ListingImageContainer = () => {
     <>
       <div className={styles.imageContainer}>
         <div className={styles.firstContainerPhoto}>
-          <img className={styles.principalImage} src={cards[0]?.image} alt='house' />
+          <img className={styles.principalImage} src={cards[0]?.image} alt={IMAGE_ALT_CONTAINER.ALT_IMAGE} />
         </div>
         <div className={styles.secondContainerPhoto}>
-          <img src={cards[0]?.image1} alt='house' />
-          <img className={styles.image2} src={cards[0]?.image2} alt='house' />
-          <img src={cards[0]?.image3} alt='house' />
-          <img className={styles.image4} src={cards[0]?.image4} alt='house' />
+          <img src={cards[0]?.image1} alt={IMAGE_ALT_CONTAINER.ALT_IMAGE} />
+          <img className={styles.image2} src={cards[0]?.image2} alt={IMAGE_ALT_CONTAINER.ALT_IMAGE} />
+          <img src={cards[0]?.image3} alt={IMAGE_ALT_CONTAINER.ALT_IMAGE} />
+          <img className={styles.image4} src={cards[0]?.image4} alt={IMAGE_ALT_CONTAINER.ALT_IMAGE} />
         </div>
         <div className={styles.showAllPhotoContainer}>
           <Button
             className={styles.showAllPhotoStyle}
-            icon={<img src={showPhotoIcon} alt='points' />}
+            icon={<img src={showPhotoIcon} alt={IMAGE_ALT_CONTAINER.ICON} />}
             label='Show all photos'
             onClick={() => {
               setIsModalOpened(true)
