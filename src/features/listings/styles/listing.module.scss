@@ -175,6 +175,7 @@
   .firstContainerPhoto {
     img {
       border-radius: 12px;
+      width: 100%;
     }
   }
   .lsitingDescriptionContainer {
@@ -190,11 +191,22 @@
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 690px) {
   .imageContainer,
-  .listingHeaderContainer,
-  .descriptionContainer {
+  .listingHeaderContainer {
     display: flex;
     justify-content: center;
+    width: 90%;
+  }
+  .descriptionContainer {
+    width: 50% !important;
+    overflow-y: scroll !important;
+    height: 25vh;
+  }
+  .firstContainerPhoto {
+    img {
+      border-radius: 12px;
+      width: 50%;
+    }
   }
 }
