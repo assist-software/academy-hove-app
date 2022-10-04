@@ -1,41 +1,41 @@
 @import 'styles/convert.scss';
 
-.test {
+.profileShowDetailsWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.details {
+.profileShowDetails {
   border-bottom: 1px solid var(--gray-200);
   padding: 0 0 rem(16px) 0;
   margin: 0 0 rem(20px) 0;
 }
 
-.detailsContent {
+.profileShowDetailsContent {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.detailsTitle {
+.profileShowDetailsTitle {
   color: var(--gray-700);
   font-size: rem(16px);
 }
 
-.detailsData {
+.profileShowDetailsData {
   color: var(--gray-400);
   font-size: rem(14px);
   font-weight: 400;
 }
 
-.detailsEdit {
+.profileShowDetailsEdit {
   color: var(--primary-500);
   font-size: 14px;
   cursor: pointer;
   padding: 0 rem(12px) 0 0;
 }
 
-.detailsChild {
+.profileShowDetailsChild {
   margin-top: rem(26px);
 }

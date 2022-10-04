@@ -1,17 +1,19 @@
-import classnames from 'classnames/bind'
-
-import style from './profile-edit-name.module.scss'
-import commonStyle from '../../style/profile-style.module.scss'
-import { Button } from 'common/components/Button/Button'
-import { InputText } from 'primereact/inputtext'
 import { ChangeEvent, useEffect, useState } from 'react'
-import { ProfileInputLabels, ProfilePlaceholder } from 'features/profile/constants/profile-constants'
+
+import classnames from 'classnames/bind'
+import { InputText } from 'primereact/inputtext'
+
+import { Button } from 'common/components/Button/Button'
+
+import { PROFILE_INPUTS_LABELS, PROFILE_PLACEHOLDER } from 'features/profile/constants/profile-constants'
+
+import styles from './profile-edit-name.module.scss'
 
 export const ProfileEditName = () => {
   const [copyFirstName, setCopyFirstName] = useState<string>('James')
   const [copyLastName, setCopyLastName] = useState<string>('Milner')
   const [isDisabled, setIsDisabled] = useState<boolean>(false)
-  const cx = classnames.bind(style)
+  const cx = classnames.bind(styles)
 
   useEffect(() => {
     if (copyFirstName !== '' && copyLastName !== '') {
@@ -34,34 +36,28 @@ export const ProfileEditName = () => {
   }
 
   return (
-    <div className={commonStyle.profileContent}>
-      <div className={style.editNameForm}>
-        <div className={style.editNameInput}>
-          <p>{ProfileInputLabels.firstName}</p>
+    <div className={styles.editNameContent}>
+      <div className={styles.editNameForm}>
+        <div className={styles.editNameInput}>
+          <p>{PROFILE_INPUTS_LABELS.FIRST_NAME}</p>
           <InputText
-            placeholder={ProfilePlaceholder.firstName}
+            placeholder={PROFILE_PLACEHOLDER.FIRST_NAME}
             value={copyFirstName}
             onChange={handleFirstName}
             className={cx(!copyFirstName && 'p-invalid')}
           />
         </div>
-        <div className={style.editNameInput}>
-          <p>{ProfileInputLabels.lastName}</p>
+        <div className={styles.editNameInput}>
+          <p>{PROFILE_INPUTS_LABELS.LAST_NAME}</p>
           <InputText
-            placeholder={ProfilePlaceholder.lastName}
+            placeholder={PROFILE_PLACEHOLDER.LAST_NAME}
             value={copyLastName}
             onChange={handleLastName}
             className={cx(!copyLastName && 'p-invalid')}
           />
         </div>
       </div>
-      <Button
-        mode='primary'
-        children='Save'
-        onClick={handleSubmit}
-        disabled={isDisabled}
-        className={commonStyle.buttonStyle}
-      />
+      <Button mode='primary' children='Save' onClick={handleSubmit} disabled={isDisabled} style={{ width: '117px' }} />
     </div>
   )
 }

@@ -1,15 +1,16 @@
-import classnames from 'classnames/bind'
-
-import commonStyle from '../../style/profile-style.module.scss'
-import { InputMask, InputMaskChangeParams } from 'primereact/inputmask'
 import { useEffect, useState } from 'react'
+
+import classNames from 'classnames'
+import { InputMask, InputMaskChangeParams } from 'primereact/inputmask'
+
 import { Button } from 'common/components/Button/Button'
-import { ProfileInputLabels } from 'features/profile/constants/profile-constants'
+
+import { PROFILE_INPUTS_LABELS } from 'features/profile/constants/profile-constants'
+import { ProfileLabel } from 'features/profile/components/profile-label/profile-label'
 
 export const ProfileEditPhone = () => {
   const [copyPhone, setCopyPhone] = useState<string>('+40747854493')
   const [isDisabled, setIsDisabled] = useState<boolean>(false)
-  const cx = classnames.bind(commonStyle)
 
   useEffect(() => {
     if (copyPhone) {
@@ -29,24 +30,23 @@ export const ProfileEditPhone = () => {
   }
 
   return (
-    <div className={commonStyle.profileContent}>
-      <div className={commonStyle.profileLabel}>
-        <p>{ProfileInputLabels.phone}</p>
-        <InputMask
-          mask='+99 999 999 999'
-          value={copyPhone}
-          onChange={handleChangePhone}
-          className={cx(isDisabled && 'p-invalid')}
+    <ProfileLabel>
+      <p>{PROFILE_INPUTS_LABELS.PHONE}</p>
+      <InputMask
+        mask='+99 999 999 999'
+        value={copyPhone}
+        onChange={handleChangePhone}
+        className={classNames(isDisabled && 'p-invalid')}
+      />
+      <div>
+        <Button
+          mode='primary'
+          children='Save'
+          disabled={isDisabled}
+          onClick={handleSubmit}
+          style={{ width: '117px' }}
         />
       </div>
-
-      <Button
-        mode='primary'
-        children='Save'
-        disabled={isDisabled}
-        onClick={handleSubmit}
-        className={commonStyle.buttonStyle}
-      />
-    </div>
+    </ProfileLabel>
   )
 }

@@ -1,5 +1,6 @@
 import { FC, ReactNode, useState } from 'react'
-import style from './profile-show-details.module.scss'
+
+import styles from './profile-show-details.module.scss'
 
 interface IProps {
   title: string
@@ -10,17 +11,17 @@ interface IProps {
 export const ProfileShowDetails: FC<IProps> = ({ child, title, data }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
-    <div className={style.details}>
-      <div className={style.test}>
-        <div className={style.detailsContent}>
-          <p className={style.detailsTitle}>{title}</p>
-          {!isOpen && <p className={style.detailsData}>{data}</p>}
+    <div className={styles.profileShowDetails}>
+      <div className={styles.profileShowDetailsWrapper}>
+        <div className={styles.profileShowDetailsContent}>
+          <p className={styles.profileShowDetailsTitle}>{title}</p>
+          {!isOpen && <p className={styles.profileShowDetailsData}>{data}</p>}
         </div>
-        <p className={style.detailsEdit} onClick={() => setIsOpen(!isOpen)}>
+        <p className={styles.profileShowDetailsEdit} onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? 'Cancel' : 'Edit'}
         </p>
       </div>
-      {isOpen && <div className={style.detailsChild}>{child}</div>}
+      {isOpen && <div className={styles.profileShowDetailsChild}>{child}</div>}
     </div>
   )
 }

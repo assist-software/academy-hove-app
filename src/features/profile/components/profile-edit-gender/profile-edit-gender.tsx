@@ -1,9 +1,11 @@
-import commonStyle from '../../style/profile-style.module.scss'
+import { useState } from 'react'
 
 import { Dropdown, DropdownChangeParams } from 'primereact/dropdown'
-import { useState } from 'react'
+
 import { Button } from 'common/components/Button/Button'
-import { ProfileInputLabels, ProfilePlaceholder } from 'features/profile/constants/profile-constants'
+
+import { PROFILE_INPUTS_LABELS, PROFILE_PLACEHOLDER } from 'features/profile/constants/profile-constants'
+import { ProfileLabel } from 'features/profile/components/profile-label/profile-label'
 
 export const ProfileEditGender = () => {
   const [copyGender, setCopyGender] = useState<string>('Male')
@@ -21,18 +23,18 @@ export const ProfileEditGender = () => {
   }
 
   return (
-    <div className={commonStyle.profileContent}>
-      <div className={commonStyle.profileLabel}>
-        <p>{ProfileInputLabels.gender}</p>
-        <Dropdown
-          value={copyGender}
-          options={citySelectItems}
-          onChange={handleChangeGender}
-          placeholder={ProfilePlaceholder.gender}
-          required={true}
-        />
+    <ProfileLabel>
+      <p>{PROFILE_INPUTS_LABELS.GENDER}</p>
+      <Dropdown
+        value={copyGender}
+        options={citySelectItems}
+        onChange={handleChangeGender}
+        placeholder={PROFILE_PLACEHOLDER.GENDER}
+        required={true}
+      />
+      <div>
+        <Button mode='primary' children='Save' onClick={handleSubmit} style={{ width: '117px' }} />
       </div>
-      <Button mode='primary' children='Save' onClick={handleSubmit} className={commonStyle.buttonStyle} />
-    </div>
+    </ProfileLabel>
   )
 }

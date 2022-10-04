@@ -1,9 +1,11 @@
 import { useState } from 'react'
 
-import commonStyle from '../../style/profile-style.module.scss'
-import { Button } from 'common/components/Button/Button'
 import { Calendar } from 'primereact/calendar'
-import { ProfileInputLabels, ProfilePlaceholder } from 'features/profile/constants/profile-constants'
+
+import { Button } from 'common/components/Button/Button'
+
+import { PROFILE_INPUTS_LABELS, PROFILE_PLACEHOLDER } from 'features/profile/constants/profile-constants'
+import { ProfileLabel } from 'features/profile/components/profile-label/profile-label'
 
 export const ProfileEditBirth = () => {
   const [copyDate, setCopyDate] = useState<any>('06/01/1999')
@@ -21,18 +23,17 @@ export const ProfileEditBirth = () => {
   }
 
   return (
-    <div className={commonStyle.profileContent}>
-      <div className={commonStyle.profileLabel}>
-        <p>{ProfileInputLabels.birth}</p>
-        <Calendar
-          value={copyDate}
-          onChange={handleChangeDate}
-          dateFormat='dd/mm/yy'
-          showIcon={true}
-          placeholder={copyDate ? copyDate : ProfilePlaceholder.birth}
-        />
-      </div>
-      <Button mode='primary' children='Save' onClick={handleSubmit} className={commonStyle.buttonStyle} />
-    </div>
+    <ProfileLabel>
+      <p>{PROFILE_INPUTS_LABELS.BIRTH}</p>
+      <Calendar
+        value={copyDate}
+        onChange={handleChangeDate}
+        dateFormat='dd/mm/yy'
+        showIcon={true}
+        placeholder={copyDate ? copyDate : PROFILE_PLACEHOLDER.BIRTH}
+      />
+
+      <Button mode='primary' children='Save' onClick={handleSubmit} style={{ width: '117px' }} />
+    </ProfileLabel>
   )
 }

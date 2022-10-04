@@ -1,63 +1,64 @@
-import style from './profile-edit-address.module.scss'
-import commonStyle from '../../style/profile-style.module.scss'
-import { ProfileInputLabels, ProfilePlaceholder } from 'features/profile/constants/profile-constants'
-import { ChangeEvent, useEffect, useState } from 'react'
+import { Controller, useForm } from 'react-hook-form'
+
 import { InputText } from 'primereact/inputtext'
+
 import { Button } from 'common/components/Button/Button'
 
+import { PROFILE_INPUTS_LABELS, PROFILE_PLACEHOLDER } from 'features/profile/constants/profile-constants'
+
+import styles from './profile-edit-address.module.scss'
+
 export const ProfileEditAddress = () => {
-  const [isDisabled, setIsDisabled] = useState<boolean>(false)
-  const [copyAddress, setCopyAddress] = useState<string>('')
-  const [copyCountry, setCopyCountry] = useState<string>('')
-  const [copyCity, setCopyCity] = useState<string>('')
-
-  useEffect(() => {
-    if (copyAddress && copyCountry && copyCity) {
-      setIsDisabled(false)
-    } else {
-      return setIsDisabled(true)
-    }
-  }, [copyAddress, copyCountry, copyCity])
-
-  const handleChangeCity = (e: ChangeEvent<HTMLInputElement>) => {
-    setCopyCity(e.target.value)
+  const defaultValues = {
+    country: '',
+    city: '',
+    address: '',
   }
 
-  const handleChangeCountry = (e: ChangeEvent<HTMLInputElement>) => {
-    setCopyCountry(e.target.value)
-  }
+  const { control, reset, handleSubmit } = useForm({ defaultValues })
 
-  const handleChangeAddress = (e: ChangeEvent<HTMLInputElement>) => {
-    setCopyAddress(e.target.value)
-  }
-
-  const handleSubmit = () => {
-    console.log('Send to backend')
+  const onSubmit = (data: any) => {
+    console.log(data)
+    reset()
   }
 
   return (
-    <div className={commonStyle.profileContent}>
-      <div className={style.editAddressForm}>
-        <div className={commonStyle.profileLabel}>
-          <p>{ProfileInputLabels.country}</p>
-          <InputText placeholder={ProfilePlaceholder.country} value={copyCountry} onChange={handleChangeCountry} />
+    <div className={styles.editAddressContent}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className={styles.editAddressForm}>
+          <div className={styles.editAddressLabel}>
+            <p>{PROFILE_INPUTS_LABELS.COUNTRY}</p>
+            <Controller
+              name='country'
+              control={control}
+              render={({ field }) => (
+                <InputText id={field.name} placeholder={PROFILE_PLACEHOLDER.COUNTRY} {...field} required={true} />
+              )}
+            />
+          </div>
+          <div className={styles.editAddressLabel}>
+            <p>{PROFILE_INPUTS_LABELS.CITY}</p>
+            <Controller
+              name='city'
+              control={control}
+              render={({ field }) => (
+                <InputText id={field.name} placeholder={PROFILE_PLACEHOLDER.CITY} {...field} required={true} />
+              )}
+            />
+          </div>
         </div>
-        <div className={commonStyle.profileLabel}>
-          <p>{ProfileInputLabels.city}</p>
-          <InputText placeholder={ProfilePlaceholder.city} value={copyCity} onChange={handleChangeCity} />
+        <div className={styles.editAddressLabel}>
+          <p>{PROFILE_INPUTS_LABELS.ADDRESS}</p>
+          <Controller
+            name='address'
+            control={control}
+            render={({ field }) => (
+              <InputText id={field.name} placeholder={PROFILE_PLACEHOLDER.ADDRESS} {...field} required={true} />
+            )}
+          />
         </div>
-      </div>
-      <div className={commonStyle.profileLabel}>
-        <p>{ProfileInputLabels.address}</p>
-        <InputText placeholder={ProfilePlaceholder.address} value={copyAddress} onChange={handleChangeAddress} />
-      </div>
-      <Button
-        mode='primary'
-        children='Save'
-        disabled={isDisabled}
-        onClick={handleSubmit}
-        className={commonStyle.buttonStyle}
-      />
+        <Button mode='primary' children='Save' className={styles.editAddressButton} />
+      </form>
     </div>
   )
 }

@@ -1,9 +1,11 @@
 import { useState } from 'react'
 
-import style from './page-user.module.scss'
 import { ProfilePage } from 'features/profile/profile-page'
-import { StepperNavigation } from 'features/stepper/components/stepper-navigation/stepper-navigation'
-import { StepperProfilePhoto } from 'features/stepper/components/stepper-profile-photo/stepper-profile-photo'
+
+import style from './page-user.module.scss'
+
+// import { StepperNavigation } from 'features/stepper/components/stepper-navigation/stepper-navigation'
+// import { StepperProfilePhoto } from 'features/stepper/components/stepper-profile-photo/stepper-profile-photo'
 
 export const PageUser = () => {
   const [currentPage] = useState<string>('profile')
@@ -26,8 +28,8 @@ export const PageUser = () => {
   return (
     <div className={style.pageUser}>
       <div className={style.pageUserStepper}>
-        <StepperProfilePhoto />
-        <StepperNavigation />
+        {/* <StepperProfilePhoto />
+        <StepperNavigation /> */}
       </div>
       <div className={style.pageUserContent}>{getCurrentProfileComponent()}</div>
     </div>

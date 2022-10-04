@@ -1,15 +1,16 @@
-import classnames from 'classnames/bind'
-
-import commonStyle from '../../style/profile-style.module.scss'
-import { ProfileInputLabels, ProfilePlaceholder } from 'features/profile/constants/profile-constants'
-import { Button } from 'common/components/Button/Button'
-import { InputText } from 'primereact/inputtext'
 import { ChangeEvent, useEffect, useState } from 'react'
+
+import { InputText } from 'primereact/inputtext'
+import classNames from 'classnames'
+
+import { Button } from 'common/components/Button/Button'
+
+import { PROFILE_INPUTS_LABELS, PROFILE_PLACEHOLDER } from 'features/profile/constants/profile-constants'
+import { ProfileLabel } from 'features/profile/components/profile-label/profile-label'
 
 export const ProfileEditEmail = () => {
   const [copyEmail, setCopyEmail] = useState<string>('costescuadrian@outlook.com')
   const [isDisabled, setIsDisabled] = useState<boolean>(false)
-  const cx = classnames.bind(commonStyle)
   const regx = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
 
   useEffect(() => {
@@ -29,17 +30,17 @@ export const ProfileEditEmail = () => {
   }
 
   return (
-    <div className={commonStyle.profileContent}>
-      <div className={commonStyle.profileLabel}>
-        <p>{ProfileInputLabels.email}</p>
-        <InputText
-          placeholder={ProfilePlaceholder.email}
-          value={copyEmail}
-          onChange={handleChangeEmail}
-          className={cx(isDisabled && 'p-invalid')}
-        />
+    <ProfileLabel>
+      <p>{PROFILE_INPUTS_LABELS.EMAIL}</p>
+      <InputText
+        placeholder={PROFILE_PLACEHOLDER.EMAIL}
+        value={copyEmail}
+        onChange={handleChangeEmail}
+        className={classNames(isDisabled && 'p-invalid')}
+      />
+      <div>
+        <Button mode='primary' children='Save' onClick={handleSubmit} style={{ width: '117px' }} />
       </div>
-      <Button mode='primary' children='Save' onClick={handleSubmit} className={commonStyle.buttonStyle} />
-    </div>
+    </ProfileLabel>
   )
 }

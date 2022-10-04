@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+
+import '/node_modules/primeflex/primeflex.css'
 import './index.css'
 import './styles/elements.scss'
 import './styles/buttons.scss'

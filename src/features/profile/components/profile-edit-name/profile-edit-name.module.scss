@@ -1,5 +1,11 @@
 @import 'styles/convert.scss';
 
+.editNameContent {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20px);
+}
+
 .editNameForm {
   width: 100%;
   display: flex;

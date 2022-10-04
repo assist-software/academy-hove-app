@@ -1,16 +1,20 @@
 import { makeAutoObservable } from 'mobx'
 
-import { updateTimeout } from '../constants/notifications-constants'
-import { notificationsUpdateService } from '../services/notifications-update-service'
-import { INotificationSettings, notificationStatus, notificationTypes } from '../models/notifications-models'
+import { UPDATE_TIME_OUT } from 'features/notifications/constants/notifications-constants'
+import {
+  INotificationSettings,
+  notificationStatus,
+  notificationTypes,
+} from 'features/notifications/models/notifications-models'
+import { notificationsUpdateService } from 'features/notifications/services/notifications-update-service'
 
 export class NotificationsStore {
   notificationSettings: INotificationSettings = {
-    newsNotification: { email: false, sms: false },
-    discountNotifications: { email: false, sms: false },
-    messagesNotifications: { email: false, sms: false },
-    newListingsNotifications: { email: false, sms: false },
-    priceChangeNotifications: { email: false, sms: false },
+    NEWS_NOTIFICATIONS: { email: false, sms: false },
+    DISCOUNT_NOTIFICATIONS: { email: false, sms: false },
+    MESSAGES_NOTIFICATIONS: { email: false, sms: false },
+    NEW_LISTINGS_NOTIFICATIONS: { email: false, sms: false },
+    PRICE_CHANGE_NOTIFICATIONS: { email: false, sms: false },
   }
 
   editModal: notificationTypes | null = null
@@ -32,7 +36,7 @@ export class NotificationsStore {
     if (this.notificationsUpdateTimer) clearTimeout(this.notificationsUpdateTimer)
     this.notificationsUpdateTimer = setTimeout(() => {
       notificationsUpdateService(this.notificationSettings)
-    }, updateTimeout)
+    }, UPDATE_TIME_OUT)
   }
 
   setEditModal = (state: notificationTypes | null) => {

@@ -1,7 +1,24 @@
 @import 'styles/convert.scss';
 
+.editAddressContent {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20px);
+}
+
 .editAddressForm {
   width: 100%;
   display: flex;
   gap: rem(20px);
+}
+
+.editAddressLabel {
+  width: calc(50% - rem(20px));
+  display: flex;
+  flex-direction: column;
+  gap: rem(4px);
+}
+
+.editAddressButton {
+  width: rem(117px);
 }
