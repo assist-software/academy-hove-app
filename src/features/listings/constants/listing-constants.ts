@@ -19,9 +19,11 @@ export const IMAGE_ALT_CONTAINER = {
   ICON: 'points',
   HEART: 'heart',
   SHARE: 'Share',
+  SAVE: 'Save',
 }
 
 export const MESSAGE_SELLER_CONTAINER = {
   MESSAGE: 'Message the seller',
   SEND_MESSAGE: 'Send message',
+  SEND: 'Send',
 }

@@ -44,11 +44,11 @@ export const ListingModal = ({ closeModal }: any) => {
           <div className={styles.modalShareAndFavContainer}>
             <div className={styles.modalShareIconContainer}>
               <img src={shareIcon} alt={IMAGE_ALT_CONTAINER.SHARE} />
-              Share
+              {IMAGE_ALT_CONTAINER.SHARE}
             </div>
             <div className={styles.modalHeartIconContainer}>
               <img src={heartIcon} alt={IMAGE_ALT_CONTAINER.HEART} />
-              Save
+              {IMAGE_ALT_CONTAINER.SAVE}
             </div>
           </div>
           <div className={styles.modalImageContainer}>

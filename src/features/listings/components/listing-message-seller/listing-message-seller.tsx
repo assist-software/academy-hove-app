@@ -23,7 +23,7 @@ export const ListingMessageSeller = () => {
           />
         </div>
         <div className={styles.spacingButton}>
-          <Button label='Send' className='p-button-outlined' disabled={value2.length === 0} />
+          <Button label={MESSAGE_SELLER_CONTAINER.SEND} className='p-button-outlined' disabled={value2.length === 0} />
         </div>
       </div>
     </>

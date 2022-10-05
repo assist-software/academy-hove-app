@@ -34,7 +34,7 @@ export const ListingTitleHeader = () => {
         </div>
         <div className={styles.shareButtonContainer}>
           <div>
-            <img src={shareLogo} alt='Share' />
+            <img src={shareLogo} alt={IMAGE_ALT_CONTAINER.SHARE} />
           </div>
           <div className={styles.shareButtonStyle}>{IMAGE_ALT_CONTAINER.SHARE}</div>
         </div>
