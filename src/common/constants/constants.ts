@@ -11,6 +11,7 @@ export const PAGES_PATHS = {
   BIG_HOUSES: 'big-houses',
   LISTING_ID: 'listing/:id',
   LISTING: 'listing',
+  ADD_ITEM: '/add-item',
 }
 
 export const ButtonLables = {

@@ -8,6 +8,7 @@ import { PAGES_PATHS } from '../../common/constants/constants'
 import { Home } from '../home/home'
 import { ShowroomSeeEverything } from 'features/showroom/components/showroom-see-everithing/showroom-see-everithing'
 import { Listing } from 'pages/listing/listing'
+import { AddItemPage } from 'pages/add-item/add-item-page'
 
 export const PageRouter = () => {
   return (
@@ -20,6 +21,7 @@ export const PageRouter = () => {
         <Route path={PAGES_PATHS.RESET_PASS} element={<PageResetPass />}></Route>
         <Route path={PAGES_PATHS.SEE_EVERITHING_ID} element={<ShowroomSeeEverything />}></Route>
         <Route path={PAGES_PATHS.LISTING_ID} element={<Listing />}></Route>
+        <Route path={PAGES_PATHS.ADD_ITEM} element={<AddItemPage />}></Route>
       </Routes>
     </BrowserRouter>
   )
