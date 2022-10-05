@@ -12,6 +12,7 @@ import { auth } from '../../../firebase/firebase-config'
 export const authRegister = async (email: string, password: string) => {
   try {
     const user = await createUserWithEmailAndPassword(auth, email, password)
+    return user.user
   } catch (err: any) {
     return err
   }

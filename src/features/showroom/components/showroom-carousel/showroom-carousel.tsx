@@ -38,7 +38,6 @@ export const ShowroomCarousel: FC<IProperty> = () => {
         snapshot.docs.forEach((doc: any) => {
           info.push({ ...doc.data() })
         })
-        console.log('123123', info)
         setCardLatest(info)
         dispatch(HANDLE_SET_SHOWROOM_LATEST(info))
       })
@@ -53,7 +52,6 @@ export const ShowroomCarousel: FC<IProperty> = () => {
         snapshot.docs.forEach((doc: any) => {
           info.push({ ...doc.data() })
         })
-        console.log('123123', info)
         setCardBigHouses(info)
         dispatch(HANDLE_SET_SHOWROOM_BIG_HOUSES(info))
       })
@@ -68,7 +66,6 @@ export const ShowroomCarousel: FC<IProperty> = () => {
         snapshot.docs.forEach((doc: any) => {
           info.push({ ...doc.data() })
         })
-        console.log('123123', info)
         setCardSmallHouses(info)
         dispatch(HANDLE_SET_SHOWROOM_SMALL_HOUSES(info))
       })
