@@ -1,6 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import imageRef from 'features/add-item/assets/uploadImg.png'
 import styles from 'features/add-item/styles/add-item.module.scss'
+import { PHOTOS_AND_VIDEO_CONSTANTS } from 'features/add-item/constants/add-item-constants'
 
 export const AddImage: FC<any> = ({ ...props }) => {
   const { image, setImage, setArray, setSetArray, setFieldValue, errors, touched } = props
@@ -55,8 +56,8 @@ export const AddImage: FC<any> = ({ ...props }) => {
     <>
       <div className={styles.descriptionContainer}>
         <div className={styles.leftContainerPhoto}>
-          <h4>Photos & videos</h4>
-          <div className={styles.subtitleStyle}>Lörem ipsum trede relig, oktig. Tism rallylydnad. </div>
+          <h4>{PHOTOS_AND_VIDEO_CONSTANTS.PHOTO_VIDEO_TITLE}</h4>
+          <div className={styles.subtitleStyle}>{PHOTOS_AND_VIDEO_CONSTANTS.PHOTO_VIDEO_SUBTITLE} </div>
         </div>
 
         <div className={styles.showImageContainer}>
