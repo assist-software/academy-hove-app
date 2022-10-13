@@ -24,6 +24,7 @@ import {
   DETAILS_CONSTANTS,
   PLACEHOLDER,
 } from 'features/add-item/constants/add-item-constants'
+import { PAGES_PATHS } from 'common/constants/constants'
 
 export const AddItemFormikDetails = () => {
   const category = [{ name: 'Latest' }, { name: 'Big Houses' }, { name: 'Small Houses' }]
@@ -60,7 +61,7 @@ export const AddItemFormikDetails = () => {
       uploadImage(values.title)
 
       console.log(docRef)
-      return navigate('/')
+      return navigate(PAGES_PATHS.HOME)
     } catch (err: any) {
       return err
     }

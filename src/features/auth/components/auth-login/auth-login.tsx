@@ -30,7 +30,7 @@ export const AuthLogin = () => {
     if (!user.message) {
       localStorage.setItem('user1', JSON.stringify(user))
       dispatch(HANDLE_SET_USER({ ...user, isLoggedIn: true }))
-      return navigate('/')
+      return navigate(PAGES_PATHS.HOME)
     } else {
       dispatch(HANDLE_SET_USER({ ...user, error: user.message }))
     }
@@ -42,7 +42,7 @@ export const AuthLogin = () => {
     if (!user.message) {
       localStorage.setItem('user1', JSON.stringify(user))
       dispatch(HANDLE_SET_USER({ ...user, isLoggedIn: true }))
-      return navigate('/')
+      return navigate(PAGES_PATHS.HOME)
     } else {
       dispatch(HANDLE_SET_USER({ ...user, error: user.message }))
     }
