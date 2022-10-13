@@ -1,4 +1,4 @@
-import { AddItemFormikDetails } from 'features/add-item/components/add-item-formik-details'
+import { AddItemFormikDetails } from 'features/add-item/components/add-item-formik-details/add-item-formik-details'
 import { ShowroomHeader } from 'features/header/showroom-header'
 import styles from 'pages/add-item/add-item-page.module.scss'
 export const AddItemPage = () => {

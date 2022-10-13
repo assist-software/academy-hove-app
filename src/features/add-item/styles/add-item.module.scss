@@ -29,6 +29,14 @@
   color: var(--gray-400);
 }
 
+.subtitleStyleError {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--alert-500) !important;
+}
+
 .formsTitleStyles {
   font-style: normal;
   font-weight: 500;
@@ -47,6 +55,11 @@
   width: 245% !important;
 }
 
+.errorpDropdown {
+  width: 245% !important;
+  border: 1px solid var(--alert-500) !important;
+}
+
 .addPriceContainer {
   display: flex;
   flex-direction: column;
@@ -56,6 +69,13 @@
   width: 60%;
   margin-right: 2% !important;
   margin-bottom: 5% !important;
+}
+
+.priceInputError {
+  width: 60%;
+  margin-right: 2% !important;
+  margin-bottom: 5% !important;
+  border: 1px solid var(--alert-500) !important;
 }
 
 @media screen and (max-width: 450px) {
@@ -74,4 +94,129 @@
   .leftContainer {
     margin-right: 5%;
   }
+}
+
+.addDescriptionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.textAreaStyle {
+  width: 35rem !important;
+  height: 15rem !important;
+}
+
+.textAreaStyleError {
+  width: 35rem !important;
+  height: 15rem !important;
+  border: 1px solid var(--alert-500) !important;
+}
+
+.descriptionContainer {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.leftContainerDescription {
+  margin-right: 11%;
+}
+
+.phoneInput {
+  width: 90% !important;
+  margin-right: 2% !important;
+  margin-bottom: 5% !important;
+}
+.phoneInputError {
+  width: 90% !important;
+  margin-right: 2% !important;
+  margin-bottom: 5% !important;
+  border: 1px solid var(--alert-500) !important;
+}
+
+.locationInput {
+  width: 245%;
+}
+
+.locationInputError {
+  width: 245%;
+  border: 1px solid var(--alert-500) !important;
+}
+
+.inputUploadStyle {
+  display: none;
+}
+
+.leftContainerPhoto {
+  margin-right: 11%;
+}
+
+.previewImageStyle {
+  width: 164.67px;
+  height: 128.33px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.showImageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 5% 0 5% 0;
+  gap: 2rem;
+}
+
+.iconImageStyle {
+  cursor: pointer;
+  margin-bottom: 45%;
+}
+
+.errorMessage {
+  height: 12px;
+  color: var(--alert-400);
+  font-size: 12px;
+}
+
+.subtitleStyleError {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--gray-400);
+}
+
+.errorInput {
+  width: 245%;
+  border: 1px solid var(--alert-500) !important;
+}
+
+.imageRefStyle {
+  cursor: pointer;
+}
+
+.addItemButtonContainer {
+  display: flex;
+  justify-content: right;
+  margin: 2% 20% 5% 0;
+  gap: 6rem;
+}
+
+.publishButtonStyle {
+  width: 10.313rem;
+  height: 4.5vh;
+  background: var(--primary-400);
+  border-radius: 8px;
+}
+
+.previewButtonStyle {
+  width: 10.313rem;
+  height: 4.5vh;
+  background: var(--secondary);
+  border-radius: 8px;
+  color: var(--primary-400);
+}
+
+.imageRefStyleError {
+  border: 1px solid var(--alert-500) !important;
+  border-radius: 8px;
 }

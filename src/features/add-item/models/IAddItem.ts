@@ -1,15 +1,22 @@
 export interface IAddItem {
-  details_title: string
-  details_category: 'Latest' | 'Big Houses' | 'Small Houses'
-  details_price: string
-  image: string
+  title: string
+  category: { name: 'latest' | 'Big Houses' | 'Small Houses' | '' }
+  price: string
+  file?:
+    | [
+        string | null,
+        string | null,
+        string | null,
+        string | null,
+        string | null,
+        string | null,
+        string | null,
+        string | null,
+        string | null,
+      ]
+    | null
   description: string
-  contact_location: string
-  contact_phone: string
-}
-
-export interface IAddDetails {
-  details_title: string
-  details_category: 'Latest' | 'Big Houses' | 'Small Houses'
-  details_price: string
+  location: string
+  phone: string
+  id?: string
 }
