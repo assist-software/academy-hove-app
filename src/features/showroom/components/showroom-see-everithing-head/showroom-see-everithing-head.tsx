@@ -17,9 +17,9 @@ export const ShowroomSeeEverithingHead = () => {
   const [isGrid, setIsGrid] = useState<boolean>(false)
   const { latest } = useAppSelector((state) => state.showroom)
   const dataCollectionLatest = collection(db, 'Latest')
-  const qLatest = query(dataCollectionLatest, where('type', '==', 'latest'))
-  const qBigHouses = query(dataCollectionLatest, where('type', '==', 'Big_Houses'))
-  const qSmallHouses = query(dataCollectionLatest, where('type', '==', 'Small_Houses'))
+  const qLatest = query(dataCollectionLatest, where('type', '==', 'Latest'))
+  const qBigHouses = query(dataCollectionLatest, where('type', '==', 'Big Houses'))
+  const qSmallHouses = query(dataCollectionLatest, where('type', '==', 'Small Houses'))
   const [cards, setCards] = useState<IProperty1[]>([])
 
   const page = window.location.pathname.split('/')[2]

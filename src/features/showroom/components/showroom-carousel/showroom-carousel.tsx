@@ -27,9 +27,9 @@ export const ShowroomCarousel: FC<IProperty> = () => {
   console.log('latest', latest)
   const navigate = useNavigate()
 
-  const qLatest = query(dataCollectionLatest, where('type', '==', 'latest'))
-  const qBigHouses = query(dataCollectionLatest, where('type', '==', 'Big_Houses'))
-  const qSmallHouses = query(dataCollectionLatest, where('type', '==', 'Small_Houses'))
+  const qLatest = query(dataCollectionLatest, where('type', '==', 'Latest'))
+  const qBigHouses = query(dataCollectionLatest, where('type', '==', 'Big Houses'))
+  const qSmallHouses = query(dataCollectionLatest, where('type', '==', 'Small Houses'))
 
   useEffect(() => {
     getDocs(qLatest)

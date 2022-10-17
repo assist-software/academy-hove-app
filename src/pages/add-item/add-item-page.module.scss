@@ -1,0 +1,11 @@
+.addItemPageContainer {
+  margin-left: 220px;
+  margin-right: 220px;
+}
+
+@media screen and (max-width: 450px) {
+  .addItemPageContainer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
