@@ -4,11 +4,11 @@ import { InputTextarea } from 'primereact/inputtextarea'
 
 import { Button } from 'common/components/Button/Button'
 
-import { PROPRETY_BUTTON, PROPRETY_LABELS, PROPRETY_PLACEHOLDER } from 'features/results/constants/proprety-constants'
+import { PROPRETY_BUTTON, PROPRETY_LABELS, PROPRETY_PLACEHOLDER } from 'features/manage/constants/manage-constants'
 
-import style from './results-messages.module.scss'
+import style from './manage-messages.module.scss'
 
-export const ResultsMessages = () => {
+export const ManageMessages = () => {
   const [messages, setMessage] = useState('')
 
   const handleSendMessage = () => {
@@ -16,27 +16,25 @@ export const ResultsMessages = () => {
   }
 
   return (
-    <div className={style.messages}>
+    <div className={style.manageMessages}>
       <h2>{PROPRETY_LABELS.MESSAGES_LABELS}</h2>
       <InputTextarea
         value={messages}
         onChange={(e) => setMessage(e.target.value)}
-        rows={5}
-        cols={30}
         autoResize
         placeholder={PROPRETY_PLACEHOLDER.TEXTAREA}
-        className={style.messagesTextarea}
+        className={style.manageMessagesTextarea}
       />
-      <div className={style.messagesButton}>
+      <div className={style.manageMessagesButton}>
         {messages ? (
           <Button
             mode='primary'
             children={PROPRETY_BUTTON.SEND}
-            className={style.messagesButtonStyle}
+            className={style.manageMessagesButtonStyle}
             onClick={handleSendMessage}
           />
         ) : (
-          <Button mode='secondary' children={PROPRETY_BUTTON.SEND} className={style.messagesButtonDisable} />
+          <Button mode='secondary' children={PROPRETY_BUTTON.SEND} className={style.manageMessagesButtonDisable} />
         )}
       </div>
     </div>
