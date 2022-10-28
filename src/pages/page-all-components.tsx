@@ -13,7 +13,7 @@ export const PageAllComponents = () => {
     <div>
       <ShowroomAllComponents />
       <ShowroomViewSwitch activeView={activeView} switchView={(view) => setActiveView(view)} />
-      <ShowroomPropertyList title={'Small'} />z
+      <ShowroomPropertyList title={'Small'} />
     </div>
   )
 }
