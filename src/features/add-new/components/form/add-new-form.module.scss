@@ -1,0 +1,38 @@
+.addNewFormInput {
+  width: 100%;
+}
+
+.addNewFormInputPrice {
+  width: 262px;
+}
+
+.addNewFormSpan {
+  padding: 0 0 0 12px;
+}
+
+.addNewFormTextarea {
+  width: 100%;
+  height: 200px;
+}
+
+.test {
+  width: 164px;
+  height: 128px;
+}
+
+.test2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.addNewFormButtonWrapper {
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+  margin: 40px 0 0 0;
+}
+
+.addNewFormButton {
+  width: 165px;
+}
