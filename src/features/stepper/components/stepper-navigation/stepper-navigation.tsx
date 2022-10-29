@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
+import { Image } from 'primereact/image'
 import classnames from 'classnames/bind'
 
-import { ALT_IMG_PROFILE, STEPPER_LABELS } from 'features/stepper/constants/stepper-constants'
+import { StepperProfilePhoto } from 'features/stepper/components/stepper-profile-photo/stepper-profile-photo'
+import { ALT_IMG_PROFILE, STEPPER_LABELS, STEPPER_PATH } from 'features/stepper/constants/stepper-constants'
 import profile from 'features/stepper/assets/profile.svg'
 import profileActive from 'features/stepper/assets/profileActive.svg'
 import security from 'features/stepper/assets/security.svg'
@@ -16,39 +18,71 @@ import logout from 'features/stepper/assets/logout.svg'
 import style from './stepper-navigation.module.scss'
 
 export const StepperNavigation = () => {
-  const [currentPage, setCurrentPage] = useState<string>(STEPPER_LABELS.PROFILE)
   const cx = classnames.bind(style)
-  const profileActiveText = currentPage === STEPPER_LABELS.PROFILE && style.stepperActiveText
-  const securityActiveText = currentPage === STEPPER_LABELS.SECURITY && style.stepperActiveText
-  const notificationActiveText = currentPage === STEPPER_LABELS.NOTIFICATION && style.stepperActiveText
-  const messagesActiveText = currentPage === STEPPER_LABELS.MESSAGES && style.stepperActiveText
-  const profileIcon = currentPage === STEPPER_LABELS.PROFILE ? profileActive : profile
-  const securityIcon = currentPage === STEPPER_LABELS.SECURITY ? securityActive : security
-  const notificationIcon = currentPage === STEPPER_LABELS.NOTIFICATION ? notificationActive : notification
-  const messagesIcon = currentPage === STEPPER_LABELS.MESSAGES ? messagesActive : messages
+  const navigate = useNavigate()
+  const param = useParams()
+  const profileActiveText = param.action === STEPPER_PATH.PROFILE && style.stepperNavigationActiveText
+  const securityActiveText = param.action === STEPPER_PATH.SECURITY && style.stepperNavigationActiveText
+  const notificationActiveText = param.action === STEPPER_PATH.NOTIFICATION && style.stepperNavigationActiveText
+  const messagesActiveText = param.action === STEPPER_PATH.MESSAGES && style.stepperNavigationActiveText
+  const profileIcon = param.action === STEPPER_PATH.PROFILE ? profileActive : profile
+  const securityIcon = param.action === STEPPER_PATH.SECURITY ? securityActive : security
+  const notificationIcon = param.action === STEPPER_PATH.NOTIFICATION ? notificationActive : notification
+  const messagesIcon = param.action === STEPPER_PATH.MESSAGES ? messagesActive : messages
+
+  const handleChangeAccountNavigation = (navigateLink: string): void => {
+    navigate(`/account/${navigateLink}`)
+  }
+
+  const getCurrentAccountComponent = (): JSX.Element => {
+    switch (param.action) {
+      case STEPPER_PATH.PROFILE:
+        return <div>profile</div>
+      case STEPPER_PATH.SECURITY:
+        return <div>security</div>
+      case STEPPER_PATH.NOTIFICATION:
+        return <div>notification</div>
+      case STEPPER_PATH.MESSAGES:
+        return <div>messages</div>
+      default:
+        return <div>profile</div>
+    }
+  }
 
   return (
-    <div className={style.stepper}>
-      <div className={style.stepperCategory} onClick={() => setCurrentPage(STEPPER_LABELS.PROFILE)}>
-        <img src={profileIcon} alt={ALT_IMG_PROFILE.PROFILE} />
-        <p className={cx(profileActiveText)}>{STEPPER_LABELS.PROFILE}</p>
+    <div className={style.stepperNavigation}>
+      <div className={style.stepperNavigationWrapper}>
+        <StepperProfilePhoto />
+        <div
+          className={style.stepperNavigationCategory}
+          onClick={() => handleChangeAccountNavigation(STEPPER_PATH.PROFILE)}>
+          <Image src={profileIcon} alt={ALT_IMG_PROFILE.PROFILE} />
+          <p className={cx(profileActiveText)}>{STEPPER_LABELS.PROFILE}</p>
+        </div>
+        <div
+          className={style.stepperNavigationCategory}
+          onClick={() => handleChangeAccountNavigation(STEPPER_PATH.SECURITY)}>
+          <Image src={securityIcon} alt={ALT_IMG_PROFILE.PROFILE} />
+          <p className={cx(securityActiveText)}>{STEPPER_LABELS.SECURITY}</p>
+        </div>
+        <div
+          className={style.stepperNavigationCategory}
+          onClick={() => handleChangeAccountNavigation(STEPPER_PATH.NOTIFICATION)}>
+          <Image src={notificationIcon} alt={ALT_IMG_PROFILE.NOTIFICATION} />
+          <p className={cx(notificationActiveText)}>{STEPPER_LABELS.NOTIFICATION}</p>
+        </div>
+        <div
+          className={style.stepperNavigationCategory}
+          onClick={() => handleChangeAccountNavigation(STEPPER_PATH.MESSAGES)}>
+          <Image src={messagesIcon} alt={ALT_IMG_PROFILE.MESSAGES} />
+          <p className={cx(messagesActiveText)}>{STEPPER_LABELS.MESSAGES}</p>
+        </div>
+        <div className={style.stepperNavigationLogout}>
+          <Image src={logout} alt={ALT_IMG_PROFILE.LOGOUT} />
+          <p>{STEPPER_LABELS.LOGOUT}</p>
+        </div>
       </div>
-      <div className={style.stepperCategory} onClick={() => setCurrentPage(STEPPER_LABELS.SECURITY)}>
-        <img src={securityIcon} alt={ALT_IMG_PROFILE.PROFILE} />
-        <p className={cx(securityActiveText)}>{STEPPER_LABELS.SECURITY}</p>
-      </div>
-      <div className={style.stepperCategory} onClick={() => setCurrentPage(STEPPER_LABELS.NOTIFICATION)}>
-        <img src={notificationIcon} alt={ALT_IMG_PROFILE.NOTIFICATION} />
-        <p className={cx(notificationActiveText)}>{STEPPER_LABELS.NOTIFICATION}</p>
-      </div>
-      <div className={style.stepperCategory} onClick={() => setCurrentPage(STEPPER_LABELS.MESSAGES)}>
-        <img src={messagesIcon} alt={ALT_IMG_PROFILE.MESSAGES} />
-        <p className={cx(messagesActiveText)}>{STEPPER_LABELS.MESSAGES}</p>
-      </div>
-      <div className={style.stepperCategoryLogout}>
-        <img src={logout} alt={ALT_IMG_PROFILE.LOGOUT} />
-        <p>{STEPPER_LABELS.LOGOUT}</p>
-      </div>
+      <div>{getCurrentAccountComponent()}</div>
     </div>
   )
 }

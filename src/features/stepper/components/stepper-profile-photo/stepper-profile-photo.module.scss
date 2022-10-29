@@ -7,19 +7,19 @@
   position: relative;
 }
 
-.stepprUserPhoto {
+.stepperProfilePhotoUser {
   width: rem(112px);
   height: rem(112px);
   border-radius: 50%;
 }
 
-.stepperChangeAvatar {
+.stepperProfilePhotoAvatar {
   position: absolute;
   right: rem(-10px);
   bottom: rem(-20px);
 }
 
-.stepperInputUpload {
+.stepperProfilePhotoInput {
   width: rem(32px);
   height: rem(32px);
   border-radius: 50%;
@@ -29,6 +29,6 @@
   cursor: pointer;
 }
 
-.stepperInputUpload::-webkit-file-upload-button {
+.stepperProfilePhotoInput::-webkit-file-upload-button {
   visibility: hidden;
 }

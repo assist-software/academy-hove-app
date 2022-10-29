@@ -17,13 +17,13 @@ export const StepperProfilePhoto = () => {
 
   return (
     <div className={style.stepperProfilePhoto}>
-      <img className={style.stepprUserPhoto} src={photo ? photo : avatar} alt={ALT_IMG_PROFILE.PHOTO} />
+      <img className={style.stepperProfilePhotoUser} src={photo ? photo : avatar} alt={ALT_IMG_PROFILE.PHOTO} />
       <div>
-        <img className={style.stepperChangeAvatar} src={edit} alt={ALT_IMG_PROFILE.EDIT_PHOTO} />
+        <img className={style.stepperProfilePhotoAvatar} src={edit} alt={ALT_IMG_PROFILE.EDIT_PHOTO} />
         <input
           tabIndex={0}
           onChange={handleChangeProfilePhoto}
-          className={style.stepperInputUpload}
+          className={style.stepperProfilePhotoInput}
           accept='image/png, image/jpeg'
           type='file'
         />

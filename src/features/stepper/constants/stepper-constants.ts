@@ -15,3 +15,10 @@ export const ALT_IMG_PROFILE = {
   EDIT_PHOTO: 'Edit Photo Icon',
   PHOTO: 'User Photo',
 }
+
+export const STEPPER_PATH = {
+  PROFILE: 'profile',
+  SECURITY: 'security',
+  NOTIFICATION: 'notifications',
+  MESSAGES: 'messages',
+}
