@@ -13,15 +13,11 @@ export const ProfileEditPhone = () => {
   const [isDisabled, setIsDisabled] = useState<boolean>(false)
 
   useEffect(() => {
-    if (copyPhone) {
-      setIsDisabled(false)
-    } else {
-      return setIsDisabled(true)
-    }
+    if (copyPhone) return setIsDisabled(false)
+    return setIsDisabled(true)
   }, [copyPhone])
 
   const handleChangePhone = (e: InputMaskChangeParams) => {
-    console.log(e)
     setCopyPhone(e.target.value)
   }
 

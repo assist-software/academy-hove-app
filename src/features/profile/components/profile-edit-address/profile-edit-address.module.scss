@@ -1,24 +1,24 @@
 @import 'styles/convert.scss';
 
-.editAddressContent {
+.profileEditAddress {
   display: flex;
   flex-direction: column;
   gap: rem(20px);
 }
 
-.editAddressForm {
+.profileEditAddressForm {
   width: 100%;
   display: flex;
   gap: rem(20px);
 }
 
-.editAddressLabel {
+.profileEditAddressLabel {
   width: calc(50% - rem(20px));
   display: flex;
   flex-direction: column;
   gap: rem(4px);
 }
 
-.editAddressButton {
+.profileEditAddressButton {
   width: rem(117px);
 }

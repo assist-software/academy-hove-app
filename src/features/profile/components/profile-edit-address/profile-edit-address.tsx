@@ -23,10 +23,10 @@ export const ProfileEditAddress = () => {
   }
 
   return (
-    <div className={styles.editAddressContent}>
+    <div className={styles.profileEditAddress}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.editAddressForm}>
-          <div className={styles.editAddressLabel}>
+        <div className={styles.profileEditAddressForm}>
+          <div className={styles.profileEditAddressLabel}>
             <p>{PROFILE_INPUTS_LABELS.COUNTRY}</p>
             <Controller
               name='country'
@@ -57,7 +57,7 @@ export const ProfileEditAddress = () => {
             )}
           />
         </div>
-        <Button mode='primary' children='Save' className={styles.editAddressButton} />
+        <Button mode='primary' children='Save' className={styles.profileEditAddressButton} />
       </form>
     </div>
   )

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-import { Calendar } from 'primereact/calendar'
+import dayjs from 'dayjs'
+import { Calendar, CalendarChangeParams } from 'primereact/calendar'
 
 import { Button } from 'common/components/Button/Button'
 
@@ -10,12 +11,9 @@ import { ProfileLabel } from 'features/profile/components/profile-label/profile-
 export const ProfileEditBirth = () => {
   const [copyDate, setCopyDate] = useState<any>('06/01/1999')
 
-  const handleChangeDate = (e: any) => {
-    const date = e.value
-    const yyyy = date.getFullYear()
-    const mm = ('0' + (date.getMonth() + 1)).slice(-2)
-    const dd = ('0' + date.getDate()).slice(-2)
-    setCopyDate(`${dd}/${mm}/${yyyy}`)
+  const handleChangeDate = (e: CalendarChangeParams) => {
+    const date = e.value?.toString()
+    setCopyDate(dayjs(date).format('DD/MM/YYYY'))
   }
 
   const handleSubmit = () => {

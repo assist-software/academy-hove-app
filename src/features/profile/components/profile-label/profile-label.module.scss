@@ -1,16 +1,12 @@
 @import 'styles/convert.scss';
 
-.profileContent {
+.profileLabel {
   display: flex;
   flex-direction: column;
   gap: rem(20px);
 }
 
-.buttonStyle {
-  width: rem(117px);
-}
-
-.profileLabel {
+.profileLabelChildren {
   width: calc(50% - rem(20px));
   display: flex;
   flex-direction: column;

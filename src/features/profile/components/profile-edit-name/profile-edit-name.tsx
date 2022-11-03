@@ -36,9 +36,9 @@ export const ProfileEditName = () => {
   }
 
   return (
-    <div className={styles.editNameContent}>
-      <div className={styles.editNameForm}>
-        <div className={styles.editNameInput}>
+    <div className={styles.profileEditName}>
+      <div className={styles.profileEditNameForm}>
+        <div className={styles.profileEditNameInput}>
           <p>{PROFILE_INPUTS_LABELS.FIRST_NAME}</p>
           <InputText
             placeholder={PROFILE_PLACEHOLDER.FIRST_NAME}
@@ -47,7 +47,7 @@ export const ProfileEditName = () => {
             className={cx(!copyFirstName && 'p-invalid')}
           />
         </div>
-        <div className={styles.editNameInput}>
+        <div className={styles.profileEditNameInput}>
           <p>{PROFILE_INPUTS_LABELS.LAST_NAME}</p>
           <InputText
             placeholder={PROFILE_PLACEHOLDER.LAST_NAME}
