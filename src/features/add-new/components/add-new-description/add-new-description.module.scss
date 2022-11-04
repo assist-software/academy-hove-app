@@ -1,15 +1,15 @@
-.description {
+.addNewDescription {
   display: flex;
   justify-content: space-between;
   padding: 40px 0 50px 0;
   border-bottom: 1px solid var(--gray-100);
 }
 
-.descriptionDetails {
+.addNewDescriptionDetails {
   width: 263px;
 }
 
-.descriptionChildren {
+.addNewDescriptionChildren {
   width: 100%;
   display: flex;
   flex-direction: column;
