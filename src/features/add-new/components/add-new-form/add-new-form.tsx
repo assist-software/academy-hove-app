@@ -11,7 +11,7 @@ import classNames from 'classnames'
 
 import { Button } from 'common/components/Button/Button'
 
-import { AddNewDescription } from 'features/add-new/components/description/add-new-description'
+import { AddNewDescription } from 'features/add-new/components/add-new-description/add-new-description'
 import {
   ADD_NEW,
   ADD_NEW_ALT_IMG,
@@ -26,7 +26,7 @@ import { categoryArray } from 'features/add-new/constants/add-new-mock-data'
 
 import styles from './add-new-form.module.scss'
 
-export const Form = () => {
+export const AddNewForm = () => {
   const formik: any = useFormik({
     initialValues: { title: '', category: '', price: null, details: '', location: '', phone: null, file: [] },
     validationSchema: validationSchema,
