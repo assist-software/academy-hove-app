@@ -1,12 +1,23 @@
+import { ChangeEvent, FC } from 'react'
+
+import classNames from 'classnames'
+
 import addIcon from 'features/add-new/assets/add.svg'
 
 import styles from './add-new-upload.module.scss'
 
-export const AddNewUpload = ({ handleUploadPhoto }: any) => {
+interface IProps {
+  handleUploadPhoto: (e: ChangeEvent) => void
+  validation: boolean
+}
+
+export const AddNewUpload: FC<IProps> = ({ handleUploadPhoto, validation }) => {
   return (
-    <div className={styles.addNewUpload}>
+    <div className={classNames(styles.addNewUpload, validation && styles.addNewUploadError)}>
       <img src={addIcon} alt='' className={styles.addNewUploadIcon} />
       <input
+        id='file'
+        name='file'
         tabIndex={0}
         onChange={handleUploadPhoto}
         className={styles.addNewUploadInput}
