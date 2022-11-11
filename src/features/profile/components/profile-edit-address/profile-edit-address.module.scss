@@ -1,0 +1,24 @@
+@import 'styles/convert.scss';
+
+.profileEditAddress {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20px);
+}
+
+.profileEditAddressForm {
+  width: 100%;
+  display: flex;
+  gap: rem(20px);
+}
+
+.profileEditAddressLabel {
+  width: calc(50% - rem(20px));
+  display: flex;
+  flex-direction: column;
+  gap: rem(4px);
+}
+
+.profileEditAddressButton {
+  width: rem(117px);
+}

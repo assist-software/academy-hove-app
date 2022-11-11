@@ -1,19 +1,13 @@
 @import 'styles/convert.scss';
 
-.profileEditName {
+.profileLabel {
   display: flex;
   flex-direction: column;
   gap: rem(20px);
 }
 
-.profileEditNameForm {
-  width: 100%;
-  display: flex;
-  gap: rem(20px);
-}
-
-.profileEditNameInput {
-  width: 100%;
+.profileLabelChildren {
+  width: calc(50% - rem(20px));
   display: flex;
   flex-direction: column;
   gap: rem(4px);
