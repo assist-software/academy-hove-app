@@ -1,4 +1,5 @@
 export const PROFILE_MOCK_DATA = {
+  fullName: 'James Milner',
   firstName: 'James',
   lastName: 'Milner',
   gender: 'Male',

@@ -1,0 +1,30 @@
+@import 'styles/convert.scss';
+
+.stepperNavigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stepperNavigationWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30px);
+  width: rem(165px);
+}
+
+.stepperNavigationCategory {
+  display: flex;
+  align-items: center;
+  gap: rem(12px);
+  cursor: pointer;
+}
+
+.stepperNavigationLogout {
+  @extend .stepperNavigationCategory;
+  border-top: 1px solid var(--gray-200);
+  padding: rem(10px) 0 0 0;
+}
+
+.stepperNavigationActiveText {
+  color: var(--primary-400);
+}

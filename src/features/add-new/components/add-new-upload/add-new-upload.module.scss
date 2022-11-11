@@ -1,0 +1,25 @@
+.addNewUpload {
+  width: 164px;
+  height: 128px;
+  background: #f2f4f7;
+  border-radius: 12px;
+  position: relative;
+}
+
+.addNewUploadError {
+  border: 1px solid red;
+}
+
+.addNewUploadIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.addNewUploadInput {
+  width: 164px;
+  height: 128px;
+  opacity: 0;
+  cursor: pointer;
+}

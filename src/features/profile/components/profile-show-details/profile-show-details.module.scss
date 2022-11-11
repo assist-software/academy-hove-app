@@ -1,0 +1,41 @@
+@import 'styles/convert.scss';
+
+.profileShowDetailsWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profileShowDetails {
+  border-bottom: 1px solid var(--gray-200);
+  padding: 0 0 rem(16px) 0;
+  margin: 0 0 rem(20px) 0;
+}
+
+.profileShowDetailsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profileShowDetailsTitle {
+  color: var(--gray-700);
+  font-size: rem(16px);
+}
+
+.profileShowDetailsData {
+  color: var(--gray-400);
+  font-size: rem(14px);
+  font-weight: 400;
+}
+
+.profileShowDetailsEdit {
+  color: var(--primary-500);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 rem(12px) 0 0;
+}
+
+.profileShowDetailsChild {
+  margin-top: rem(26px);
+}
