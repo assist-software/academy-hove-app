@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 import classnames from 'classnames/bind'
 import { Button } from 'primereact/button'
 
@@ -6,7 +8,6 @@ import { UtilService } from 'common/services/util-service'
 
 import favoriteActive from 'features/showroom/assets/favoriteActive.svg'
 import favoriteInactive from 'features/showroom/assets/favoriteInactive.svg'
-import thumbnailImg from 'features/showroom/assets/thumbnail.jpg'
 import { ALT_IMG_SHOWROOM } from 'features/showroom/constants/showroom-constants'
 import { IPropertyLite } from 'features/showroom/models/showroom-models'
 import { ShowroomUtilService } from 'features/showroom/services/showroom-util-service'
@@ -21,6 +22,9 @@ interface Props {
 
 export const ShowroomPropertyThumbnail = ({ thumbnail, type, role }: Props) => {
   const cx = classnames.bind(style)
+  const navigate = useNavigate()
+  const randomNumber = Math.floor(Math.random() * 8 + 0)
+
   const borderActionsStyle = style[`thumbnailBorderActions${UtilService.capitalizeFirstLetter(role)}`]
   const locationStyle = style[`thumbnailLocation${UtilService.capitalizeFirstLetter(type)}`]
   const actionsStyle = style[`thumbnailActions${UtilService.capitalizeFirstLetter(type)}`]
@@ -29,12 +33,26 @@ export const ShowroomPropertyThumbnail = ({ thumbnail, type, role }: Props) => {
   const imageStyle = style[`thumbnailImage${UtilService.capitalizeFirstLetter(type)}`]
   const textStyle = style[`thumbnailText${UtilService.capitalizeFirstLetter(type)}`]
   const typeStyle = style[`thumbnaiType${UtilService.capitalizeFirstLetter(type)}`]
+
+  //When login modal is done, change the function to open modal
+  const handleFavorite = () => {
+    if (role !== 'unauth') ShowroomUtilService.handleFavorite(thumbnail.id)
+    navigate('/login')
+  }
+
   return (
     <div className={style.thumbnail}>
       <div className={cx(style.thumbnaiType, typeStyle, borderStyle)}>
-        <img className={cx(style.thumbnailImage, imageStyle)} src={thumbnailImg} alt={ALT_IMG_SHOWROOM.PROPERTY} />
-        <div className={style.thumbnailFavorite} onClick={() => ShowroomUtilService.handleFavorite(thumbnail.id)}>
-          <img src={thumbnail.favorite ? favoriteActive : favoriteInactive} alt={ALT_IMG_SHOWROOM.FAVORITE} />
+        <img
+          className={cx(style.thumbnailImage, imageStyle)}
+          src={thumbnail.image[randomNumber]}
+          alt={ALT_IMG_SHOWROOM.PROPERTY}
+        />
+        <div className={style.thumbnailFavorite} onClick={handleFavorite}>
+          <img
+            src={thumbnail.favorite && role !== 'unauth' ? favoriteActive : favoriteInactive}
+            alt={ALT_IMG_SHOWROOM.FAVORITE}
+          />
         </div>
         <div className={cx(style.thumbnailText, textStyle)}>
           <h2 className={cx(style.thumbnailTitle, titleStyle)}>{thumbnail.property}</h2>
@@ -45,7 +63,7 @@ export const ShowroomPropertyThumbnail = ({ thumbnail, type, role }: Props) => {
           <h2>{thumbnail.price}</h2>
         </div>
       </div>
-      {role !== 'user' && (
+      {role !== 'user' && role !== 'unauth' && (
         <div className={cx(style.thumbnailActions, actionsStyle, type === 'list' && borderActionsStyle)}>
           {thumbnail.status === 'pending' && role !== 'client' && (
             <Button

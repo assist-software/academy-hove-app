@@ -16,6 +16,13 @@ export interface IPropertyLite {
   favorite: boolean
   status: string
   id: string
+  image: Array<string>
+}
+
+export interface IAllProperty {
+  latest: Array<IPropertyLite>
+  big: Array<IPropertyLite>
+  small: Array<IPropertyLite>
 }
 
 export type viewType = keyof typeof SHOWROOM_ACTIVE_VIEW

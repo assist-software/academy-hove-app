@@ -10,6 +10,7 @@
     "formik": "^2.2.9",
     "mobx": "6.6.1",
     "mobx-react-lite": "3.4.0",
+    "mobx-utils": "^6.0.5",
     "nanoid": "4.0.0",
     "primeflex": "^3.2.1",
     "primeicons": "5.0.0",

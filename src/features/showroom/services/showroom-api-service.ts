@@ -1,17 +1,13 @@
 import axios from 'axios'
 
+import instance from 'common/axios/config-defaults'
 import { HTTP_METHODS } from 'common/constants/constants'
 
-const fetchProperties = async () => {
+const getAllProperties = async (): Promise<any> => {
   try {
-    const { data } = await axios({
+    const { data } = await instance({
       method: HTTP_METHODS.GET,
-      baseURL: process.env.BASE_PATH,
-      url: 'property',
-      headers: {
-        authorization: `Bearer`,
-        accept: 'application/json',
-      },
+      url: 'houses.json',
     })
     return data
   } catch (err) {
@@ -56,7 +52,7 @@ const deleteProprety = async (idProprety: string): Promise<any> => {
 }
 
 export const ShowroomAPIService = {
-  fetchProperties,
+  getAllProperties,
   deleteProprety,
   addToFavorite,
 }

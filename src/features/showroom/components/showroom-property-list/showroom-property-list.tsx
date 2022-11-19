@@ -1,27 +1,29 @@
 import classnames from 'classnames/bind'
 import { Carousel } from 'primereact/carousel'
+import { useStore } from 'store/store'
 
 import { ShowroomPropertyThumbnail } from 'features/showroom/components/showroom-property-thumbnail/showroom-property-thumbnail'
 import { ShowroomSeeEverythingLite } from 'features/showroom/components/showroom-see-everything-lite/showroom-see-everything-lite'
-import {
-  SHOWROOM_CAROUSEL_RESPONSIVE_OPTIONS,
-  SHOWROOM_HOUSE_THUMBNAIL,
-} from 'features/showroom/constants/showroom-mock-data'
+import { SHOWROOM_CAROUSEL_RESPONSIVE_OPTIONS } from 'features/showroom/constants/showroom-mock-data'
 import { IPropertyLite } from 'features/showroom/models/showroom-models'
 
 import styles from './showroom-property-list.module.scss'
 
 interface Props {
   title: string
+  carouselData: Array<IPropertyLite>
 }
 
 const cx = classnames.bind(styles)
 
-const thumbnailTemplate = (property: IPropertyLite) => {
-  return <ShowroomPropertyThumbnail type='grid' role='admin' thumbnail={property} />
-}
+export const ShowroomPropertyList = ({ title, carouselData }: Props) => {
+  const { authStore } = useStore()
+  const { userRole } = authStore
 
-export const ShowroomPropertyList = ({ title }: Props) => {
+  const thumbnailTemplate = (property: IPropertyLite) => {
+    return <ShowroomPropertyThumbnail type='grid' role={userRole} thumbnail={property} />
+  }
+
   const renderHeader = () => {
     return (
       <div className='grid p-3'>
@@ -39,7 +41,7 @@ export const ShowroomPropertyList = ({ title }: Props) => {
   return (
     <div className={cx(styles.showroomPropertyList)}>
       <Carousel
-        value={[...SHOWROOM_HOUSE_THUMBNAIL, ...SHOWROOM_HOUSE_THUMBNAIL, ...SHOWROOM_HOUSE_THUMBNAIL]}
+        value={[...carouselData, ...carouselData, ...carouselData]}
         numVisible={5}
         numScroll={1}
         responsiveOptions={SHOWROOM_CAROUSEL_RESPONSIVE_OPTIONS}

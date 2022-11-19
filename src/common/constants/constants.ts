@@ -18,3 +18,14 @@ export const HTTP_METHODS = {
   PUT: 'put',
   DELETE: 'delete',
 }
+
+export const HOME_PAGE_LABELS = {
+  TITLE: 'What are you interested in?',
+  LATEST: 'Latest',
+  BIG: 'Big houses',
+  SMALL: 'Small houses',
+}
+
+export const ERROR = {
+  AXIOS_ERROR: 'Something went wrong! Please try again!',
+}

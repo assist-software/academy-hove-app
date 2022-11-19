@@ -10,7 +10,7 @@ export const ShowroomSeeEverythingLite = ({ onClickHandler }: Props) => {
   return (
     <Button className={`${style.seeEverything} p-button-link`} onClick={onClickHandler}>
       <span>See everything</span>
-      <i className='pi pi-arrow-right' style={{ fontSize: '12px', color: '#0241AE' }} />
+      <i className='pi pi-arrow-right' style={{ fontSize: '12px', color: '#0241AE', paddingLeft: '8px' }} />
     </Button>
   )
 }
