@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { Header } from 'layout/header/header'
+
 import { ShowroomAllComponents } from 'features/showroom/components/showroom-all-components/showroom-all-components'
 import { ShowroomPropertyList } from 'features/showroom/components/showroom-property-list/showroom-property-list'
 import { ShowroomViewSwitch } from 'features/showroom/components/showroom-view-switch/showroom-view-switch'
@@ -12,6 +14,7 @@ export const PageAllComponents = () => {
 
   return (
     <div>
+      <Header />
       <ShowroomAllComponents />
       <ShowroomViewSwitch activeView={activeView} switchView={(view) => setActiveView(view)} />
       <ShowroomPropertyList title={'Small'} />
