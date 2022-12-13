@@ -18,3 +18,15 @@ export const HTTP_METHODS = {
   PUT: 'put',
   DELETE: 'delete',
 }
+
+export const ALT_IMG = {
+  LOGO: 'Logo Icon',
+  FAVORITE: 'Favorite Icon',
+  ACCOUNT: 'Account Icon',
+  ARROW: 'Arrow Icon',
+}
+
+export const HEADER_LABELS = {
+  FAVORITE: 'Favorites',
+  ACCOUNT: 'My account',
+}
